@@ -1,0 +1,5 @@
+D:\tgapp-radius-ip\TgappWeb\TgappWeb\bin\TgappWeb.dll
+D:\tgapp-radius-ip\TgappWeb\TgappWeb\bin\TgappWeb.pdb
+D:\tgapp-radius-ip\TgappWeb\TgappWeb\obj\Debug\ResolveAssemblyReference.cache
+D:\tgapp-radius-ip\TgappWeb\TgappWeb\obj\Debug\TgappWeb.dll
+D:\tgapp-radius-ip\TgappWeb\TgappWeb\obj\Debug\TgappWeb.pdb

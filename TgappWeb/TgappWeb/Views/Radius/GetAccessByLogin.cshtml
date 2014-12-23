@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Get_Access_by_Login";
+}
+
+@foreach(var item in ViewBag.ResultSet)
+{
+	<p>@item.err_code;@item.err_string;@item.login;@item.mac_addr;@item.nas_ip;@item.nas_port_id;@item.status;@item.sys_date;@item.tfp_code;@item.tfp_name;@item.zone_date</p>
+}
+    

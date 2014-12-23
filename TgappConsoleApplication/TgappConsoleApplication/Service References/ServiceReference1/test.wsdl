@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://datumnode.com/web/common/test" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:dn="DatumNode" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="test" targetNamespace="http://datumnode.com/web/common/test" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="http_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="http_basic_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="tcp_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="tcp_anonymous_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://datumnode.com/web/common/test">
+      <xsd:import namespace="DatumNode" />
+      <xsd:element name="get_number">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:get_numberRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="get_numberRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="get_numberResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:get_numberOutputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="get_numberOutputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="result" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="get_numberResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="get_numberResult" type="tns:get_numberResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="DatumNode">
+      <xsd:element name="Connection" type="dn:MetaConnection" />
+      <xsd:complexType name="MetaConnection">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Provider" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Connection" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Lifetime" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="AccessTimeout" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="Unspecified" name="IsolationLevel" type="dn:IsolationLevel" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="IsolationLevel">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Serializable" />
+          <xsd:enumeration value="RepeatableRead" />
+          <xsd:enumeration value="ReadCommitted" />
+          <xsd:enumeration value="ReadUncommitted" />
+          <xsd:enumeration value="Snapshot" />
+          <xsd:enumeration value="Chaos" />
+          <xsd:enumeration value="Unspecified" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="Command" type="dn:MetaCommand" />
+      <xsd:complexType name="MetaCommand">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="ExecuteQuery" name="Operation" type="dn:DbOperation" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Options" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="Default" name="Behavior" type="dn:DbBehavior" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="None" name="Transaction" type="dn:DbTransaction" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Timeout" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="ReaderTimeout" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="StartRecord" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="MaxRecordsPerCall" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="MaxRecords" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="DbOperation">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Open" />
+          <xsd:enumeration value="ExecuteScalar" />
+          <xsd:enumeration value="ExecuteNonQuery" />
+          <xsd:enumeration value="ExecuteBatch" />
+          <xsd:enumeration value="ExecuteQuery" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="DbBehavior">
+        <xsd:list>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="None" />
+              <xsd:enumeration value="CloseOnSuccess" />
+              <xsd:enumeration value="CloseOnFault" />
+              <xsd:enumeration value="CloseOnCancel" />
+              <xsd:enumeration value="Default" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:list>
+      </xsd:simpleType>
+      <xsd:simpleType name="DbTransaction">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="None" />
+          <xsd:enumeration value="Begin" />
+          <xsd:enumeration value="Commit" />
+          <xsd:enumeration value="Rollback" />
+          <xsd:enumeration value="BeginLocal" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="Result" type="dn:DbResult" />
+      <xsd:complexType name="DbResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="HasRows" type="xsd:boolean" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="State" type="dn:DbState" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Value" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="DbState">
+        <xsd:list>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="Open" />
+              <xsd:enumeration value="Closed" />
+              <xsd:enumeration value="Canceled" />
+              <xsd:enumeration value="Executing" />
+              <xsd:enumeration value="Transaction" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:list>
+      </xsd:simpleType>
+      <xsd:complexType name="DbException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Message" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ExtendedErrorMessage" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DbException" type="dn:DbException" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="test_get_number_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_number" />
+  </wsdl:message>
+  <wsdl:message name="test_get_number_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_numberResponse" />
+  </wsdl:message>
+  <wsdl:message name="test_get_number_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:portType name="test">
+    <wsdl:operation name="get_number">
+      <wsdl:input wsaw:Action="http://datumnode.com/web/common/test/get_number" message="tns:test_get_number_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/web/common/test/get_numberResponse" message="tns:test_get_number_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/web/common/test/get_numberFault" name="DbException" message="tns:test_get_number_DbException_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="http" type="tns:test">
+    <wsp:PolicyReference URI="#http_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_number">
+      <soap:operation soapAction="http://datumnode.com/web/common/test/get_number" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="http_basic" type="tns:test">
+    <wsp:PolicyReference URI="#http_basic_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_number">
+      <soap:operation soapAction="http://datumnode.com/web/common/test/get_number" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="http_anonymous" type="tns:test">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_number">
+      <soap:operation soapAction="http://datumnode.com/web/common/test/get_number" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="tcp" type="tns:test">
+    <wsp:PolicyReference URI="#tcp_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="get_number">
+      <soap12:operation soapAction="http://datumnode.com/web/common/test/get_number" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="tcp_anonymous" type="tns:test">
+    <wsp:PolicyReference URI="#tcp_anonymous_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="get_number">
+      <soap12:operation soapAction="http://datumnode.com/web/common/test/get_number" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="test">
+    <wsdl:port name="http" binding="tns:http">
+      <soap:address location="http://sdvdr002ap008.dv.rt.ru/DatumNode.svc" />
+    </wsdl:port>
+    <wsdl:port name="http_basic" binding="tns:http_basic">
+      <soap:address location="http://sdvdr002ap008.dv.rt.ru/DatumNode.svc/basic" />
+    </wsdl:port>
+    <wsdl:port name="http_anonymous" binding="tns:http_anonymous">
+      <soap:address location="http://sdvdr002ap008.dv.rt.ru/DatumNode.svc/a" />
+    </wsdl:port>
+    <wsdl:port name="tcp" binding="tns:tcp">
+      <soap12:address location="net.tcp://sdvdr002ap008.dv.rt.ru:5555/DatumNode.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://sdvdr002ap008.dv.rt.ru:5555/DatumNode.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="tcp_anonymous" binding="tns:tcp_anonymous">
+      <soap12:address location="net.tcp://sdvdr002ap008.dv.rt.ru:5555/DatumNode.svc/a" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://sdvdr002ap008.dv.rt.ru:5555/DatumNode.svc/a</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

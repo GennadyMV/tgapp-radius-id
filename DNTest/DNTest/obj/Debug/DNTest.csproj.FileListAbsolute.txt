@@ -1,0 +1,5 @@
+D:\Work\Arms\DNTest\DNTest\bin\Debug\DNTest.exe.config
+D:\Work\Arms\DNTest\DNTest\bin\Debug\DNTest.exe
+D:\Work\Arms\DNTest\DNTest\bin\Debug\DNTest.pdb
+D:\Work\Arms\DNTest\DNTest\obj\Debug\DNTest.exe
+D:\Work\Arms\DNTest\DNTest\obj\Debug\DNTest.pdb

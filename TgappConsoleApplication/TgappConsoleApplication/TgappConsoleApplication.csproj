@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\TgappRadius\Reference.cs">
+    <Compile Include="Service References\Radius\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -58,52 +58,52 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\TgappRadius\radius.wsdl" />
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Change_PasswordResult.datasource">
+    <None Include="Service References\Radius\radius.wsdl" />
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Change_PasswordResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Check_ProfileResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Check_ProfileResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Get_Access_by_LoginResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Get_Access_by_LoginResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Get_Access_by_Login_SysResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Get_Access_by_Login_SysResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Get_Access_SysdateResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Get_Access_SysdateResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Get_Dev_LoginResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Get_Dev_LoginResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Get_Sessions_by_LoginResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Get_Sessions_by_LoginResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Get_Sessions_by_Login_SysResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Get_Sessions_by_Login_SysResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Get_Srv_ListResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Get_Srv_ListResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Get_Traffic_by_LoginResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Get_Traffic_by_LoginResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TgappRadius\TgappConsoleApplication.TgappRadius.Stop_Radius_SessionResult.datasource">
+    <None Include="Service References\Radius\TgappConsoleApplication.Radius.Stop_Radius_SessionResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\TgappRadius\" />
+    <WCFMetadataStorage Include="Service References\Radius\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TgappRadius\configuration91.svcinfo" />
+    <None Include="Service References\Radius\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TgappRadius\configuration.svcinfo" />
+    <None Include="Service References\Radius\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TgappRadius\Reference.svcmap">
+    <None Include="Service References\Radius\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
