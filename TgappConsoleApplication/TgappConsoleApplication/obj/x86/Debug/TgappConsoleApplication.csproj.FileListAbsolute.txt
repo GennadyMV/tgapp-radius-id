@@ -1,0 +1,6 @@
+D:\tgapp-radius-ip\TgappConsoleApplication\TgappConsoleApplication\bin\Debug\TgappConsoleApplication.exe.config
+D:\tgapp-radius-ip\TgappConsoleApplication\TgappConsoleApplication\bin\Debug\TgappConsoleApplication.exe
+D:\tgapp-radius-ip\TgappConsoleApplication\TgappConsoleApplication\bin\Debug\TgappConsoleApplication.pdb
+D:\tgapp-radius-ip\TgappConsoleApplication\TgappConsoleApplication\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\tgapp-radius-ip\TgappConsoleApplication\TgappConsoleApplication\obj\x86\Debug\TgappConsoleApplication.exe
+D:\tgapp-radius-ip\TgappConsoleApplication\TgappConsoleApplication\obj\x86\Debug\TgappConsoleApplication.pdb
