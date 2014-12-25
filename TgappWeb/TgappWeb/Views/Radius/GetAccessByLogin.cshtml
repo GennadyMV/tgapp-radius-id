@@ -1,9 +1,48 @@
 ﻿@{
     ViewBag.Title = "Get_Access_by_Login";
 }
+@{
+    Layout = "";    
+    }
 
+<table class="table table-bordered">
 @foreach(var item in ViewBag.ResultSet)
 {
-	<p>@item.err_code;@item.err_string;@item.login;@item.mac_addr;@item.nas_ip;@item.nas_port_id;@item.status;@item.sys_date;@item.tfp_code;@item.tfp_name;@item.zone_date</p>
+<tr>
+		<td>
+			@item.err_code
+		</td>
+		<td>
+			@item.err_string
+		</td>
+		<td>
+			@item.login
+		</td>
+		<td>
+			@item.mac_addr
+		</td>
+		<td>
+			@item.nas_ip
+		</td>
+		<td>
+			@item.nas_port_id
+		</td>
+		<td>
+			@item.status
+		</td>
+		<td>
+			@item.sys_date
+		</td>
+		<td>
+			@item.tfp_code
+		</td>
+		<td>
+			@item.tfp_name
+		</td>
+		<td>
+			@item.zone_date
+		</td>
+	</tr>
 }
     
+</table>

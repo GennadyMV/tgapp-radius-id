@@ -67,8 +67,8 @@ namespace TgappWeb.Controllers
                 p_Filial = filial
             };
 
-
-            theSessionResult = radiusClient.Get_Sessions_by_Login(theSessionRequest);
+            
+            theSessionResult = radiusClient.Get_Sessions_by_Login(theSessionRequest);            
             ViewBag.ResultSet = theSessionResult.ResultSet;
             return View();
         }

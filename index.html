@@ -2,36 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Hello World</title>
-		<script src="js/cxf-utils.js"></script>
-		<script src="js/radius.js"></script>
-		<script type="text/javascript" src="js/soapclient.js"></script>
-		<script type="text/javascript">
-		
-			var url = "http://tgapp/DatumNode/DatumNode.svc?wsdl&entity=start.start_ip.radius";//document.location.href.replace("demo.htm", "webservicedemo.asmx");
-			
-			function Get_Access_by_Login() 
-			{
-			/*
-				var requestLogin = new datumnode_com_start_start_ip_radius_Get_Access_by_Login();
-				console.log('d');
-				console.log(requestLogin.typeMarker);
-				console.log(requestLogin._request);
-				console.log(datumnode_com_start_start_ip_radius_Get_Access_by_Login.prototype.getRequest());
-			*/
-				var pl = new SOAPClientParameters();
-				SOAPClient.invoke(url, "Get_Access_by_Login", pl, true, Get_Access_by_Login_callBack);			
-			}
-			function Get_Access_by_Login_callBack(r)
-			{
-				alert(r);
-			}
-		</script>
+        <title>Запросы к Radius IP </title>
     </head>
-    <body onload="Get_Access_by_Login()">
-        <h1>Hello World</h1>
+    <body >
+        <h1>Демонстрация встроенного приложения</h1>
         <p>
-            Jamie was here.
+            Приложение
         </p>
+		<iframe src="http://10.200.2.70/tgappweb/radius/radius" width="800" height="660" align="left">
+			Ваш браузер не поддерживает плавающие фреймы!
+		</iframe>
     </body>
 </html>

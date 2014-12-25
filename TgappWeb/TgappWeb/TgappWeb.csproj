@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\tcal.css" />
     <Content Include="Content\themes\base\images\tcal\cal.gif" />
     <Content Include="Content\themes\base\images\tcal\next_mon.gif" />
     <Content Include="Content\themes\base\images\tcal\next_year.gif" />
@@ -105,7 +106,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\radius.js" />
     <Content Include="Scripts\tcal.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -169,6 +172,7 @@
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Stop_Radius_SessionResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <Content Include="Views\Radius\GetSessionsByLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

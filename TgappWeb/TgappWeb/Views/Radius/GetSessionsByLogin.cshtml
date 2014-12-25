@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Get_Sessions_by_Login";
+}
+@{
+    Layout = "";    
+    }
+
+<table class="table table-bordered">
+@foreach(var item in ViewBag.ResultSet)
+{
+	
+	<tr>
+		<td>
+			@item.bytes_in
+		</td>
+		<td>
+			@item.bytes_out
+		</td>
+		<td>
+			@item.cid
+		</td>
+		<td>
+			@item.cid_primary
+		</td>
+		<td>
+			@item.ip
+		</td>
+		<td>
+			@item.login
+		</td>
+		<td>
+			@item.mac_addr
+		</td>
+		<td>
+			@item.nas_ip
+		</td>
+		<td>
+			@item.nas_name
+		</td>
+		<td>
+			@item.nas_port_id
+		</td>
+		<td>
+			@item.nas_zone
+		</td>
+		<td>
+			@item.policy
+		</td>
+		<td>
+			@item.status
+		</td>
+		<td>
+			@item.stop_cause
+		</td>
+		<td>
+			@item.sys_access_date
+		</td>
+		<td>
+			@item.sys_start_date
+		</td>
+		<td>
+			@item.sys_stop_date
+		</td>
+		<td>
+			@item.zone_access_date
+		</td>
+		<td>
+			@item.zone_last_alive_date
+		</td>
+		<td>
+			@item.zone_start_date
+		</td>
+		<td>
+			@item.zone_stop_date
+		</td>
+	</tr>
+}
+    
+</table>
