@@ -66,11 +66,32 @@ namespace TgappWeb.Controllers
                 p_Login = login,
                 p_Filial = filial
             };
-
             
             theSessionResult = radiusClient.Get_Sessions_by_Login(theSessionRequest);            
             ViewBag.ResultSet = theSessionResult.ResultSet;
             return View();
+        }
+
+        public ActionResult GetAccessByLoginSys(string filial, string login, decimal interval)
+        {
+            var radiusClient = new RadiusAsync.radiusClient("http");
+            RadiusAsync.Get_Access_by_Login_SysResult theAccessSysResult;
+            RadiusAsync.Get_Access_by_Login_SysRequest theAccessSysRequest = new RadiusAsync.Get_Access_by_Login_SysRequest();
+            theAccessSysRequest.Command = new MetaCommand()
+            {
+                Operation = DbOperation.ExecuteQuery
+            };
+            theAccessSysRequest.Connection = new MetaConnection() { Connection = "*.*" };
+            theAccessSysRequest.Parameters = new Get_Access_by_Login_SysInputParameters()
+            {
+                p_Interval = interval,
+                p_Login = login,
+                p_Filial = filial                
+            };
+            theAccessSysResult = radiusClient.Get_Access_by_Login_Sys(theAccessSysRequest);
+            ViewBag.ResultSet = theAccessSysResult.ResultSet;
+
+            return View();              
         }
 
     }
