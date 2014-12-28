@@ -22,9 +22,22 @@ namespace TgappWeb.Controllers
             return View();
         }
 
-        public ActionResult GetAccessByLogin(string filial, string login, string datebgn, string dateend)
+        public ActionResult GetAccessByLogin(string filial, string login, string datebgn, string dateend, int interval)
         {
-            var radiusClient = new RadiusAsync.radiusClient("http");
+            var radiusClient = new RadiusAsync.radius2Client("http");
+
+            DateTime dbgn;
+            DateTime dend;
+            if (interval > 0)
+            {
+                dbgn = DateTime.Now.AddDays(-1 * interval);
+                dend = DateTime.Now;
+            }
+            else
+            {
+                dbgn = DateTime.Parse(datebgn);
+                dend = DateTime.Parse(dateend);
+            }
             
             RadiusAsync.Get_Access_by_LoginResult theLoginResult;
             theLoginResult = radiusClient.Get_Access_by_Login(new Get_Access_by_LoginRequest()
@@ -33,12 +46,12 @@ namespace TgappWeb.Controllers
                 {
                     Operation = DbOperation.ExecuteQuery
                 },
-                Connection = new MetaConnection() { Connection = "*.*" },
+                Connection = new MetaConnection() { Connection = "*.*" },                
                 Parameters =//параметры функции
                     new Get_Access_by_LoginInputParameters()
                     {
-                        p_Date_Beg = DateTime.Parse(datebgn),
-                        p_Date_End = DateTime.Parse(dateend),
+                        p_Date_Beg = dbgn,
+                        p_Date_End = dend,
                         p_Login = login,
                         p_Filial = filial
                     }
@@ -49,9 +62,23 @@ namespace TgappWeb.Controllers
             return View();
         }
 
-        public ActionResult GetSessionsByLogin(string filial, string login, string datebgn, string dateend)
+        public ActionResult GetSessionsByLogin(string filial, string login, string datebgn, string dateend, int interval)
         {
-            var radiusClient = new RadiusAsync.radiusClient("http");
+            var radiusClient = new RadiusAsync.radius2Client("http");
+            
+            DateTime dbgn;
+            DateTime dend;
+            if (interval > 0)
+            {
+                dbgn = DateTime.Now.AddDays(-1 * interval);
+                dend = DateTime.Now;
+            }
+            else
+            {
+                dbgn = DateTime.Parse(datebgn);
+                dend = DateTime.Parse(dateend);
+            }
+
             RadiusAsync.Get_Sessions_by_LoginResult theSessionResult;
             RadiusAsync.Get_Sessions_by_LoginRequest theSessionRequest = new RadiusAsync.Get_Sessions_by_LoginRequest();
             theSessionRequest.Command = new MetaCommand()
@@ -61,8 +88,8 @@ namespace TgappWeb.Controllers
             theSessionRequest.Connection = new MetaConnection() { Connection = "*.*" };
             theSessionRequest.Parameters = new Get_Sessions_by_LoginInputParameters()
             {
-                p_Date_Beg = DateTime.Parse(datebgn),
-                p_Date_End = DateTime.Parse(dateend),
+                p_Date_Beg = dbgn,
+                p_Date_End = dend,
                 p_Login = login,
                 p_Filial = filial
             };
@@ -74,7 +101,7 @@ namespace TgappWeb.Controllers
 
         public ActionResult GetAccessByLoginSys(string filial, string login, decimal interval)
         {
-            var radiusClient = new RadiusAsync.radiusClient("http");
+            var radiusClient = new RadiusAsync.radius2Client("http");
             RadiusAsync.Get_Access_by_Login_SysResult theAccessSysResult;
             RadiusAsync.Get_Access_by_Login_SysRequest theAccessSysRequest = new RadiusAsync.Get_Access_by_Login_SysRequest();
             theAccessSysRequest.Command = new MetaCommand()

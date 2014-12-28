@@ -1,0 +1,1498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://datumnode.com/start/start_ip/radius2" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:dn="DatumNode" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="radius2" targetNamespace="http://datumnode.com/start/start_ip/radius2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="http_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NegotiateAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="tcp_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="pipe_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="tcp_anonymous_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="pipe_anonymous_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://datumnode.com/start/start_ip/radius2">
+      <xsd:import namespace="DatumNode" />
+      <xsd:element name="Change_Password">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Change_PasswordRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Change_PasswordRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Change_PasswordInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Change_PasswordInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_New_Pass" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Old_Pass" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Pin_Code" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Change_PasswordResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Change_PasswordOutputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Change_PasswordOutputParameters" />
+      <xsd:element name="Change_PasswordResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Change_PasswordResult" type="tns:Change_PasswordResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Check_Profile">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Check_ProfileRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Check_ProfileRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Check_ProfileInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Check_ProfileInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Check_ProfileResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Check_ProfileOutputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Check_ProfileOutputParameters" />
+      <xsd:element name="Check_ProfileResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Check_ProfileResult" type="tns:Check_ProfileResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Get_Access_Sysdate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Get_Access_SysdateRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Get_Access_SysdateRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Access_SysdateInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_SysdateInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Interval" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_MAC" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_NAS_port_ID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_SysdateResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Access_SysdateOutputParameters" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ResultSet" type="tns:ArrayOfGet_Access_SysdateEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_SysdateOutputParameters" />
+      <xsd:complexType name="ArrayOfGet_Access_SysdateEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Get_Access_SysdateEntity" nillable="true" type="tns:Get_Access_SysdateEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_SysdateEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="sys_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_ip" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_zone" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="login" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="mac_addr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_port_id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tfp_code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tfp_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="err_code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="err_string" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="err_info" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Get_Access_SysdateResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Get_Access_SysdateResult" type="tns:Get_Access_SysdateResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Get_Access_by_Login">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Get_Access_by_LoginRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Get_Access_by_LoginRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Access_by_LoginInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_by_LoginInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Date_Beg" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Date_End" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_by_LoginResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Access_by_LoginOutputParameters" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ResultSet" type="tns:ArrayOfGet_Access_by_LoginEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_by_LoginOutputParameters" />
+      <xsd:complexType name="ArrayOfGet_Access_by_LoginEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Get_Access_by_LoginEntity" nillable="true" type="tns:Get_Access_by_LoginEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_by_LoginEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="sys_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_ip" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_zone" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="login" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="mac_addr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_port_id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tfp_code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tfp_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="err_code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="err_string" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="err_info" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Get_Access_by_LoginResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Get_Access_by_LoginResult" type="tns:Get_Access_by_LoginResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Get_Access_by_Login_Sys">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Get_Access_by_Login_SysRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Get_Access_by_Login_SysRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Access_by_Login_SysInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_by_Login_SysInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Interval" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_by_Login_SysResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Access_by_Login_SysOutputParameters" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ResultSet" type="tns:ArrayOfGet_Access_by_Login_SysEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_by_Login_SysOutputParameters" />
+      <xsd:complexType name="ArrayOfGet_Access_by_Login_SysEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Get_Access_by_Login_SysEntity" nillable="true" type="tns:Get_Access_by_Login_SysEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Access_by_Login_SysEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="sys_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_ip" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_zone" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="login" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="mac_addr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_port_id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tfp_code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="tfp_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="err_code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="err_string" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="err_info" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Get_Access_by_Login_SysResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Get_Access_by_Login_SysResult" type="tns:Get_Access_by_Login_SysResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Get_Sessions_by_Login">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Get_Sessions_by_LoginRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Get_Sessions_by_LoginRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Sessions_by_LoginInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Sessions_by_LoginInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Date_Beg" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Date_End" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Sessions_by_LoginResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Sessions_by_LoginOutputParameters" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ResultSet" type="tns:ArrayOfGet_Sessions_by_LoginEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Sessions_by_LoginOutputParameters" />
+      <xsd:complexType name="ArrayOfGet_Sessions_by_LoginEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Get_Sessions_by_LoginEntity" nillable="true" type="tns:Get_Sessions_by_LoginEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Sessions_by_LoginEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cid_primary" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ip" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_ip" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_zone" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="login" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="mac_addr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_port_id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="policy" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_access_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_start_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_last_alive_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_stop_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="sys_access_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="sys_start_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="sys_stop_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="stop_cause" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="bytes_in" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="bytes_out" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Get_Sessions_by_LoginResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Get_Sessions_by_LoginResult" type="tns:Get_Sessions_by_LoginResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Get_Sessions_by_Login_Sys">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Get_Sessions_by_Login_SysRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Get_Sessions_by_Login_SysRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Sessions_by_Login_SysInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Sessions_by_Login_SysInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Interval" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Sessions_by_Login_SysResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Sessions_by_Login_SysOutputParameters" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ResultSet" type="tns:ArrayOfGet_Sessions_by_Login_SysEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Sessions_by_Login_SysOutputParameters" />
+      <xsd:complexType name="ArrayOfGet_Sessions_by_Login_SysEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Get_Sessions_by_Login_SysEntity" nillable="true" type="tns:Get_Sessions_by_Login_SysEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Sessions_by_Login_SysEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="cid_primary" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ip" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_ip" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_zone" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="login" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="mac_addr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nas_port_id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="policy" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_access_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_start_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_last_alive_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_stop_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="sys_access_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="sys_start_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="sys_stop_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="stop_cause" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="bytes_in" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="bytes_out" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Get_Sessions_by_Login_SysResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Get_Sessions_by_Login_SysResult" type="tns:Get_Sessions_by_Login_SysResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Get_Traffic_by_Login">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Get_Traffic_by_LoginRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Get_Traffic_by_LoginRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Traffic_by_LoginInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Traffic_by_LoginInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Date_Beg" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Date_End" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Interval" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Services" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Traffic_by_LoginResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Traffic_by_LoginOutputParameters" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ResultSet" type="tns:ArrayOfGet_Traffic_by_LoginEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Traffic_by_LoginOutputParameters" />
+      <xsd:complexType name="ArrayOfGet_Traffic_by_LoginEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Get_Traffic_by_LoginEntity" nillable="true" type="tns:Get_Traffic_by_LoginEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Traffic_by_LoginEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="login" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_start_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="zone_stop_date" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="code_value" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="bytes_in" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="bytes_out" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Get_Traffic_by_LoginResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Get_Traffic_by_LoginResult" type="tns:Get_Traffic_by_LoginResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Stop_Radius_Session">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Stop_Radius_SessionRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Stop_Radius_SessionRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Stop_Radius_SessionInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Stop_Radius_SessionInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Stop_Radius_SessionResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Stop_Radius_SessionOutputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Stop_Radius_SessionOutputParameters" />
+      <xsd:element name="Stop_Radius_SessionResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Stop_Radius_SessionResult" type="tns:Stop_Radius_SessionResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="DatumNode">
+      <xsd:element name="Connection" type="dn:MetaConnection" />
+      <xsd:complexType name="MetaConnection">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Provider" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Connection" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Lifetime" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="AccessTimeout" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="Unspecified" name="IsolationLevel" type="dn:IsolationLevel" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="IsolationLevel">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Serializable" />
+          <xsd:enumeration value="RepeatableRead" />
+          <xsd:enumeration value="ReadCommitted" />
+          <xsd:enumeration value="ReadUncommitted" />
+          <xsd:enumeration value="Snapshot" />
+          <xsd:enumeration value="Chaos" />
+          <xsd:enumeration value="Unspecified" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="Command" type="dn:MetaCommand" />
+      <xsd:complexType name="MetaCommand">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="ExecuteQuery" name="Operation" type="dn:DbOperation" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Options" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="Default" name="Behavior" type="dn:DbBehavior" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="None" name="Transaction" type="dn:DbTransaction" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Timeout" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="ReaderTimeout" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="StartRecord" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="MaxRecordsPerCall" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="MaxRecords" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="DbOperation">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Open" />
+          <xsd:enumeration value="ExecuteScalar" />
+          <xsd:enumeration value="ExecuteNonQuery" />
+          <xsd:enumeration value="ExecuteBatch" />
+          <xsd:enumeration value="ExecuteQuery" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="DbBehavior">
+        <xsd:list>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="None" />
+              <xsd:enumeration value="CloseOnSuccess" />
+              <xsd:enumeration value="CloseOnFault" />
+              <xsd:enumeration value="CloseOnCancel" />
+              <xsd:enumeration value="Default" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:list>
+      </xsd:simpleType>
+      <xsd:simpleType name="DbTransaction">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="None" />
+          <xsd:enumeration value="Begin" />
+          <xsd:enumeration value="Commit" />
+          <xsd:enumeration value="Rollback" />
+          <xsd:enumeration value="BeginLocal" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="Result" type="dn:DbResult" />
+      <xsd:complexType name="DbResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="HasRows" type="xsd:boolean" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="State" type="dn:DbState" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Value" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="DbState">
+        <xsd:list>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="Open" />
+              <xsd:enumeration value="Closed" />
+              <xsd:enumeration value="Canceled" />
+              <xsd:enumeration value="Executing" />
+              <xsd:enumeration value="Transaction" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:list>
+      </xsd:simpleType>
+      <xsd:complexType name="DbException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Message" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ExtendedErrorMessage" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DbException" type="dn:DbException" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="radius2_Change_Password_InputMessage">
+    <wsdl:part name="parameters" element="tns:Change_Password" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Change_Password_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Change_PasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Change_Password_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Check_Profile_InputMessage">
+    <wsdl:part name="parameters" element="tns:Check_Profile" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Check_Profile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Check_ProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Check_Profile_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Access_Sysdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Access_Sysdate" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Access_Sysdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Access_SysdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Access_Sysdate_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Access_by_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Access_by_Login" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Access_by_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Access_by_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Access_by_Login_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Access_by_Login_Sys_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Access_by_Login_Sys" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Access_by_Login_Sys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Access_by_Login_SysResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Access_by_Login_Sys_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Sessions_by_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Sessions_by_Login" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Sessions_by_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Sessions_by_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Sessions_by_Login_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Sessions_by_Login_Sys_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Sessions_by_Login_Sys" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Sessions_by_Login_Sys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Sessions_by_Login_SysResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Sessions_by_Login_Sys_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Traffic_by_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Traffic_by_Login" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Traffic_by_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Traffic_by_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Get_Traffic_by_Login_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Stop_Radius_Session_InputMessage">
+    <wsdl:part name="parameters" element="tns:Stop_Radius_Session" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Stop_Radius_Session_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Stop_Radius_SessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius2_Stop_Radius_Session_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:portType name="radius2">
+    <wsdl:operation name="Change_Password">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Change_Password" message="tns:radius2_Change_Password_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Change_PasswordResponse" message="tns:radius2_Change_Password_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Change_PasswordFault" name="DbException" message="tns:radius2_Change_Password_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Check_Profile">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Check_Profile" message="tns:radius2_Check_Profile_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Check_ProfileResponse" message="tns:radius2_Check_Profile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Check_ProfileFault" name="DbException" message="tns:radius2_Check_Profile_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_Sysdate">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" message="tns:radius2_Get_Access_Sysdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateResponse" message="tns:radius2_Get_Access_Sysdate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateFault" name="DbException" message="tns:radius2_Get_Access_Sysdate_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" message="tns:radius2_Get_Access_by_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginResponse" message="tns:radius2_Get_Access_by_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginFault" name="DbException" message="tns:radius2_Get_Access_by_Login_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login_Sys">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" message="tns:radius2_Get_Access_by_Login_Sys_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysResponse" message="tns:radius2_Get_Access_by_Login_Sys_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysFault" name="DbException" message="tns:radius2_Get_Access_by_Login_Sys_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" message="tns:radius2_Get_Sessions_by_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginResponse" message="tns:radius2_Get_Sessions_by_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginFault" name="DbException" message="tns:radius2_Get_Sessions_by_Login_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login_Sys">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" message="tns:radius2_Get_Sessions_by_Login_Sys_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysResponse" message="tns:radius2_Get_Sessions_by_Login_Sys_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysFault" name="DbException" message="tns:radius2_Get_Sessions_by_Login_Sys_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Traffic_by_Login">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" message="tns:radius2_Get_Traffic_by_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginResponse" message="tns:radius2_Get_Traffic_by_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginFault" name="DbException" message="tns:radius2_Get_Traffic_by_Login_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Stop_Radius_Session">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" message="tns:radius2_Stop_Radius_Session_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionResponse" message="tns:radius2_Stop_Radius_Session_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionFault" name="DbException" message="tns:radius2_Stop_Radius_Session_DbException_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="http" type="tns:radius2">
+    <wsp:PolicyReference URI="#http_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Change_Password">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Profile">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_Sysdate">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login_Sys">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login_Sys">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Traffic_by_Login">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Stop_Radius_Session">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="http_anonymous" type="tns:radius2">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Change_Password">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Profile">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_Sysdate">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login_Sys">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login_Sys">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Traffic_by_Login">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Stop_Radius_Session">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="tcp" type="tns:radius2">
+    <wsp:PolicyReference URI="#tcp_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Change_Password">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Profile">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_Sysdate">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login_Sys">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login_Sys">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Traffic_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Stop_Radius_Session">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="pipe" type="tns:radius2">
+    <wsp:PolicyReference URI="#pipe_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="Change_Password">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Profile">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_Sysdate">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login_Sys">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login_Sys">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Traffic_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Stop_Radius_Session">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="tcp_anonymous" type="tns:radius2">
+    <wsp:PolicyReference URI="#tcp_anonymous_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Change_Password">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Profile">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_Sysdate">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login_Sys">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login_Sys">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Traffic_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Stop_Radius_Session">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="pipe_anonymous" type="tns:radius2">
+    <wsp:PolicyReference URI="#pipe_anonymous_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="Change_Password">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Check_Profile">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_Sysdate">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Access_by_Login_Sys">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Sessions_by_Login_Sys">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Traffic_by_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Stop_Radius_Session">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="radius2">
+    <wsdl:port name="http" binding="tns:http">
+      <soap:address location="http://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc" />
+    </wsdl:port>
+    <wsdl:port name="http_anonymous" binding="tns:http_anonymous">
+      <soap:address location="http://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc/a" />
+    </wsdl:port>
+    <wsdl:port name="tcp" binding="tns:tcp">
+      <soap12:address location="net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="pipe" binding="tns:pipe">
+      <soap12:address location="net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="tcp_anonymous" binding="tns:tcp_anonymous">
+      <soap12:address location="net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc/a" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc/a</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="pipe_anonymous" binding="tns:pipe_anonymous">
+      <soap12:address location="net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc/a" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc/a</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

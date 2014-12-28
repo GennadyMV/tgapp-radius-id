@@ -2,7 +2,7 @@
     ViewBag.Title = "Radius";
 }
 
-<hr>	
+<hr/>	
 
 <div class="container-fluid">
 
@@ -17,8 +17,8 @@
 			<input type="text" class="form-control tcal" readonly="readonly" id="dateend" placeholder="Дата конца периода" style="cursor: pointer">
 		</div>
 		<div class="cal-xs-3">
-			<input type="button" name="submit" class="btn btn-default" value="Получить данные" onclick="SubmitSearch()"/>
-		</div
+			<input type="button" name="submit" class="btn btn-default" value="Получить данные" onclick="SubmitSearch(0)"/>
+		</div>
 	</div>
 	<hr/>
 	<div class="row">
@@ -26,11 +26,10 @@
 		</div>
 		<div class="col-xs-9 ">
 			<div class="btn-group" role="group" aria-label="...">
-				  <button type="button" class="btn btn-default">10 минут</button>
-				  <button type="button" class="btn btn-default">1 день</button>
-				  <button type="button" class="btn btn-default">3 дня</button>
-				  <button type="button" class="btn btn-default">1 неделя</button>
-				  <button type="button" class="btn btn-default">1 месяц</button>
+				  <button onclick="SubmitSearch(1)" type="button" class="btn btn-default">1 день</button>
+				  <button onclick="SubmitSearch(3)" type="button" class="btn btn-default">3 дня</button>
+				  <button onclick="SubmitSearch(7)" type="button" class="btn btn-default">1 неделя</button>
+				  <button onclick="SubmitSearch(30)" type="button" class="btn btn-default">1 месяц</button>
 			</div>
 		</div>
 	</div>
@@ -61,18 +60,28 @@
 	</div>
 
 	<script>
+		$(function () {
+		  $('[data-toggle="popover"]').tooltip()
+		});
 		$('#myTab a').click(function (e) {
 		  e.preventDefault()
 		  $(this).tab('show')
-		})
-		function SubmitSearch() {
-			if (Validation() == true) {
+		});
+		function SubmitSearch(interval) {
+			var isValid = true;
+			if (interval > 0) {
+				isValid = ValidationLogin();
+			} 
+			else {
+				isValid = Validation();
+			}
+			if (isValid == true) {
 				$('#autorization').text("Загрузка...");
 				$('#sessions').text("Загрузка...");
-				$.get('@Url.Action("GetAccessByLogin", "Radius")', { filial:"1", login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value }, function(data) { 				
+				$.get('@Url.Action("GetAccessByLogin", "Radius")', { filial:"1", login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("autorization").innerHTML = data;
 				});
-				$.get('@Url.Action("GetSessionsByLogin", "Radius")', { filial:"1", login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value }, function(data) { 				
+				$.get('@Url.Action("GetSessionsByLogin", "Radius")', { filial:"1", login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("sessions").innerHTML = data;
 				});
 			}

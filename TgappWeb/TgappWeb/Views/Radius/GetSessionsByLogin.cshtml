@@ -4,76 +4,115 @@
 @{
     Layout = "";    
     }
+	
+	@{
+		int index = 0;
+	}
 
-<table class="table table-bordered">
+<table class="table table-bordered table-hover">
+<thead>
+		<tr>
+			<th>Логин</th>
+			<th>Статус сессии</th>
+			<th>Период</th>
+			<th>NAS</th>
+			<th>IP-адрес</th>
+			<th>Политика</th>
+			<th>Входящий</th>
+			<th>Исходящий</th>
+		</tr>
+</thead>
+<tbody>
+
 @foreach(var item in ViewBag.ResultSet)
 {
-	
-	<tr>
-		<td>
-			@item.bytes_in
-		</td>
-		<td>
-			@item.bytes_out
-		</td>
-		<td>
-			@item.cid
-		</td>
-		<td>
-			@item.cid_primary
-		</td>
-		<td>
-			@item.ip
-		</td>
+	{
+		index++;
+	}
+		
+	<tr id="tr_sessions_@(index)" class="resultrow" onclick="ResultClickSessions(@index)" data-toggle="modal" data-target="#myModalSessions@(index)" data-toggle="popover" data-placement="top" title="Нажмите для детального просмотра...">
 		<td>
 			@item.login
-		</td>
-		<td>
-			@item.mac_addr
-		</td>
-		<td>
-			@item.nas_ip
-		</td>
-		<td>
-			@item.nas_name
-		</td>
-		<td>
-			@item.nas_port_id
-		</td>
-		<td>
-			@item.nas_zone
-		</td>
-		<td>
-			@item.policy
 		</td>
 		<td>
 			@item.status
 		</td>
 		<td>
-			@item.stop_cause
+			@item.zone_start_date - @item.zone_last_alive_date
 		</td>
 		<td>
-			@item.sys_access_date
+			@item.nas_name @item.nas_ip
 		</td>
 		<td>
-			@item.sys_start_date
+			@item.ip
 		</td>
 		<td>
-			@item.sys_stop_date
+			@item.policy
 		</td>
 		<td>
-			@item.zone_access_date
+			@item.bytes_in
 		</td>
 		<td>
-			@item.zone_last_alive_date
-		</td>
-		<td>
-			@item.zone_start_date
-		</td>
-		<td>
-			@item.zone_stop_date
-		</td>
+			@item.bytes_out
+		</td>		
 	</tr>
 }
     
 </table>
+
+@{
+	index=0;
+}
+
+@foreach(var item in ViewBag.ResultSet)
+{
+
+{
+	index++;
+}
+
+
+	
+
+<!-- Modal -->
+<div class="modal fade" id="myModalSessions@(index)" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Детализация сессии пользователя</h4>
+      </div>
+      <div class="modal-body">
+        <p>Статус: @item.status</p>
+		<p>ID сессии: @item.cid</p>
+		<p>ID главной сессии: @item.cid_primary</p>		
+		<p>Выданный IP-адрес: @item.ip</p>
+		<p>Адрес NAS: @item.nas_ip</p>
+		<p>Название NAS: @item.nas_name</p>
+		<p>Временная зона NAS: @item.nas_zone</p>
+		<p>Логин: @item.login</p>
+		<p>MAC-адрес: @item.mac_addr</p>		
+		<p>NAS-порт: @item.nas_port_id</p>			
+		<p>Политика направления: @item.policy</p>	
+		<p>Время авторизации местное: @item.zone_access_date</p>
+		<p>Время старта сессии местное: @item.zone_start_date</p>
+		<p>Время последнего alive местное: @item.zone_last_alive_date</p>		
+		<p>Время стопа сессии местное: @item.zone_stop_date</p>
+		<p>Время авторизации системное: @item.sys_access_date</p>
+		<p>Время старта сессии системное: @item.sys_start_date</p>
+		<p>Время стопа сессии системное: @item.sys_stop_date</p>
+		<p>Причина завершения сессии: @item.stop_cause</p>
+		<p>Входящий трафик: @item.bytes_in</p>
+		<p>Исходящий трафик: @item.bytes_out</p>
+
+		
+				
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+}

@@ -18,10 +18,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://tgapp/DatumNode/DatumNode.svc?wsdl&amp;entity=start.start_ip.radius" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://tgapp/DatumNode/DatumNode.svc?wsdl&amp;entity=start.start_ip.radius2" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="radius.wsdl" MetadataType="Wsdl" ID="96a58f39-9773-4975-b710-202911e7e3d9" SourceId="1" SourceUrl="http://tgapp/DatumNode/DatumNode.svc?wsdl&amp;entity=start.start_ip.radius" />
+    <MetadataFile FileName="radius2.wsdl" MetadataType="Wsdl" ID="c644469e-1f12-4d55-b8a5-b7d1e6ece718" SourceId="1" SourceUrl="http://tgapp/DatumNode/DatumNode.svc?wsdl&amp;entity=start.start_ip.radius2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

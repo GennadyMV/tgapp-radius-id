@@ -76,7 +76,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Stop_Radius_SessionOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -94,7 +94,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Stop_Radius_SessionResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DbResult resultField;
@@ -237,7 +237,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Stop_Radius_SessionInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string p_FilialField;
@@ -283,7 +283,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Stop_Radius_SessionRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long idField;
@@ -717,7 +717,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Traffic_by_LoginEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string loginField;
@@ -819,7 +819,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Traffic_by_LoginOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -837,7 +837,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Traffic_by_LoginResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DbResult resultField;
@@ -897,7 +897,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Traffic_by_LoginInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string p_FilialField;
@@ -999,7 +999,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Traffic_by_LoginRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long idField;
@@ -1078,270 +1078,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Srv_ListEntity : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string code_valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string code_value {
-            get {
-                return this.code_valueField;
-            }
-            set {
-                this.code_valueField = value;
-                this.RaisePropertyChanged("code_value");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Srv_ListOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Srv_ListResult : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private DbResult resultField;
-        
-        private Get_Srv_ListOutputParameters parametersField;
-        
-        private Get_Srv_ListEntity[] resultSetField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
-        public DbResult Result {
-            get {
-                return this.resultField;
-            }
-            set {
-                this.resultField = value;
-                this.RaisePropertyChanged("Result");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Get_Srv_ListOutputParameters Parameters {
-            get {
-                return this.parametersField;
-            }
-            set {
-                this.parametersField = value;
-                this.RaisePropertyChanged("Parameters");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
-        public Get_Srv_ListEntity[] ResultSet {
-            get {
-                return this.resultSetField;
-            }
-            set {
-                this.resultSetField = value;
-                this.RaisePropertyChanged("ResultSet");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Srv_ListInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string p_FilialField;
-        
-        private System.Nullable<System.DateTime> p_Date_BegField;
-        
-        private System.Nullable<System.DateTime> p_Date_EndField;
-        
-        private string p_LoginField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string p_Filial {
-            get {
-                return this.p_FilialField;
-            }
-            set {
-                this.p_FilialField = value;
-                this.RaisePropertyChanged("p_Filial");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<System.DateTime> p_Date_Beg {
-            get {
-                return this.p_Date_BegField;
-            }
-            set {
-                this.p_Date_BegField = value;
-                this.RaisePropertyChanged("p_Date_Beg");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
-        public System.Nullable<System.DateTime> p_Date_End {
-            get {
-                return this.p_Date_EndField;
-            }
-            set {
-                this.p_Date_EndField = value;
-                this.RaisePropertyChanged("p_Date_End");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string p_Login {
-            get {
-                return this.p_LoginField;
-            }
-            set {
-                this.p_LoginField = value;
-                this.RaisePropertyChanged("p_Login");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Srv_ListRequest : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private long idField;
-        
-        private MetaConnection connectionField;
-        
-        private MetaCommand commandField;
-        
-        private Get_Srv_ListInputParameters parametersField;
-        
-        public Get_Srv_ListRequest() {
-            this.idField = ((long)(0));
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
-        public long Id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("Id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
-        public MetaConnection Connection {
-            get {
-                return this.connectionField;
-            }
-            set {
-                this.connectionField = value;
-                this.RaisePropertyChanged("Connection");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
-        public MetaCommand Command {
-            get {
-                return this.commandField;
-            }
-            set {
-                this.commandField = value;
-                this.RaisePropertyChanged("Command");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public Get_Srv_ListInputParameters Parameters {
-            get {
-                return this.parametersField;
-            }
-            set {
-                this.parametersField = value;
-                this.RaisePropertyChanged("Parameters");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_Login_SysEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string statusField;
@@ -1653,7 +1390,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_Login_SysOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -1671,7 +1408,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_Login_SysResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DbResult resultField;
@@ -1731,7 +1468,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_Login_SysInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string p_FilialField;
@@ -1791,7 +1528,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_Login_SysRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long idField;
@@ -1870,7 +1607,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_LoginEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string statusField;
@@ -2182,7 +1919,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_LoginOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -2200,7 +1937,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_LoginResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DbResult resultField;
@@ -2260,7 +1997,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_LoginInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string p_FilialField;
@@ -2334,7 +2071,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Sessions_by_LoginRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long idField;
@@ -2413,340 +2150,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Dev_LoginEntity : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string service_idField;
-        
-        private string user_loginField;
-        
-        private string dsl_login_idField;
-        
-        private System.Nullable<System.DateTime> date_beginField;
-        
-        private System.Nullable<System.DateTime> date_endField;
-        
-        private System.Nullable<decimal> user_idField;
-        
-        private string user_tarifField;
-        
-        private string dev_idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string service_id {
-            get {
-                return this.service_idField;
-            }
-            set {
-                this.service_idField = value;
-                this.RaisePropertyChanged("service_id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string user_login {
-            get {
-                return this.user_loginField;
-            }
-            set {
-                this.user_loginField = value;
-                this.RaisePropertyChanged("user_login");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string dsl_login_id {
-            get {
-                return this.dsl_login_idField;
-            }
-            set {
-                this.dsl_login_idField = value;
-                this.RaisePropertyChanged("dsl_login_id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
-        public System.Nullable<System.DateTime> date_begin {
-            get {
-                return this.date_beginField;
-            }
-            set {
-                this.date_beginField = value;
-                this.RaisePropertyChanged("date_begin");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
-        public System.Nullable<System.DateTime> date_end {
-            get {
-                return this.date_endField;
-            }
-            set {
-                this.date_endField = value;
-                this.RaisePropertyChanged("date_end");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
-        public System.Nullable<decimal> user_id {
-            get {
-                return this.user_idField;
-            }
-            set {
-                this.user_idField = value;
-                this.RaisePropertyChanged("user_id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public string user_tarif {
-            get {
-                return this.user_tarifField;
-            }
-            set {
-                this.user_tarifField = value;
-                this.RaisePropertyChanged("user_tarif");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string dev_id {
-            get {
-                return this.dev_idField;
-            }
-            set {
-                this.dev_idField = value;
-                this.RaisePropertyChanged("dev_id");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Dev_LoginOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Dev_LoginResult : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private DbResult resultField;
-        
-        private Get_Dev_LoginOutputParameters parametersField;
-        
-        private Get_Dev_LoginEntity[] resultSetField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
-        public DbResult Result {
-            get {
-                return this.resultField;
-            }
-            set {
-                this.resultField = value;
-                this.RaisePropertyChanged("Result");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public Get_Dev_LoginOutputParameters Parameters {
-            get {
-                return this.parametersField;
-            }
-            set {
-                this.parametersField = value;
-                this.RaisePropertyChanged("Parameters");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
-        public Get_Dev_LoginEntity[] ResultSet {
-            get {
-                return this.resultSetField;
-            }
-            set {
-                this.resultSetField = value;
-                this.RaisePropertyChanged("ResultSet");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Dev_LoginInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string p_FilialField;
-        
-        private System.Nullable<decimal> p_Dev_IDField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string p_Filial {
-            get {
-                return this.p_FilialField;
-            }
-            set {
-                this.p_FilialField = value;
-                this.RaisePropertyChanged("p_Filial");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
-        public System.Nullable<decimal> p_Dev_ID {
-            get {
-                return this.p_Dev_IDField;
-            }
-            set {
-                this.p_Dev_IDField = value;
-                this.RaisePropertyChanged("p_Dev_ID");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
-    public partial class Get_Dev_LoginRequest : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private long idField;
-        
-        private MetaConnection connectionField;
-        
-        private MetaCommand commandField;
-        
-        private Get_Dev_LoginInputParameters parametersField;
-        
-        public Get_Dev_LoginRequest() {
-            this.idField = ((long)(0));
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
-        public long Id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-                this.RaisePropertyChanged("Id");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
-        public MetaConnection Connection {
-            get {
-                return this.connectionField;
-            }
-            set {
-                this.connectionField = value;
-                this.RaisePropertyChanged("Connection");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
-        public MetaCommand Command {
-            get {
-                return this.commandField;
-            }
-            set {
-                this.commandField = value;
-                this.RaisePropertyChanged("Command");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public Get_Dev_LoginInputParameters Parameters {
-            get {
-                return this.parametersField;
-            }
-            set {
-                this.parametersField = value;
-                this.RaisePropertyChanged("Parameters");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_Login_SysEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string statusField;
@@ -2774,6 +2178,8 @@ namespace TgappWeb.RadiusAsync {
         private string err_codeField;
         
         private string err_stringField;
+        
+        private string err_infoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -2931,6 +2337,18 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string err_info {
+            get {
+                return this.err_infoField;
+            }
+            set {
+                this.err_infoField = value;
+                this.RaisePropertyChanged("err_info");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -2946,7 +2364,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_Login_SysOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -2964,7 +2382,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_Login_SysResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DbResult resultField;
@@ -3024,7 +2442,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_Login_SysInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string p_FilialField;
@@ -3084,7 +2502,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_Login_SysRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long idField;
@@ -3163,7 +2581,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_LoginEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string statusField;
@@ -3191,6 +2609,8 @@ namespace TgappWeb.RadiusAsync {
         private string err_codeField;
         
         private string err_stringField;
+        
+        private string err_infoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -3348,6 +2768,18 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string err_info {
+            get {
+                return this.err_infoField;
+            }
+            set {
+                this.err_infoField = value;
+                this.RaisePropertyChanged("err_info");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -3363,7 +2795,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_LoginOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -3381,7 +2813,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_LoginResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DbResult resultField;
@@ -3441,7 +2873,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_LoginInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string p_FilialField;
@@ -3515,7 +2947,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_by_LoginRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long idField;
@@ -3594,7 +3026,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_SysdateEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string statusField;
@@ -3622,6 +3054,8 @@ namespace TgappWeb.RadiusAsync {
         private string err_codeField;
         
         private string err_stringField;
+        
+        private string err_infoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -3779,6 +3213,18 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public string err_info {
+            get {
+                return this.err_infoField;
+            }
+            set {
+                this.err_infoField = value;
+                this.RaisePropertyChanged("err_info");
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -3794,7 +3240,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_SysdateOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -3812,7 +3258,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_SysdateResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DbResult resultField;
@@ -3872,7 +3318,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_SysdateInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.Nullable<decimal> p_IntervalField;
@@ -3946,7 +3392,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Access_SysdateRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long idField;
@@ -4025,7 +3471,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Check_ProfileOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -4043,7 +3489,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Check_ProfileResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DbResult resultField;
@@ -4089,7 +3535,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Check_ProfileInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string p_FilialField;
@@ -4135,7 +3581,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Check_ProfileRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long idField;
@@ -4214,7 +3660,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Change_PasswordOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -4232,7 +3678,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Change_PasswordResult : object, System.ComponentModel.INotifyPropertyChanged {
         
         private DbResult resultField;
@@ -4278,7 +3724,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Change_PasswordInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string p_FilialField;
@@ -4366,7 +3812,7 @@ namespace TgappWeb.RadiusAsync {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Change_PasswordRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private long idField;
@@ -4441,24 +3887,20 @@ namespace TgappWeb.RadiusAsync {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://datumnode.com/start/start_ip/radius", ConfigurationName="RadiusAsync.radius")]
-    public interface radius {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://datumnode.com/start/start_ip/radius2", ConfigurationName="RadiusAsync.radius2")]
+    public interface radius2 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Change_Password", ReplyAction="http://datumnode.com/start/start_ip/radius/Change_PasswordResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Change_PasswordFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Change_Password", ReplyAction="http://datumnode.com/start/start_ip/radius2/Change_PasswordResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Change_PasswordFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4469,26 +3911,22 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
         TgappWeb.RadiusAsync.Change_PasswordResult Change_Password(TgappWeb.RadiusAsync.Change_PasswordRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Change_Password", ReplyAction="http://datumnode.com/start/start_ip/radius/Change_PasswordResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Change_Password", ReplyAction="http://datumnode.com/start/start_ip/radius2/Change_PasswordResponse")]
         System.IAsyncResult BeginChange_Password(TgappWeb.RadiusAsync.Change_PasswordRequest request, System.AsyncCallback callback, object asyncState);
         
         TgappWeb.RadiusAsync.Change_PasswordResult EndChange_Password(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Check_Profile", ReplyAction="http://datumnode.com/start/start_ip/radius/Check_ProfileResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Check_ProfileFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Check_Profile", ReplyAction="http://datumnode.com/start/start_ip/radius2/Check_ProfileResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Check_ProfileFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4499,26 +3937,22 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
         TgappWeb.RadiusAsync.Check_ProfileResult Check_Profile(TgappWeb.RadiusAsync.Check_ProfileRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Check_Profile", ReplyAction="http://datumnode.com/start/start_ip/radius/Check_ProfileResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Check_Profile", ReplyAction="http://datumnode.com/start/start_ip/radius2/Check_ProfileResponse")]
         System.IAsyncResult BeginCheck_Profile(TgappWeb.RadiusAsync.Check_ProfileRequest request, System.AsyncCallback callback, object asyncState);
         
         TgappWeb.RadiusAsync.Check_ProfileResult EndCheck_Profile(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Get_Access_Sysdate", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Access_SysdateResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Get_Access_SysdateFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4529,26 +3963,22 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
         TgappWeb.RadiusAsync.Get_Access_SysdateResult Get_Access_Sysdate(TgappWeb.RadiusAsync.Get_Access_SysdateRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Get_Access_Sysdate", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Access_SysdateResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateResponse")]
         System.IAsyncResult BeginGet_Access_Sysdate(TgappWeb.RadiusAsync.Get_Access_SysdateRequest request, System.AsyncCallback callback, object asyncState);
         
         TgappWeb.RadiusAsync.Get_Access_SysdateResult EndGet_Access_Sysdate(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_LoginResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_LoginFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4559,26 +3989,22 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
         TgappWeb.RadiusAsync.Get_Access_by_LoginResult Get_Access_by_Login(TgappWeb.RadiusAsync.Get_Access_by_LoginRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_LoginResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginResponse")]
         System.IAsyncResult BeginGet_Access_by_Login(TgappWeb.RadiusAsync.Get_Access_by_LoginRequest request, System.AsyncCallback callback, object asyncState);
         
         TgappWeb.RadiusAsync.Get_Access_by_LoginResult EndGet_Access_by_Login(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_SysResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4589,56 +4015,22 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
         TgappWeb.RadiusAsync.Get_Access_by_Login_SysResult Get_Access_by_Login_Sys(TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_SysResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysResponse")]
         System.IAsyncResult BeginGet_Access_by_Login_Sys(TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState);
         
         TgappWeb.RadiusAsync.Get_Access_by_Login_SysResult EndGet_Access_by_Login_Sys(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Get_Dev_Login", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Dev_LoginResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Get_Dev_LoginFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Get_Dev_LoginResult Get_Dev_Login(TgappWeb.RadiusAsync.Get_Dev_LoginRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Get_Dev_Login", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Dev_LoginResponse")]
-        System.IAsyncResult BeginGet_Dev_Login(TgappWeb.RadiusAsync.Get_Dev_LoginRequest request, System.AsyncCallback callback, object asyncState);
-        
-        TgappWeb.RadiusAsync.Get_Dev_LoginResult EndGet_Dev_Login(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_LoginResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_LoginFault", Name="DbException", Namespace="DatumNode")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4649,26 +4041,22 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
         TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult Get_Sessions_by_Login(TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_LoginResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginResponse")]
         System.IAsyncResult BeginGet_Sessions_by_Login(TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request, System.AsyncCallback callback, object asyncState);
         
         TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult EndGet_Sessions_by_Login(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_SysResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4679,56 +4067,22 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
         TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult Get_Sessions_by_Login_Sys(TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_SysResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysResponse")]
         System.IAsyncResult BeginGet_Sessions_by_Login_Sys(TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState);
         
         TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult EndGet_Sessions_by_Login_Sys(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Get_Srv_List", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Srv_ListResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Get_Srv_ListFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Get_Srv_ListResult Get_Srv_List(TgappWeb.RadiusAsync.Get_Srv_ListRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Get_Srv_List", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Srv_ListResponse")]
-        System.IAsyncResult BeginGet_Srv_List(TgappWeb.RadiusAsync.Get_Srv_ListRequest request, System.AsyncCallback callback, object asyncState);
-        
-        TgappWeb.RadiusAsync.Get_Srv_ListResult EndGet_Srv_List(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_LoginResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_LoginFault", Name="DbException", Namespace="DatumNode")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4739,26 +4093,22 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
         TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult Get_Traffic_by_Login(TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_LoginResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginResponse")]
         System.IAsyncResult BeginGet_Traffic_by_Login(TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request, System.AsyncCallback callback, object asyncState);
         
         TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult EndGet_Traffic_by_Login(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius/Stop_Radius_Session", ReplyAction="http://datumnode.com/start/start_ip/radius/Stop_Radius_SessionResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius/Stop_Radius_SessionFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session", ReplyAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Srv_ListRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginResult))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Dev_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4769,14 +4119,14 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
         TgappWeb.RadiusAsync.Stop_Radius_SessionResult Stop_Radius_Session(TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius/Stop_Radius_Session", ReplyAction="http://datumnode.com/start/start_ip/radius/Stop_Radius_SessionResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session", ReplyAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionResponse")]
         System.IAsyncResult BeginStop_Radius_Session(TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request, System.AsyncCallback callback, object asyncState);
         
         TgappWeb.RadiusAsync.Stop_Radius_SessionResult EndStop_Radius_Session(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface radiusChannel : TgappWeb.RadiusAsync.radius, System.ServiceModel.IClientChannel {
+    public interface radius2Channel : TgappWeb.RadiusAsync.radius2, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4876,25 +4226,6 @@ namespace TgappWeb.RadiusAsync {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Get_Dev_LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public Get_Dev_LoginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public TgappWeb.RadiusAsync.Get_Dev_LoginResult Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Get_Dev_LoginResult)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Get_Sessions_by_LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -4927,25 +4258,6 @@ namespace TgappWeb.RadiusAsync {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Get_Srv_ListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public Get_Srv_ListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public TgappWeb.RadiusAsync.Get_Srv_ListResult Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Get_Srv_ListResult)(this.results[0]));
             }
         }
     }
@@ -4990,7 +4302,7 @@ namespace TgappWeb.RadiusAsync {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class radiusClient : System.ServiceModel.ClientBase<TgappWeb.RadiusAsync.radius>, TgappWeb.RadiusAsync.radius {
+    public partial class radius2Client : System.ServiceModel.ClientBase<TgappWeb.RadiusAsync.radius2>, TgappWeb.RadiusAsync.radius2 {
         
         private BeginOperationDelegate onBeginChange_PasswordDelegate;
         
@@ -5022,12 +4334,6 @@ namespace TgappWeb.RadiusAsync {
         
         private System.Threading.SendOrPostCallback onGet_Access_by_Login_SysCompletedDelegate;
         
-        private BeginOperationDelegate onBeginGet_Dev_LoginDelegate;
-        
-        private EndOperationDelegate onEndGet_Dev_LoginDelegate;
-        
-        private System.Threading.SendOrPostCallback onGet_Dev_LoginCompletedDelegate;
-        
         private BeginOperationDelegate onBeginGet_Sessions_by_LoginDelegate;
         
         private EndOperationDelegate onEndGet_Sessions_by_LoginDelegate;
@@ -5039,12 +4345,6 @@ namespace TgappWeb.RadiusAsync {
         private EndOperationDelegate onEndGet_Sessions_by_Login_SysDelegate;
         
         private System.Threading.SendOrPostCallback onGet_Sessions_by_Login_SysCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGet_Srv_ListDelegate;
-        
-        private EndOperationDelegate onEndGet_Srv_ListDelegate;
-        
-        private System.Threading.SendOrPostCallback onGet_Srv_ListCompletedDelegate;
         
         private BeginOperationDelegate onBeginGet_Traffic_by_LoginDelegate;
         
@@ -5058,22 +4358,22 @@ namespace TgappWeb.RadiusAsync {
         
         private System.Threading.SendOrPostCallback onStop_Radius_SessionCompletedDelegate;
         
-        public radiusClient() {
+        public radius2Client() {
         }
         
-        public radiusClient(string endpointConfigurationName) : 
+        public radius2Client(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public radiusClient(string endpointConfigurationName, string remoteAddress) : 
+        public radius2Client(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public radiusClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public radius2Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public radiusClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public radius2Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -5087,13 +4387,9 @@ namespace TgappWeb.RadiusAsync {
         
         public event System.EventHandler<Get_Access_by_Login_SysCompletedEventArgs> Get_Access_by_Login_SysCompleted;
         
-        public event System.EventHandler<Get_Dev_LoginCompletedEventArgs> Get_Dev_LoginCompleted;
-        
         public event System.EventHandler<Get_Sessions_by_LoginCompletedEventArgs> Get_Sessions_by_LoginCompleted;
         
         public event System.EventHandler<Get_Sessions_by_Login_SysCompletedEventArgs> Get_Sessions_by_Login_SysCompleted;
-        
-        public event System.EventHandler<Get_Srv_ListCompletedEventArgs> Get_Srv_ListCompleted;
         
         public event System.EventHandler<Get_Traffic_by_LoginCompletedEventArgs> Get_Traffic_by_LoginCompleted;
         
@@ -5349,56 +4645,6 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndGet_Access_by_Login_SysDelegate, this.onGet_Access_by_Login_SysCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.Get_Dev_LoginResult Get_Dev_Login(TgappWeb.RadiusAsync.Get_Dev_LoginRequest request) {
-            return base.Channel.Get_Dev_Login(request);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Dev_Login(TgappWeb.RadiusAsync.Get_Dev_LoginRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGet_Dev_Login(request, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Get_Dev_LoginResult EndGet_Dev_Login(System.IAsyncResult result) {
-            return base.Channel.EndGet_Dev_Login(result);
-        }
-        
-        private System.IAsyncResult OnBeginGet_Dev_Login(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Get_Dev_LoginRequest request = ((TgappWeb.RadiusAsync.Get_Dev_LoginRequest)(inValues[0]));
-            return this.BeginGet_Dev_Login(request, callback, asyncState);
-        }
-        
-        private object[] OnEndGet_Dev_Login(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Get_Dev_LoginResult retVal = this.EndGet_Dev_Login(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGet_Dev_LoginCompleted(object state) {
-            if ((this.Get_Dev_LoginCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.Get_Dev_LoginCompleted(this, new Get_Dev_LoginCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void Get_Dev_LoginAsync(TgappWeb.RadiusAsync.Get_Dev_LoginRequest request) {
-            this.Get_Dev_LoginAsync(request, null);
-        }
-        
-        public void Get_Dev_LoginAsync(TgappWeb.RadiusAsync.Get_Dev_LoginRequest request, object userState) {
-            if ((this.onBeginGet_Dev_LoginDelegate == null)) {
-                this.onBeginGet_Dev_LoginDelegate = new BeginOperationDelegate(this.OnBeginGet_Dev_Login);
-            }
-            if ((this.onEndGet_Dev_LoginDelegate == null)) {
-                this.onEndGet_Dev_LoginDelegate = new EndOperationDelegate(this.OnEndGet_Dev_Login);
-            }
-            if ((this.onGet_Dev_LoginCompletedDelegate == null)) {
-                this.onGet_Dev_LoginCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Dev_LoginCompleted);
-            }
-            base.InvokeAsync(this.onBeginGet_Dev_LoginDelegate, new object[] {
-                        request}, this.onEndGet_Dev_LoginDelegate, this.onGet_Dev_LoginCompletedDelegate, userState);
-        }
-        
         public TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult Get_Sessions_by_Login(TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request) {
             return base.Channel.Get_Sessions_by_Login(request);
         }
@@ -5497,56 +4743,6 @@ namespace TgappWeb.RadiusAsync {
             }
             base.InvokeAsync(this.onBeginGet_Sessions_by_Login_SysDelegate, new object[] {
                         request}, this.onEndGet_Sessions_by_Login_SysDelegate, this.onGet_Sessions_by_Login_SysCompletedDelegate, userState);
-        }
-        
-        public TgappWeb.RadiusAsync.Get_Srv_ListResult Get_Srv_List(TgappWeb.RadiusAsync.Get_Srv_ListRequest request) {
-            return base.Channel.Get_Srv_List(request);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Srv_List(TgappWeb.RadiusAsync.Get_Srv_ListRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGet_Srv_List(request, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Get_Srv_ListResult EndGet_Srv_List(System.IAsyncResult result) {
-            return base.Channel.EndGet_Srv_List(result);
-        }
-        
-        private System.IAsyncResult OnBeginGet_Srv_List(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Get_Srv_ListRequest request = ((TgappWeb.RadiusAsync.Get_Srv_ListRequest)(inValues[0]));
-            return this.BeginGet_Srv_List(request, callback, asyncState);
-        }
-        
-        private object[] OnEndGet_Srv_List(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Get_Srv_ListResult retVal = this.EndGet_Srv_List(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGet_Srv_ListCompleted(object state) {
-            if ((this.Get_Srv_ListCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.Get_Srv_ListCompleted(this, new Get_Srv_ListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void Get_Srv_ListAsync(TgappWeb.RadiusAsync.Get_Srv_ListRequest request) {
-            this.Get_Srv_ListAsync(request, null);
-        }
-        
-        public void Get_Srv_ListAsync(TgappWeb.RadiusAsync.Get_Srv_ListRequest request, object userState) {
-            if ((this.onBeginGet_Srv_ListDelegate == null)) {
-                this.onBeginGet_Srv_ListDelegate = new BeginOperationDelegate(this.OnBeginGet_Srv_List);
-            }
-            if ((this.onEndGet_Srv_ListDelegate == null)) {
-                this.onEndGet_Srv_ListDelegate = new EndOperationDelegate(this.OnEndGet_Srv_List);
-            }
-            if ((this.onGet_Srv_ListCompletedDelegate == null)) {
-                this.onGet_Srv_ListCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Srv_ListCompleted);
-            }
-            base.InvokeAsync(this.onBeginGet_Srv_ListDelegate, new object[] {
-                        request}, this.onEndGet_Srv_ListDelegate, this.onGet_Srv_ListCompletedDelegate, userState);
         }
         
         public TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult Get_Traffic_by_Login(TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request) {

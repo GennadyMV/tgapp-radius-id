@@ -101,6 +101,7 @@
     <None Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Service References\RadiusAsync\configuration91.svcinfo" />
     <None Include="Service References\RadiusAsync\configuration.svcinfo" />
+    <None Include="Service References\RadiusAsync\radius2.wsdl" />
     <None Include="Service References\RadiusAsync\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -155,16 +156,10 @@
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Access_SysdateResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Dev_LoginResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Srv_ListResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult.datasource">
@@ -190,9 +185,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\RadiusAsync\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\RadiusAsync\radius.wsdl" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

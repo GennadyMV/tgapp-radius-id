@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="HJSHigcKvMYKgDHx7Eh9fc+EQvQ=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="KeedOv7tUxFePcOkP06zf9fn9GI=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="http">
       <properties>
@@ -597,7 +597,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="http" contract="RadiusAsync.radius" bindingType="basicHttpBinding" address="http://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc" bindingConfiguration="http">
+    <endpoint name="http" contract="RadiusAsync.radius2" bindingType="basicHttpBinding" address="http://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc" bindingConfiguration="http">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc</serializedValue>
@@ -612,7 +612,7 @@
           <serializedValue>http</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>RadiusAsync.radius</serializedValue>
+          <serializedValue>RadiusAsync.radius2</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -682,7 +682,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="http_anonymous" contract="RadiusAsync.radius" bindingType="basicHttpBinding" address="http://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc/a" bindingConfiguration="http_anonymous">
+    <endpoint name="http_anonymous" contract="RadiusAsync.radius2" bindingType="basicHttpBinding" address="http://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc/a" bindingConfiguration="http_anonymous">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc/a</serializedValue>
@@ -697,7 +697,7 @@
           <serializedValue>http_anonymous</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>RadiusAsync.radius</serializedValue>
+          <serializedValue>RadiusAsync.radius2</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -767,7 +767,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="tcp" contract="RadiusAsync.radius" bindingType="netTcpBinding" address="net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc" bindingConfiguration="tcp">
+    <endpoint name="tcp" contract="RadiusAsync.radius2" bindingType="netTcpBinding" address="net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc" bindingConfiguration="tcp">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc</serializedValue>
@@ -782,7 +782,7 @@
           <serializedValue>tcp</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>RadiusAsync.radius</serializedValue>
+          <serializedValue>RadiusAsync.radius2</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -852,7 +852,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="pipe" contract="RadiusAsync.radius" bindingType="netNamedPipeBinding" address="net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc" bindingConfiguration="pipe">
+    <endpoint name="pipe" contract="RadiusAsync.radius2" bindingType="netNamedPipeBinding" address="net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc" bindingConfiguration="pipe">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc</serializedValue>
@@ -867,7 +867,7 @@
           <serializedValue>pipe</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>RadiusAsync.radius</serializedValue>
+          <serializedValue>RadiusAsync.radius2</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -937,7 +937,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="tcp_anonymous" contract="RadiusAsync.radius" bindingType="netTcpBinding" address="net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc/a" bindingConfiguration="tcp_anonymous">
+    <endpoint name="tcp_anonymous" contract="RadiusAsync.radius2" bindingType="netTcpBinding" address="net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc/a" bindingConfiguration="tcp_anonymous">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.tcp://sdvdr002ap023.dv.rt.ru:5555/DatumNode/DatumNode.svc/a</serializedValue>
@@ -952,7 +952,7 @@
           <serializedValue>tcp_anonymous</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>RadiusAsync.radius</serializedValue>
+          <serializedValue>RadiusAsync.radius2</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -1022,7 +1022,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="pipe_anonymous" contract="RadiusAsync.radius" bindingType="netNamedPipeBinding" address="net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc/a" bindingConfiguration="pipe_anonymous">
+    <endpoint name="pipe_anonymous" contract="RadiusAsync.radius2" bindingType="netNamedPipeBinding" address="net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc/a" bindingConfiguration="pipe_anonymous">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>net.pipe://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc/a</serializedValue>
@@ -1037,7 +1037,7 @@
           <serializedValue>pipe_anonymous</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>RadiusAsync.radius</serializedValue>
+          <serializedValue>RadiusAsync.radius2</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
