@@ -12,7 +12,6 @@
 <table class="table table-bordered table-hover">
 <thead>
 		<tr>
-			<th>Логин</th>
 			<th>Статус сессии</th>
 			<th>Период</th>
 			<th>NAS</th>
@@ -31,9 +30,7 @@
 	}
 		
 	<tr id="tr_sessions_@(index)" class="resultrow" onclick="ResultClickSessions(@index)" data-toggle="modal" data-target="#myModalSessions@(index)" data-toggle="popover" data-placement="top" title="Нажмите для детального просмотра...">
-		<td>
-			@item.login
-		</td>
+		
 		<td>
 			@item.status
 		</td>

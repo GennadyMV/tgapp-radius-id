@@ -1,0 +1,38 @@
+﻿<table class="table table-bordered table-hover">
+<thead>
+	<tr>
+		<th>zone_start_date</th>
+		<th>zone_stop_date</th>
+		<th>code_value</th>
+		<th>bytes_in</th>
+		<th>bytes_out</th>
+	</tr>
+</thead>
+<tbody>
+
+
+@foreach(var item in ViewBag.ResultSet)
+{
+
+
+
+<tr>
+		
+		<td>
+			@item.zone_start_date
+		</td>
+		<td>
+			@item.zone_stop_date
+		</td>
+		<td>
+			@item.code_value
+		</td>
+		<td>
+			@item.bytes_in
+		</td>
+		
+	</tr>
+	
+}
+</tbody>
+</table>

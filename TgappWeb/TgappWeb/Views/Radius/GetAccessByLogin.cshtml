@@ -12,7 +12,6 @@
 <table class="table table-bordered table-hover">
 <thead>
 	<tr>
-		<th>Логин</th>
 		<th>Время</th>
 		<th>NAS</th>
 		<th>NAS-порт</th>
@@ -32,9 +31,7 @@
 }
 
 <tr id="tr_autorization_@(index)" class="resultrow" onclick="ResultClickAutorization(@index)" data-toggle="modal" data-target="#myModalAutorization@(index)" data-toggle="popover" data-placement="top" title="Нажмите для детального просмотра...">
-		<td>
-			@item.login
-		</td>
+		
 		<td>
 			@item.zone_date
 		</td>

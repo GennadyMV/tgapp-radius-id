@@ -107,10 +107,12 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\html5shiv.min.js" />
     <Content Include="Scripts\jquery-1.11.2.min.js" />
     <Content Include="Scripts\jquery.placeholder.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\radius.js" />
+    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\tcal.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -147,6 +149,9 @@
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Check_ProfileResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.FilialsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Access_by_LoginResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -170,6 +175,10 @@
     </None>
     <Content Include="Views\Radius\GetSessionsByLogin.cshtml" />
     <Content Include="Views\Radius\GetAccessByLoginSys.cshtml" />
+    <Content Include="Views\Radius\CheckProfile.cshtml" />
+    <Content Include="Views\Radius\StopRadiusSession.cshtml" />
+    <Content Include="Views\Radius\ChangePassword.cshtml" />
+    <Content Include="Views\Radius\GetTrafficByLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
