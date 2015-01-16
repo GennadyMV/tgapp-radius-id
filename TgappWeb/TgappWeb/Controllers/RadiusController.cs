@@ -236,7 +236,7 @@ namespace TgappWeb.Controllers
             return View();
         }
 
-        public ActionResult ChangePassword(string filial, string login, string new_pass, string old_pass, string pin_code)
+        public ActionResult ChangePassword(string filial, string login, string new_pass)
         {
             ViewBag.StatusString = "Смена пароля завершена успешна";            
             try
@@ -254,14 +254,10 @@ namespace TgappWeb.Controllers
                 {
                     p_Filial = filial.ToString(),
                     p_Login = login,
-                    p_New_Pass = new_pass,
-                    p_Old_Pass = old_pass,
-                    p_Pin_Code = pin_code
+                    p_New_Pass = new_pass
                 };
                 Change_PasswordResult theChangePasswordResult;
                 theChangePasswordResult = radiusClient.Change_Password(theChangePasswordRequest);
-                ViewBag.StatusString = "Статус операции: " + theChangePasswordResult.Result.Id.ToString();
-                
             }
             catch (Exception ex)
             {

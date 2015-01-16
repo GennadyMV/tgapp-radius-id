@@ -3922,10 +3922,6 @@ namespace TgappWeb.RadiusAsync {
         
         private string p_New_PassField;
         
-        private string p_Old_PassField;
-        
-        private string p_Pin_CodeField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string p_Filial {
@@ -3959,30 +3955,6 @@ namespace TgappWeb.RadiusAsync {
             set {
                 this.p_New_PassField = value;
                 this.RaisePropertyChanged("p_New_Pass");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string p_Old_Pass {
-            get {
-                return this.p_Old_PassField;
-            }
-            set {
-                this.p_Old_PassField = value;
-                this.RaisePropertyChanged("p_Old_Pass");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string p_Pin_Code {
-            get {
-                return this.p_Pin_CodeField;
-            }
-            set {
-                this.p_Pin_CodeField = value;
-                this.RaisePropertyChanged("p_Pin_Code");
             }
         }
         

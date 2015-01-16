@@ -104,8 +104,6 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="p_New_Pass" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="p_Old_Pass" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="p_Pin_Code" type="xsd:string" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="Change_PasswordResult">
