@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TgappWeb.RadiusAsync;
+using System.Globalization;
 
 namespace TgappWeb.Controllers
 {
@@ -17,7 +18,7 @@ namespace TgappWeb.Controllers
             return View();
         }
 
-        public ActionResult Radius(string mode, int filial, string login="", string date_beg="", string date_end="", int period=0 )
+        public ActionResult Radius(string mode="view", int filial=423, string login="", string date_beg="", string date_end="", int period=0 )
         {
             var radiusClient = new radius2Client("http");
             RadiusAsync.FilialsResult theFilialsResult;
@@ -36,16 +37,17 @@ namespace TgappWeb.Controllers
             switch (filial)
             {
                 case 421:
-                    ViewBag.Filial = "Приморский филиал";
+                    ViewBag.Filial = "Хабаровский филиал";
                     break;
                 case 423:
-                    ViewBag.Filial = "Хабаровский филиал";
+                    ViewBag.Filial = "Приморский филиал";
                     break;
                 default:
                     ViewBag.Filial = "Филиал не определён по номеру: " + filial.ToString();
                     break;
             }
             ViewBag.Mode = mode.ToUpper() ;
+            ViewBag.FilialCode = filial;
             ViewBag.Login = login;
             ViewBag.DateBgn = date_beg;
             ViewBag.DateEnd = date_end;
@@ -67,8 +69,8 @@ namespace TgappWeb.Controllers
             }
             else
             {
-                dbgn = DateTime.Parse(datebgn);
-                dend = DateTime.Parse(dateend);
+                dbgn = DateTime.ParseExact(datebgn, "dd.MM.yyyy", new CultureInfo("en-US"));
+                dend = DateTime.ParseExact(dateend, "dd.MM.yyyy", new CultureInfo("en-US"));
             }
             
             RadiusAsync.Get_Access_by_LoginResult theLoginResult;
@@ -107,8 +109,8 @@ namespace TgappWeb.Controllers
             }
             else
             {
-                dbgn = DateTime.Parse(datebgn);
-                dend = DateTime.Parse(dateend);
+                dbgn = DateTime.ParseExact(datebgn, "dd.MM.yyyy", new CultureInfo("en-US"));
+                dend = DateTime.ParseExact(dateend, "dd.MM.yyyy", new CultureInfo("en-US"));
             }
 
             RadiusAsync.Get_Sessions_by_LoginResult theSessionResult;
@@ -131,40 +133,86 @@ namespace TgappWeb.Controllers
             return View();
         }
 
-        public ActionResult GetTrafficByLogin(string filial, string login, string datebgn, string dateend, int interval)
+        public ActionResult GetTrafficByLogin(string filial, string login, string datebgn, string dateend, int interval, int interval2=24)
         {
             var radiusClient = new RadiusAsync.radius2Client("http");
-            
-            DateTime dbgn;
-            DateTime dend;
-            if (interval > 0)
+            try
             {
-                dbgn = DateTime.Now.AddMinutes(-1 * interval);
-                dend = DateTime.Now;
-            }
-            else
-            {
-                dbgn = DateTime.Parse(datebgn);
-                dend = DateTime.Parse(dateend);
-            }
+                DateTime dbgn;
+                DateTime dend;
+                if (interval > 0)
+                {
+                    dbgn = DateTime.Now.AddMinutes(-1 * interval);
+                    dend = DateTime.Now;
+                }
+                else
+                {
+                    dbgn = DateTime.ParseExact(datebgn, "dd.MM.yyyy", new CultureInfo("en-US"));
+                    dend = DateTime.ParseExact(dateend, "dd.MM.yyyy", new CultureInfo("en-US"));
+                }
 
-            RadiusAsync.Get_Traffic_by_LoginResult theTrafficResult;
-            RadiusAsync.Get_Traffic_by_LoginRequest theTrafficRequest = new RadiusAsync.Get_Traffic_by_LoginRequest();
-            theTrafficRequest.Command = new MetaCommand()
-            {
-                Operation = DbOperation.ExecuteQuery
-            };
-            theTrafficRequest.Connection = new MetaConnection() { Connection = "*.*" };
-            theTrafficRequest.Parameters = new Get_Traffic_by_LoginInputParameters()
-            {
-                p_Date_Beg = dbgn,
-                p_Date_End = dend,
-                p_Login = login,
-                p_Filial = filial
-            };
+                RadiusAsync.Get_Traffic_by_LoginResult theTrafficResult;
+                RadiusAsync.Get_Traffic_by_LoginRequest theTrafficRequest = new RadiusAsync.Get_Traffic_by_LoginRequest();
+                theTrafficRequest.Command = new MetaCommand()
+                {
+                    Operation = DbOperation.ExecuteQuery
+                };
+                theTrafficRequest.Connection = new MetaConnection() { Connection = "*.*" };
+                theTrafficRequest.Parameters = new Get_Traffic_by_LoginInputParameters()
+                {
+                    p_Date_Beg = dbgn,
+                    p_Date_End = dend,
+                    p_Login = login,
+                    p_Filial = filial,
+                    p_Interval = interval2
+                };
 
-            theTrafficResult = radiusClient.Get_Traffic_by_Login(theTrafficRequest);
-            ViewBag.ResultSet = theTrafficResult.ResultSet;
+                theTrafficResult = radiusClient.Get_Traffic_by_Login(theTrafficRequest);
+                ViewBag.ResultSet = theTrafficResult.ResultSet;
+
+                Dictionary<string, ulong> dictionary_in = new Dictionary<string, ulong>();
+                Dictionary<string, ulong> dictionary_out = new Dictionary<string, ulong>();
+                UInt64 total_bytes_in = 0;
+                UInt64 total_bytes_out = 0;
+                foreach(var item in theTrafficResult.ResultSet)
+                {
+                    if (item.bytes_in == null) item.bytes_in = 0;
+                    if (item.bytes_out == null) item.bytes_out = 0;
+
+                    total_bytes_in += (ulong)item.bytes_in;                    
+                    total_bytes_out += (ulong)item.bytes_out;
+
+                    if (!dictionary_in.ContainsKey(item.code_value))
+                    {
+                        dictionary_in.Add(item.code_value, 0);
+                    }
+                    dictionary_in[item.code_value] += (ulong) item.bytes_in;
+
+                    if (!dictionary_out.ContainsKey(item.code_value))
+                    {
+                        dictionary_out.Add(item.code_value, 0);
+                    }
+                    dictionary_out[item.code_value] += (ulong)item.bytes_out;
+                }
+                ViewBag.TotalBytesIn = total_bytes_in;
+                ViewBag.TotalBytesOut = total_bytes_out;
+                ViewBag.DictionaryIn = dictionary_in;
+                ViewBag.DictionaryOut = dictionary_out;
+                
+                ViewBag.TrafficTitle = String.Format("Полный трафик {0} за период с {1} по {2} , с разбиением на интервалы по ", 
+                    login, dbgn.ToShortDateString(), dend.ToShortDateString());
+
+                ViewBag.Interval2 = interval2;
+                ViewBag.Filial = filial;
+                ViewBag.Login = login;
+                ViewBag.DateBgn = datebgn;
+                ViewBag.DateEnd = dateend;
+                ViewBag.Interval = interval;
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
 
             return View();
         }

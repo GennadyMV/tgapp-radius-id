@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://datumnode.com/start/start_ip/radius2" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:dn="DatumNode" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="radius2" targetNamespace="http://datumnode.com/start/start_ip/radius2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://datumnode.com/start/start_ip/radius" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:dn="DatumNode" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="radius" targetNamespace="http://datumnode.com/start/start_ip/radius" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="http_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -82,7 +82,7 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsdl:types>
-    <xsd:schema elementFormDefault="qualified" targetNamespace="http://datumnode.com/start/start_ip/radius2">
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://datumnode.com/start/start_ip/radius">
       <xsd:import namespace="DatumNode" />
       <xsd:element name="Change_Password">
         <xsd:complexType>
@@ -104,6 +104,8 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="p_New_Pass" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Old_Pass" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Pin_Code" type="xsd:string" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="Change_PasswordResult">
@@ -152,46 +154,6 @@
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element minOccurs="0" maxOccurs="1" name="Check_ProfileResult" type="tns:Check_ProfileResult" />
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
-      <xsd:element name="Filials">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:FilialsRequest" />
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
-      <xsd:complexType name="FilialsRequest">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
-          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
-          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:complexType name="FilialsResult">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:FilialsOutputParameters" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="ResultSet" type="tns:ArrayOfFilialsEntity" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:complexType name="FilialsOutputParameters" />
-      <xsd:complexType name="ArrayOfFilialsEntity">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" maxOccurs="unbounded" name="FilialsEntity" nillable="true" type="tns:FilialsEntity" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:complexType name="FilialsEntity">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" maxOccurs="1" name="Id" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="Name" type="xsd:string" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:element name="FilialsResponse">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:element minOccurs="0" maxOccurs="1" name="FilialsResult" type="tns:FilialsResult" />
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -246,7 +208,6 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="tfp_name" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="err_code" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="err_string" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="err_info" type="xsd:string" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:element name="Get_Access_SysdateResponse">
@@ -307,7 +268,6 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="tfp_name" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="err_code" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="err_string" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="err_info" type="xsd:string" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:element name="Get_Access_by_LoginResponse">
@@ -367,13 +327,65 @@
           <xsd:element minOccurs="0" maxOccurs="1" name="tfp_name" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="err_code" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="1" name="err_string" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="err_info" type="xsd:string" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:element name="Get_Access_by_Login_SysResponse">
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element minOccurs="0" maxOccurs="1" name="Get_Access_by_Login_SysResult" type="tns:Get_Access_by_Login_SysResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Get_Dev_Login">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Get_Dev_LoginRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Get_Dev_LoginRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Dev_LoginInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Dev_LoginInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Dev_ID" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Dev_LoginResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Dev_LoginOutputParameters" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ResultSet" type="tns:ArrayOfGet_Dev_LoginEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Dev_LoginOutputParameters" />
+      <xsd:complexType name="ArrayOfGet_Dev_LoginEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Get_Dev_LoginEntity" nillable="true" type="tns:Get_Dev_LoginEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Dev_LoginEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="service_id" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="user_login" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="dsl_login_id" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="date_begin" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="date_end" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="user_id" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="user_tarif" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="dev_id" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Get_Dev_LoginResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Get_Dev_LoginResult" type="tns:Get_Dev_LoginResult" />
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -512,6 +524,54 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="Get_Srv_List">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="request" type="tns:Get_Srv_ListRequest" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Get_Srv_ListRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" default="0" name="Id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Connection" />
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Command" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Srv_ListInputParameters" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Srv_ListInputParameters">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Filial" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Date_Beg" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="p_Date_End" nillable="true" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="p_Login" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Srv_ListResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" ref="dn:Result" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Parameters" type="tns:Get_Srv_ListOutputParameters" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ResultSet" type="tns:ArrayOfGet_Srv_ListEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Srv_ListOutputParameters" />
+      <xsd:complexType name="ArrayOfGet_Srv_ListEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Get_Srv_ListEntity" nillable="true" type="tns:Get_Srv_ListEntity" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Srv_ListEntity">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="code_value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Get_Srv_ListResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="Get_Srv_ListResult" type="tns:Get_Srv_ListResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="Get_Traffic_by_Login">
         <xsd:complexType>
           <xsd:sequence>
@@ -556,7 +616,6 @@
           <xsd:element minOccurs="1" maxOccurs="1" name="zone_start_date" nillable="true" type="xsd:dateTime" />
           <xsd:element minOccurs="1" maxOccurs="1" name="zone_stop_date" nillable="true" type="xsd:dateTime" />
           <xsd:element minOccurs="0" maxOccurs="1" name="code_value" type="xsd:string" />
-          <xsd:element minOccurs="0" maxOccurs="1" name="code_text" type="xsd:string" />
           <xsd:element minOccurs="1" maxOccurs="1" name="bytes_in" nillable="true" type="xsd:decimal" />
           <xsd:element minOccurs="1" maxOccurs="1" name="bytes_out" nillable="true" type="xsd:decimal" />
         </xsd:sequence>
@@ -703,153 +762,167 @@
       <xsd:element name="DbException" type="dn:DbException" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="radius2_Change_Password_InputMessage">
+  <wsdl:message name="radius_Change_Password_InputMessage">
     <wsdl:part name="parameters" element="tns:Change_Password" />
   </wsdl:message>
-  <wsdl:message name="radius2_Change_Password_OutputMessage">
+  <wsdl:message name="radius_Change_Password_OutputMessage">
     <wsdl:part name="parameters" element="tns:Change_PasswordResponse" />
   </wsdl:message>
-  <wsdl:message name="radius2_Change_Password_DbException_FaultMessage">
+  <wsdl:message name="radius_Change_Password_DbException_FaultMessage">
     <wsdl:part name="detail" element="dn:DbException" />
   </wsdl:message>
-  <wsdl:message name="radius2_Check_Profile_InputMessage">
+  <wsdl:message name="radius_Check_Profile_InputMessage">
     <wsdl:part name="parameters" element="tns:Check_Profile" />
   </wsdl:message>
-  <wsdl:message name="radius2_Check_Profile_OutputMessage">
+  <wsdl:message name="radius_Check_Profile_OutputMessage">
     <wsdl:part name="parameters" element="tns:Check_ProfileResponse" />
   </wsdl:message>
-  <wsdl:message name="radius2_Check_Profile_DbException_FaultMessage">
+  <wsdl:message name="radius_Check_Profile_DbException_FaultMessage">
     <wsdl:part name="detail" element="dn:DbException" />
   </wsdl:message>
-  <wsdl:message name="radius2_Filials_InputMessage">
-    <wsdl:part name="parameters" element="tns:Filials" />
-  </wsdl:message>
-  <wsdl:message name="radius2_Filials_OutputMessage">
-    <wsdl:part name="parameters" element="tns:FilialsResponse" />
-  </wsdl:message>
-  <wsdl:message name="radius2_Filials_DbException_FaultMessage">
-    <wsdl:part name="detail" element="dn:DbException" />
-  </wsdl:message>
-  <wsdl:message name="radius2_Get_Access_Sysdate_InputMessage">
+  <wsdl:message name="radius_Get_Access_Sysdate_InputMessage">
     <wsdl:part name="parameters" element="tns:Get_Access_Sysdate" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Access_Sysdate_OutputMessage">
+  <wsdl:message name="radius_Get_Access_Sysdate_OutputMessage">
     <wsdl:part name="parameters" element="tns:Get_Access_SysdateResponse" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Access_Sysdate_DbException_FaultMessage">
+  <wsdl:message name="radius_Get_Access_Sysdate_DbException_FaultMessage">
     <wsdl:part name="detail" element="dn:DbException" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Access_by_Login_InputMessage">
+  <wsdl:message name="radius_Get_Access_by_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Get_Access_by_Login" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Access_by_Login_OutputMessage">
+  <wsdl:message name="radius_Get_Access_by_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:Get_Access_by_LoginResponse" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Access_by_Login_DbException_FaultMessage">
+  <wsdl:message name="radius_Get_Access_by_Login_DbException_FaultMessage">
     <wsdl:part name="detail" element="dn:DbException" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Access_by_Login_Sys_InputMessage">
+  <wsdl:message name="radius_Get_Access_by_Login_Sys_InputMessage">
     <wsdl:part name="parameters" element="tns:Get_Access_by_Login_Sys" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Access_by_Login_Sys_OutputMessage">
+  <wsdl:message name="radius_Get_Access_by_Login_Sys_OutputMessage">
     <wsdl:part name="parameters" element="tns:Get_Access_by_Login_SysResponse" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Access_by_Login_Sys_DbException_FaultMessage">
+  <wsdl:message name="radius_Get_Access_by_Login_Sys_DbException_FaultMessage">
     <wsdl:part name="detail" element="dn:DbException" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Sessions_by_Login_InputMessage">
+  <wsdl:message name="radius_Get_Dev_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Dev_Login" />
+  </wsdl:message>
+  <wsdl:message name="radius_Get_Dev_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Dev_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius_Get_Dev_Login_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius_Get_Sessions_by_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Get_Sessions_by_Login" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Sessions_by_Login_OutputMessage">
+  <wsdl:message name="radius_Get_Sessions_by_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:Get_Sessions_by_LoginResponse" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Sessions_by_Login_DbException_FaultMessage">
+  <wsdl:message name="radius_Get_Sessions_by_Login_DbException_FaultMessage">
     <wsdl:part name="detail" element="dn:DbException" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Sessions_by_Login_Sys_InputMessage">
+  <wsdl:message name="radius_Get_Sessions_by_Login_Sys_InputMessage">
     <wsdl:part name="parameters" element="tns:Get_Sessions_by_Login_Sys" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Sessions_by_Login_Sys_OutputMessage">
+  <wsdl:message name="radius_Get_Sessions_by_Login_Sys_OutputMessage">
     <wsdl:part name="parameters" element="tns:Get_Sessions_by_Login_SysResponse" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Sessions_by_Login_Sys_DbException_FaultMessage">
+  <wsdl:message name="radius_Get_Sessions_by_Login_Sys_DbException_FaultMessage">
     <wsdl:part name="detail" element="dn:DbException" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Traffic_by_Login_InputMessage">
+  <wsdl:message name="radius_Get_Srv_List_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Srv_List" />
+  </wsdl:message>
+  <wsdl:message name="radius_Get_Srv_List_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Get_Srv_ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="radius_Get_Srv_List_DbException_FaultMessage">
+    <wsdl:part name="detail" element="dn:DbException" />
+  </wsdl:message>
+  <wsdl:message name="radius_Get_Traffic_by_Login_InputMessage">
     <wsdl:part name="parameters" element="tns:Get_Traffic_by_Login" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Traffic_by_Login_OutputMessage">
+  <wsdl:message name="radius_Get_Traffic_by_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:Get_Traffic_by_LoginResponse" />
   </wsdl:message>
-  <wsdl:message name="radius2_Get_Traffic_by_Login_DbException_FaultMessage">
+  <wsdl:message name="radius_Get_Traffic_by_Login_DbException_FaultMessage">
     <wsdl:part name="detail" element="dn:DbException" />
   </wsdl:message>
-  <wsdl:message name="radius2_Stop_Radius_Session_InputMessage">
+  <wsdl:message name="radius_Stop_Radius_Session_InputMessage">
     <wsdl:part name="parameters" element="tns:Stop_Radius_Session" />
   </wsdl:message>
-  <wsdl:message name="radius2_Stop_Radius_Session_OutputMessage">
+  <wsdl:message name="radius_Stop_Radius_Session_OutputMessage">
     <wsdl:part name="parameters" element="tns:Stop_Radius_SessionResponse" />
   </wsdl:message>
-  <wsdl:message name="radius2_Stop_Radius_Session_DbException_FaultMessage">
+  <wsdl:message name="radius_Stop_Radius_Session_DbException_FaultMessage">
     <wsdl:part name="detail" element="dn:DbException" />
   </wsdl:message>
-  <wsdl:portType name="radius2">
+  <wsdl:portType name="radius">
     <wsdl:operation name="Change_Password">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Change_Password" message="tns:radius2_Change_Password_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Change_PasswordResponse" message="tns:radius2_Change_Password_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Change_PasswordFault" name="DbException" message="tns:radius2_Change_Password_DbException_FaultMessage" />
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Change_Password" message="tns:radius_Change_Password_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Change_PasswordResponse" message="tns:radius_Change_Password_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Change_PasswordFault" name="DbException" message="tns:radius_Change_Password_DbException_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Check_Profile">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Check_Profile" message="tns:radius2_Check_Profile_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Check_ProfileResponse" message="tns:radius2_Check_Profile_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Check_ProfileFault" name="DbException" message="tns:radius2_Check_Profile_DbException_FaultMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Filials">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Filials" message="tns:radius2_Filials_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/FilialsResponse" message="tns:radius2_Filials_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/FilialsFault" name="DbException" message="tns:radius2_Filials_DbException_FaultMessage" />
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Check_Profile" message="tns:radius_Check_Profile_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Check_ProfileResponse" message="tns:radius_Check_Profile_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Check_ProfileFault" name="DbException" message="tns:radius_Check_Profile_DbException_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Get_Access_Sysdate">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" message="tns:radius2_Get_Access_Sysdate_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateResponse" message="tns:radius2_Get_Access_Sysdate_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateFault" name="DbException" message="tns:radius2_Get_Access_Sysdate_DbException_FaultMessage" />
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Access_Sysdate" message="tns:radius_Get_Access_Sysdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Access_SysdateResponse" message="tns:radius_Get_Access_Sysdate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Access_SysdateFault" name="DbException" message="tns:radius_Get_Access_Sysdate_DbException_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" message="tns:radius2_Get_Access_by_Login_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginResponse" message="tns:radius2_Get_Access_by_Login_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginFault" name="DbException" message="tns:radius2_Get_Access_by_Login_DbException_FaultMessage" />
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login" message="tns:radius_Get_Access_by_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_LoginResponse" message="tns:radius_Get_Access_by_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_LoginFault" name="DbException" message="tns:radius_Get_Access_by_Login_DbException_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login_Sys">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" message="tns:radius2_Get_Access_by_Login_Sys_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysResponse" message="tns:radius2_Get_Access_by_Login_Sys_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysFault" name="DbException" message="tns:radius2_Get_Access_by_Login_Sys_DbException_FaultMessage" />
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_Sys" message="tns:radius_Get_Access_by_Login_Sys_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_SysResponse" message="tns:radius_Get_Access_by_Login_Sys_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_SysFault" name="DbException" message="tns:radius_Get_Access_by_Login_Sys_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Dev_Login">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Dev_Login" message="tns:radius_Get_Dev_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Dev_LoginResponse" message="tns:radius_Get_Dev_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Dev_LoginFault" name="DbException" message="tns:radius_Get_Dev_Login_DbException_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" message="tns:radius2_Get_Sessions_by_Login_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginResponse" message="tns:radius2_Get_Sessions_by_Login_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginFault" name="DbException" message="tns:radius2_Get_Sessions_by_Login_DbException_FaultMessage" />
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login" message="tns:radius_Get_Sessions_by_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_LoginResponse" message="tns:radius_Get_Sessions_by_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_LoginFault" name="DbException" message="tns:radius_Get_Sessions_by_Login_DbException_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login_Sys">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" message="tns:radius2_Get_Sessions_by_Login_Sys_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysResponse" message="tns:radius2_Get_Sessions_by_Login_Sys_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysFault" name="DbException" message="tns:radius2_Get_Sessions_by_Login_Sys_DbException_FaultMessage" />
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_Sys" message="tns:radius_Get_Sessions_by_Login_Sys_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_SysResponse" message="tns:radius_Get_Sessions_by_Login_Sys_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_SysFault" name="DbException" message="tns:radius_Get_Sessions_by_Login_Sys_DbException_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Srv_List">
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Srv_List" message="tns:radius_Get_Srv_List_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Srv_ListResponse" message="tns:radius_Get_Srv_List_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Srv_ListFault" name="DbException" message="tns:radius_Get_Srv_List_DbException_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Get_Traffic_by_Login">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" message="tns:radius2_Get_Traffic_by_Login_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginResponse" message="tns:radius2_Get_Traffic_by_Login_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginFault" name="DbException" message="tns:radius2_Get_Traffic_by_Login_DbException_FaultMessage" />
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_Login" message="tns:radius_Get_Traffic_by_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_LoginResponse" message="tns:radius_Get_Traffic_by_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_LoginFault" name="DbException" message="tns:radius_Get_Traffic_by_Login_DbException_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Stop_Radius_Session">
-      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" message="tns:radius2_Stop_Radius_Session_InputMessage" />
-      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionResponse" message="tns:radius2_Stop_Radius_Session_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionFault" name="DbException" message="tns:radius2_Stop_Radius_Session_DbException_FaultMessage" />
+      <wsdl:input wsaw:Action="http://datumnode.com/start/start_ip/radius/Stop_Radius_Session" message="tns:radius_Stop_Radius_Session_InputMessage" />
+      <wsdl:output wsaw:Action="http://datumnode.com/start/start_ip/radius/Stop_Radius_SessionResponse" message="tns:radius_Stop_Radius_Session_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://datumnode.com/start/start_ip/radius/Stop_Radius_SessionFault" name="DbException" message="tns:radius_Stop_Radius_Session_DbException_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="http" type="tns:radius2">
+  <wsdl:binding name="http" type="tns:radius">
     <wsp:PolicyReference URI="#http_policy" />
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Change_Password">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Change_Password" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -861,19 +934,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Check_Profile">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-      <wsdl:fault name="DbException">
-        <soap:fault use="literal" name="DbException" namespace="" />
-      </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="Filials">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Filials" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Check_Profile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -885,7 +946,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_Sysdate">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_Sysdate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -897,7 +958,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -909,7 +970,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login_Sys">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Dev_Login">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Dev_Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -921,7 +994,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -933,7 +1006,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login_Sys">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Srv_List">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Srv_List" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -945,7 +1030,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Traffic_by_Login">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -957,7 +1042,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Stop_Radius_Session">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Stop_Radius_Session" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -969,10 +1054,10 @@
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="http_anonymous" type="tns:radius2">
+  <wsdl:binding name="http_anonymous" type="tns:radius">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Change_Password">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Change_Password" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -984,19 +1069,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Check_Profile">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-      <wsdl:fault name="DbException">
-        <soap:fault use="literal" name="DbException" namespace="" />
-      </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="Filials">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Filials" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Check_Profile" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1008,7 +1081,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_Sysdate">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_Sysdate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1020,7 +1093,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1032,7 +1105,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login_Sys">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Dev_Login">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Dev_Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1044,7 +1129,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1056,7 +1141,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login_Sys">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Srv_List">
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Srv_List" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1068,7 +1165,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Traffic_by_Login">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1080,7 +1177,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Stop_Radius_Session">
-      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <soap:operation soapAction="http://datumnode.com/start/start_ip/radius/Stop_Radius_Session" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1092,11 +1189,11 @@
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="tcp" type="tns:radius2">
+  <wsdl:binding name="tcp" type="tns:radius">
     <wsp:PolicyReference URI="#tcp_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="Change_Password">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Change_Password" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1108,19 +1205,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Check_Profile">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-      <wsdl:fault name="DbException">
-        <soap12:fault use="literal" name="DbException" namespace="" />
-      </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="Filials">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Filials" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Check_Profile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1132,7 +1217,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_Sysdate">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_Sysdate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1144,7 +1229,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1156,7 +1241,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login_Sys">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Dev_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Dev_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1168,7 +1265,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1180,7 +1277,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login_Sys">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Srv_List">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Srv_List" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1192,7 +1301,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Traffic_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1204,7 +1313,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Stop_Radius_Session">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Stop_Radius_Session" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1216,11 +1325,11 @@
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="pipe" type="tns:radius2">
+  <wsdl:binding name="pipe" type="tns:radius">
     <wsp:PolicyReference URI="#pipe_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
     <wsdl:operation name="Change_Password">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Change_Password" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1232,19 +1341,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Check_Profile">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-      <wsdl:fault name="DbException">
-        <soap12:fault use="literal" name="DbException" namespace="" />
-      </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="Filials">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Filials" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Check_Profile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1256,7 +1353,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_Sysdate">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_Sysdate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1268,7 +1365,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1280,7 +1377,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login_Sys">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Dev_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Dev_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1292,7 +1401,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1304,7 +1413,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login_Sys">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Srv_List">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Srv_List" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1316,7 +1437,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Traffic_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1328,7 +1449,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Stop_Radius_Session">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Stop_Radius_Session" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1340,11 +1461,11 @@
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="tcp_anonymous" type="tns:radius2">
+  <wsdl:binding name="tcp_anonymous" type="tns:radius">
     <wsp:PolicyReference URI="#tcp_anonymous_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="Change_Password">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Change_Password" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1356,19 +1477,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Check_Profile">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-      <wsdl:fault name="DbException">
-        <soap12:fault use="literal" name="DbException" namespace="" />
-      </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="Filials">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Filials" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Check_Profile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1380,7 +1489,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_Sysdate">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_Sysdate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1392,7 +1501,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1404,7 +1513,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login_Sys">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Dev_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Dev_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1416,7 +1537,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1428,7 +1549,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login_Sys">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Srv_List">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Srv_List" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1440,7 +1573,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Traffic_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1452,7 +1585,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Stop_Radius_Session">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Stop_Radius_Session" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1464,11 +1597,11 @@
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="pipe_anonymous" type="tns:radius2">
+  <wsdl:binding name="pipe_anonymous" type="tns:radius">
     <wsp:PolicyReference URI="#pipe_anonymous_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
     <wsdl:operation name="Change_Password">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Change_Password" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Change_Password" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1480,19 +1613,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Check_Profile">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Check_Profile" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-      <wsdl:fault name="DbException">
-        <soap12:fault use="literal" name="DbException" namespace="" />
-      </wsdl:fault>
-    </wsdl:operation>
-    <wsdl:operation name="Filials">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Filials" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Check_Profile" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1504,7 +1625,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_Sysdate">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_Sysdate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1516,7 +1637,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1528,7 +1649,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Access_by_Login_Sys">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Access_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Dev_Login">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Dev_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1540,7 +1673,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1552,7 +1685,19 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Sessions_by_Login_Sys">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Sessions_by_Login_Sys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="DbException">
+        <soap12:fault use="literal" name="DbException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Srv_List">
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Srv_List" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1564,7 +1709,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Get_Traffic_by_Login">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Get_Traffic_by_Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1576,7 +1721,7 @@
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Stop_Radius_Session">
-      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session" style="document" />
+      <soap12:operation soapAction="http://datumnode.com/start/start_ip/radius/Stop_Radius_Session" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1588,7 +1733,7 @@
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="radius2">
+  <wsdl:service name="radius">
     <wsdl:port name="http" binding="tns:http">
       <soap:address location="http://sdvdr002ap023.dv.rt.ru/DatumNode/DatumNode.svc" />
     </wsdl:port>

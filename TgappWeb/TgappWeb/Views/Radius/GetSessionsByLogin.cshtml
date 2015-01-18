@@ -46,12 +46,12 @@
 		<td>
 			@item.policy
 		</td>
-		<td>
-			@item.bytes_in
+		<td style="text-align:right">
+			@String.Format("{0:N0}", (UInt64) @item.bytes_in)
 		</td>
-		<td>
-			@item.bytes_out
-		</td>		
+		  <td style="text-align:right">
+			  @String.Format("{0:N0}", (UInt64) @item.bytes_out)
+		  </td>	
 	</tr>
 }
     

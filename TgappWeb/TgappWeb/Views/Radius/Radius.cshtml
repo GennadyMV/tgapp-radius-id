@@ -3,6 +3,10 @@
 }
 
 <input type="hidden" id="period" name="period" value="@(ViewBag.Period)">
+<input type="hidden" id="mode" name="mode" value="@(ViewBag.Mode)">
+<input type="hidden" id="filial" name="filial" value="@(ViewBag.Filial)">
+<input type="hidden" id="filial_code" name="filial_code" value="@(ViewBag.FilialCode)">
+<input type="hidden" id="p_login" name="p_login" value="@(ViewBag.Login)">
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -14,7 +18,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">@ViewBag.Filial</a>
+      <a class="navbar-brand" href="#">@ViewBag.Filial</a> 
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,7 +44,7 @@
 			}
 			else
 			{
-			 <li id="login_head" class="active"><a href="#">@ViewBag.Login<span class="sr-only">(current)</span></a></li>
+			 <li class="active"><a id="login_head" href="#">@ViewBag.Login<span class="sr-only">(current)</span></a></li>
 			}
 		
       </ul>
@@ -194,18 +198,27 @@
 				isValid = Validation(true);
 			}
 			if (isValid == true) {
-				document.getElementById("login_head").innerHTML = document.getElementById("login").value + ' <span class="caret"></span>';
+				document.getElementById("period").value = interval;
+				$('#login_head').show();
+				if (document.getElementById("mode").value == "CONTROL" || document.getElementById("mode").value == "MANAGE" )
+				{
+					document.getElementById("login_head").innerHTML = document.getElementById("login").value + ' <span class="caret"></span>';
+				}
+				else
+				{
+					document.getElementById("login_head").innerHTML = document.getElementById("login").value;
+				}
 				$('#autorization').text("Загрузка...");
 				$('#sessions').text("Загрузка...");
 				$('#traffic').text("Загрузка...");
 
-				$.get('@Url.Action("GetAccessByLogin", "Radius")', { filial:"1", login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
+				$.get('@Url.Action("GetAccessByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("autorization").innerHTML = data;
 				});
-				$.get('@Url.Action("GetSessionsByLogin", "Radius")', { filial:"1", login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
+				$.get('@Url.Action("GetSessionsByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("sessions").innerHTML = data;
 				});
-				$.get('@Url.Action("GetTrafficByLogin", "Radius")', { filial:"1", login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
+				$.get('@Url.Action("GetTrafficByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("traffic").innerHTML = data;
 				});
 			}
@@ -228,6 +241,15 @@
 					alert( data );
 			});
 		}
+
+		function SelectInterval(interval)
+		{
+			$.get('@Url.Action("GetTrafficByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, interval2:interval }, function(data) { 				
+					document.getElementById("traffic").innerHTML = data;					
+				});
+
+		  }
+
 	</script>
 
 </div>

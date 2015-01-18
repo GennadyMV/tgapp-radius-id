@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TgappWeb.RadiusAsync {
+namespace RadiusTest.Radius2 {
     
     
     /// <remarks/>
@@ -4062,11 +4062,11 @@ namespace TgappWeb.RadiusAsync {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://datumnode.com/start/start_ip/radius2", ConfigurationName="RadiusAsync.radius2")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://datumnode.com/start/start_ip/radius2", ConfigurationName="Radius2.radius2")]
     public interface radius2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Change_Password", ReplyAction="http://datumnode.com/start/start_ip/radius2/Change_PasswordResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Change_PasswordFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Change_PasswordFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4086,15 +4086,15 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Change_PasswordResult Change_Password(TgappWeb.RadiusAsync.Change_PasswordRequest request);
+        RadiusTest.Radius2.Change_PasswordResult Change_Password(RadiusTest.Radius2.Change_PasswordRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Change_Password", ReplyAction="http://datumnode.com/start/start_ip/radius2/Change_PasswordResponse")]
-        System.IAsyncResult BeginChange_Password(TgappWeb.RadiusAsync.Change_PasswordRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginChange_Password(RadiusTest.Radius2.Change_PasswordRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.Change_PasswordResult EndChange_Password(System.IAsyncResult result);
+        RadiusTest.Radius2.Change_PasswordResult EndChange_Password(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Check_Profile", ReplyAction="http://datumnode.com/start/start_ip/radius2/Check_ProfileResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Check_ProfileFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Check_ProfileFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4114,15 +4114,15 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Check_ProfileResult Check_Profile(TgappWeb.RadiusAsync.Check_ProfileRequest request);
+        RadiusTest.Radius2.Check_ProfileResult Check_Profile(RadiusTest.Radius2.Check_ProfileRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Check_Profile", ReplyAction="http://datumnode.com/start/start_ip/radius2/Check_ProfileResponse")]
-        System.IAsyncResult BeginCheck_Profile(TgappWeb.RadiusAsync.Check_ProfileRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginCheck_Profile(RadiusTest.Radius2.Check_ProfileRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.Check_ProfileResult EndCheck_Profile(System.IAsyncResult result);
+        RadiusTest.Radius2.Check_ProfileResult EndCheck_Profile(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Filials", ReplyAction="http://datumnode.com/start/start_ip/radius2/FilialsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/FilialsFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/FilialsFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4142,15 +4142,15 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.FilialsResult Filials(TgappWeb.RadiusAsync.FilialsRequest request);
+        RadiusTest.Radius2.FilialsResult Filials(RadiusTest.Radius2.FilialsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Filials", ReplyAction="http://datumnode.com/start/start_ip/radius2/FilialsResponse")]
-        System.IAsyncResult BeginFilials(TgappWeb.RadiusAsync.FilialsRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginFilials(RadiusTest.Radius2.FilialsRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.FilialsResult EndFilials(System.IAsyncResult result);
+        RadiusTest.Radius2.FilialsResult EndFilials(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4170,15 +4170,15 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Get_Access_SysdateResult Get_Access_Sysdate(TgappWeb.RadiusAsync.Get_Access_SysdateRequest request);
+        RadiusTest.Radius2.Get_Access_SysdateResult Get_Access_Sysdate(RadiusTest.Radius2.Get_Access_SysdateRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Access_Sysdate", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_SysdateResponse")]
-        System.IAsyncResult BeginGet_Access_Sysdate(TgappWeb.RadiusAsync.Get_Access_SysdateRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGet_Access_Sysdate(RadiusTest.Radius2.Get_Access_SysdateRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.Get_Access_SysdateResult EndGet_Access_Sysdate(System.IAsyncResult result);
+        RadiusTest.Radius2.Get_Access_SysdateResult EndGet_Access_Sysdate(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4198,15 +4198,15 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Get_Access_by_LoginResult Get_Access_by_Login(TgappWeb.RadiusAsync.Get_Access_by_LoginRequest request);
+        RadiusTest.Radius2.Get_Access_by_LoginResult Get_Access_by_Login(RadiusTest.Radius2.Get_Access_by_LoginRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_LoginResponse")]
-        System.IAsyncResult BeginGet_Access_by_Login(TgappWeb.RadiusAsync.Get_Access_by_LoginRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGet_Access_by_Login(RadiusTest.Radius2.Get_Access_by_LoginRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.Get_Access_by_LoginResult EndGet_Access_by_Login(System.IAsyncResult result);
+        RadiusTest.Radius2.Get_Access_by_LoginResult EndGet_Access_by_Login(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4226,15 +4226,15 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Get_Access_by_Login_SysResult Get_Access_by_Login_Sys(TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest request);
+        RadiusTest.Radius2.Get_Access_by_Login_SysResult Get_Access_by_Login_Sys(RadiusTest.Radius2.Get_Access_by_Login_SysRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Access_by_Login_SysResponse")]
-        System.IAsyncResult BeginGet_Access_by_Login_Sys(TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGet_Access_by_Login_Sys(RadiusTest.Radius2.Get_Access_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.Get_Access_by_Login_SysResult EndGet_Access_by_Login_Sys(System.IAsyncResult result);
+        RadiusTest.Radius2.Get_Access_by_Login_SysResult EndGet_Access_by_Login_Sys(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4254,15 +4254,15 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult Get_Sessions_by_Login(TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request);
+        RadiusTest.Radius2.Get_Sessions_by_LoginResult Get_Sessions_by_Login(RadiusTest.Radius2.Get_Sessions_by_LoginRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginResponse")]
-        System.IAsyncResult BeginGet_Sessions_by_Login(TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGet_Sessions_by_Login(RadiusTest.Radius2.Get_Sessions_by_LoginRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult EndGet_Sessions_by_Login(System.IAsyncResult result);
+        RadiusTest.Radius2.Get_Sessions_by_LoginResult EndGet_Sessions_by_Login(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4282,15 +4282,15 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult Get_Sessions_by_Login_Sys(TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest request);
+        RadiusTest.Radius2.Get_Sessions_by_Login_SysResult Get_Sessions_by_Login_Sys(RadiusTest.Radius2.Get_Sessions_by_Login_SysRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login_SysResponse")]
-        System.IAsyncResult BeginGet_Sessions_by_Login_Sys(TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGet_Sessions_by_Login_Sys(RadiusTest.Radius2.Get_Sessions_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult EndGet_Sessions_by_Login_Sys(System.IAsyncResult result);
+        RadiusTest.Radius2.Get_Sessions_by_Login_SysResult EndGet_Sessions_by_Login_Sys(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4310,15 +4310,15 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult Get_Traffic_by_Login(TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request);
+        RadiusTest.Radius2.Get_Traffic_by_LoginResult Get_Traffic_by_Login(RadiusTest.Radius2.Get_Traffic_by_LoginRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_LoginResponse")]
-        System.IAsyncResult BeginGet_Traffic_by_Login(TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGet_Traffic_by_Login(RadiusTest.Radius2.Get_Traffic_by_LoginRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult EndGet_Traffic_by_Login(System.IAsyncResult result);
+        RadiusTest.Radius2.Get_Traffic_by_LoginResult EndGet_Traffic_by_Login(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session", ReplyAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
@@ -4338,16 +4338,16 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
-        TgappWeb.RadiusAsync.Stop_Radius_SessionResult Stop_Radius_Session(TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request);
+        RadiusTest.Radius2.Stop_Radius_SessionResult Stop_Radius_Session(RadiusTest.Radius2.Stop_Radius_SessionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session", ReplyAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionResponse")]
-        System.IAsyncResult BeginStop_Radius_Session(TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginStop_Radius_Session(RadiusTest.Radius2.Stop_Radius_SessionRequest request, System.AsyncCallback callback, object asyncState);
         
-        TgappWeb.RadiusAsync.Stop_Radius_SessionResult EndStop_Radius_Session(System.IAsyncResult result);
+        RadiusTest.Radius2.Stop_Radius_SessionResult EndStop_Radius_Session(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface radius2Channel : TgappWeb.RadiusAsync.radius2, System.ServiceModel.IClientChannel {
+    public interface radius2Channel : RadiusTest.Radius2.radius2, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4361,10 +4361,10 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.Change_PasswordResult Result {
+        public RadiusTest.Radius2.Change_PasswordResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Change_PasswordResult)(this.results[0]));
+                return ((RadiusTest.Radius2.Change_PasswordResult)(this.results[0]));
             }
         }
     }
@@ -4380,10 +4380,10 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.Check_ProfileResult Result {
+        public RadiusTest.Radius2.Check_ProfileResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Check_ProfileResult)(this.results[0]));
+                return ((RadiusTest.Radius2.Check_ProfileResult)(this.results[0]));
             }
         }
     }
@@ -4399,10 +4399,10 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.FilialsResult Result {
+        public RadiusTest.Radius2.FilialsResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.FilialsResult)(this.results[0]));
+                return ((RadiusTest.Radius2.FilialsResult)(this.results[0]));
             }
         }
     }
@@ -4418,10 +4418,10 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.Get_Access_SysdateResult Result {
+        public RadiusTest.Radius2.Get_Access_SysdateResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Get_Access_SysdateResult)(this.results[0]));
+                return ((RadiusTest.Radius2.Get_Access_SysdateResult)(this.results[0]));
             }
         }
     }
@@ -4437,10 +4437,10 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.Get_Access_by_LoginResult Result {
+        public RadiusTest.Radius2.Get_Access_by_LoginResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Get_Access_by_LoginResult)(this.results[0]));
+                return ((RadiusTest.Radius2.Get_Access_by_LoginResult)(this.results[0]));
             }
         }
     }
@@ -4456,10 +4456,10 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.Get_Access_by_Login_SysResult Result {
+        public RadiusTest.Radius2.Get_Access_by_Login_SysResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Get_Access_by_Login_SysResult)(this.results[0]));
+                return ((RadiusTest.Radius2.Get_Access_by_Login_SysResult)(this.results[0]));
             }
         }
     }
@@ -4475,10 +4475,10 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult Result {
+        public RadiusTest.Radius2.Get_Sessions_by_LoginResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult)(this.results[0]));
+                return ((RadiusTest.Radius2.Get_Sessions_by_LoginResult)(this.results[0]));
             }
         }
     }
@@ -4494,10 +4494,10 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult Result {
+        public RadiusTest.Radius2.Get_Sessions_by_Login_SysResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult)(this.results[0]));
+                return ((RadiusTest.Radius2.Get_Sessions_by_Login_SysResult)(this.results[0]));
             }
         }
     }
@@ -4513,10 +4513,10 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult Result {
+        public RadiusTest.Radius2.Get_Traffic_by_LoginResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult)(this.results[0]));
+                return ((RadiusTest.Radius2.Get_Traffic_by_LoginResult)(this.results[0]));
             }
         }
     }
@@ -4532,17 +4532,17 @@ namespace TgappWeb.RadiusAsync {
             this.results = results;
         }
         
-        public TgappWeb.RadiusAsync.Stop_Radius_SessionResult Result {
+        public RadiusTest.Radius2.Stop_Radius_SessionResult Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TgappWeb.RadiusAsync.Stop_Radius_SessionResult)(this.results[0]));
+                return ((RadiusTest.Radius2.Stop_Radius_SessionResult)(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class radius2Client : System.ServiceModel.ClientBase<TgappWeb.RadiusAsync.radius2>, TgappWeb.RadiusAsync.radius2 {
+    public partial class radius2Client : System.ServiceModel.ClientBase<RadiusTest.Radius2.radius2>, RadiusTest.Radius2.radius2 {
         
         private BeginOperationDelegate onBeginChange_PasswordDelegate;
         
@@ -4643,27 +4643,27 @@ namespace TgappWeb.RadiusAsync {
         
         public event System.EventHandler<Stop_Radius_SessionCompletedEventArgs> Stop_Radius_SessionCompleted;
         
-        public TgappWeb.RadiusAsync.Change_PasswordResult Change_Password(TgappWeb.RadiusAsync.Change_PasswordRequest request) {
+        public RadiusTest.Radius2.Change_PasswordResult Change_Password(RadiusTest.Radius2.Change_PasswordRequest request) {
             return base.Channel.Change_Password(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginChange_Password(TgappWeb.RadiusAsync.Change_PasswordRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginChange_Password(RadiusTest.Radius2.Change_PasswordRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginChange_Password(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Change_PasswordResult EndChange_Password(System.IAsyncResult result) {
+        public RadiusTest.Radius2.Change_PasswordResult EndChange_Password(System.IAsyncResult result) {
             return base.Channel.EndChange_Password(result);
         }
         
         private System.IAsyncResult OnBeginChange_Password(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Change_PasswordRequest request = ((TgappWeb.RadiusAsync.Change_PasswordRequest)(inValues[0]));
+            RadiusTest.Radius2.Change_PasswordRequest request = ((RadiusTest.Radius2.Change_PasswordRequest)(inValues[0]));
             return this.BeginChange_Password(request, callback, asyncState);
         }
         
         private object[] OnEndChange_Password(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Change_PasswordResult retVal = this.EndChange_Password(result);
+            RadiusTest.Radius2.Change_PasswordResult retVal = this.EndChange_Password(result);
             return new object[] {
                     retVal};
         }
@@ -4675,11 +4675,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void Change_PasswordAsync(TgappWeb.RadiusAsync.Change_PasswordRequest request) {
+        public void Change_PasswordAsync(RadiusTest.Radius2.Change_PasswordRequest request) {
             this.Change_PasswordAsync(request, null);
         }
         
-        public void Change_PasswordAsync(TgappWeb.RadiusAsync.Change_PasswordRequest request, object userState) {
+        public void Change_PasswordAsync(RadiusTest.Radius2.Change_PasswordRequest request, object userState) {
             if ((this.onBeginChange_PasswordDelegate == null)) {
                 this.onBeginChange_PasswordDelegate = new BeginOperationDelegate(this.OnBeginChange_Password);
             }
@@ -4693,27 +4693,27 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndChange_PasswordDelegate, this.onChange_PasswordCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.Check_ProfileResult Check_Profile(TgappWeb.RadiusAsync.Check_ProfileRequest request) {
+        public RadiusTest.Radius2.Check_ProfileResult Check_Profile(RadiusTest.Radius2.Check_ProfileRequest request) {
             return base.Channel.Check_Profile(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginCheck_Profile(TgappWeb.RadiusAsync.Check_ProfileRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginCheck_Profile(RadiusTest.Radius2.Check_ProfileRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginCheck_Profile(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Check_ProfileResult EndCheck_Profile(System.IAsyncResult result) {
+        public RadiusTest.Radius2.Check_ProfileResult EndCheck_Profile(System.IAsyncResult result) {
             return base.Channel.EndCheck_Profile(result);
         }
         
         private System.IAsyncResult OnBeginCheck_Profile(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Check_ProfileRequest request = ((TgappWeb.RadiusAsync.Check_ProfileRequest)(inValues[0]));
+            RadiusTest.Radius2.Check_ProfileRequest request = ((RadiusTest.Radius2.Check_ProfileRequest)(inValues[0]));
             return this.BeginCheck_Profile(request, callback, asyncState);
         }
         
         private object[] OnEndCheck_Profile(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Check_ProfileResult retVal = this.EndCheck_Profile(result);
+            RadiusTest.Radius2.Check_ProfileResult retVal = this.EndCheck_Profile(result);
             return new object[] {
                     retVal};
         }
@@ -4725,11 +4725,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void Check_ProfileAsync(TgappWeb.RadiusAsync.Check_ProfileRequest request) {
+        public void Check_ProfileAsync(RadiusTest.Radius2.Check_ProfileRequest request) {
             this.Check_ProfileAsync(request, null);
         }
         
-        public void Check_ProfileAsync(TgappWeb.RadiusAsync.Check_ProfileRequest request, object userState) {
+        public void Check_ProfileAsync(RadiusTest.Radius2.Check_ProfileRequest request, object userState) {
             if ((this.onBeginCheck_ProfileDelegate == null)) {
                 this.onBeginCheck_ProfileDelegate = new BeginOperationDelegate(this.OnBeginCheck_Profile);
             }
@@ -4743,27 +4743,27 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndCheck_ProfileDelegate, this.onCheck_ProfileCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.FilialsResult Filials(TgappWeb.RadiusAsync.FilialsRequest request) {
+        public RadiusTest.Radius2.FilialsResult Filials(RadiusTest.Radius2.FilialsRequest request) {
             return base.Channel.Filials(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginFilials(TgappWeb.RadiusAsync.FilialsRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginFilials(RadiusTest.Radius2.FilialsRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginFilials(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.FilialsResult EndFilials(System.IAsyncResult result) {
+        public RadiusTest.Radius2.FilialsResult EndFilials(System.IAsyncResult result) {
             return base.Channel.EndFilials(result);
         }
         
         private System.IAsyncResult OnBeginFilials(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.FilialsRequest request = ((TgappWeb.RadiusAsync.FilialsRequest)(inValues[0]));
+            RadiusTest.Radius2.FilialsRequest request = ((RadiusTest.Radius2.FilialsRequest)(inValues[0]));
             return this.BeginFilials(request, callback, asyncState);
         }
         
         private object[] OnEndFilials(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.FilialsResult retVal = this.EndFilials(result);
+            RadiusTest.Radius2.FilialsResult retVal = this.EndFilials(result);
             return new object[] {
                     retVal};
         }
@@ -4775,11 +4775,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void FilialsAsync(TgappWeb.RadiusAsync.FilialsRequest request) {
+        public void FilialsAsync(RadiusTest.Radius2.FilialsRequest request) {
             this.FilialsAsync(request, null);
         }
         
-        public void FilialsAsync(TgappWeb.RadiusAsync.FilialsRequest request, object userState) {
+        public void FilialsAsync(RadiusTest.Radius2.FilialsRequest request, object userState) {
             if ((this.onBeginFilialsDelegate == null)) {
                 this.onBeginFilialsDelegate = new BeginOperationDelegate(this.OnBeginFilials);
             }
@@ -4793,27 +4793,27 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndFilialsDelegate, this.onFilialsCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.Get_Access_SysdateResult Get_Access_Sysdate(TgappWeb.RadiusAsync.Get_Access_SysdateRequest request) {
+        public RadiusTest.Radius2.Get_Access_SysdateResult Get_Access_Sysdate(RadiusTest.Radius2.Get_Access_SysdateRequest request) {
             return base.Channel.Get_Access_Sysdate(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Access_Sysdate(TgappWeb.RadiusAsync.Get_Access_SysdateRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginGet_Access_Sysdate(RadiusTest.Radius2.Get_Access_SysdateRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGet_Access_Sysdate(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Get_Access_SysdateResult EndGet_Access_Sysdate(System.IAsyncResult result) {
+        public RadiusTest.Radius2.Get_Access_SysdateResult EndGet_Access_Sysdate(System.IAsyncResult result) {
             return base.Channel.EndGet_Access_Sysdate(result);
         }
         
         private System.IAsyncResult OnBeginGet_Access_Sysdate(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Get_Access_SysdateRequest request = ((TgappWeb.RadiusAsync.Get_Access_SysdateRequest)(inValues[0]));
+            RadiusTest.Radius2.Get_Access_SysdateRequest request = ((RadiusTest.Radius2.Get_Access_SysdateRequest)(inValues[0]));
             return this.BeginGet_Access_Sysdate(request, callback, asyncState);
         }
         
         private object[] OnEndGet_Access_Sysdate(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Get_Access_SysdateResult retVal = this.EndGet_Access_Sysdate(result);
+            RadiusTest.Radius2.Get_Access_SysdateResult retVal = this.EndGet_Access_Sysdate(result);
             return new object[] {
                     retVal};
         }
@@ -4825,11 +4825,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void Get_Access_SysdateAsync(TgappWeb.RadiusAsync.Get_Access_SysdateRequest request) {
+        public void Get_Access_SysdateAsync(RadiusTest.Radius2.Get_Access_SysdateRequest request) {
             this.Get_Access_SysdateAsync(request, null);
         }
         
-        public void Get_Access_SysdateAsync(TgappWeb.RadiusAsync.Get_Access_SysdateRequest request, object userState) {
+        public void Get_Access_SysdateAsync(RadiusTest.Radius2.Get_Access_SysdateRequest request, object userState) {
             if ((this.onBeginGet_Access_SysdateDelegate == null)) {
                 this.onBeginGet_Access_SysdateDelegate = new BeginOperationDelegate(this.OnBeginGet_Access_Sysdate);
             }
@@ -4843,27 +4843,27 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndGet_Access_SysdateDelegate, this.onGet_Access_SysdateCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.Get_Access_by_LoginResult Get_Access_by_Login(TgappWeb.RadiusAsync.Get_Access_by_LoginRequest request) {
+        public RadiusTest.Radius2.Get_Access_by_LoginResult Get_Access_by_Login(RadiusTest.Radius2.Get_Access_by_LoginRequest request) {
             return base.Channel.Get_Access_by_Login(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Access_by_Login(TgappWeb.RadiusAsync.Get_Access_by_LoginRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginGet_Access_by_Login(RadiusTest.Radius2.Get_Access_by_LoginRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGet_Access_by_Login(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Get_Access_by_LoginResult EndGet_Access_by_Login(System.IAsyncResult result) {
+        public RadiusTest.Radius2.Get_Access_by_LoginResult EndGet_Access_by_Login(System.IAsyncResult result) {
             return base.Channel.EndGet_Access_by_Login(result);
         }
         
         private System.IAsyncResult OnBeginGet_Access_by_Login(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Get_Access_by_LoginRequest request = ((TgappWeb.RadiusAsync.Get_Access_by_LoginRequest)(inValues[0]));
+            RadiusTest.Radius2.Get_Access_by_LoginRequest request = ((RadiusTest.Radius2.Get_Access_by_LoginRequest)(inValues[0]));
             return this.BeginGet_Access_by_Login(request, callback, asyncState);
         }
         
         private object[] OnEndGet_Access_by_Login(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Get_Access_by_LoginResult retVal = this.EndGet_Access_by_Login(result);
+            RadiusTest.Radius2.Get_Access_by_LoginResult retVal = this.EndGet_Access_by_Login(result);
             return new object[] {
                     retVal};
         }
@@ -4875,11 +4875,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void Get_Access_by_LoginAsync(TgappWeb.RadiusAsync.Get_Access_by_LoginRequest request) {
+        public void Get_Access_by_LoginAsync(RadiusTest.Radius2.Get_Access_by_LoginRequest request) {
             this.Get_Access_by_LoginAsync(request, null);
         }
         
-        public void Get_Access_by_LoginAsync(TgappWeb.RadiusAsync.Get_Access_by_LoginRequest request, object userState) {
+        public void Get_Access_by_LoginAsync(RadiusTest.Radius2.Get_Access_by_LoginRequest request, object userState) {
             if ((this.onBeginGet_Access_by_LoginDelegate == null)) {
                 this.onBeginGet_Access_by_LoginDelegate = new BeginOperationDelegate(this.OnBeginGet_Access_by_Login);
             }
@@ -4893,27 +4893,27 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndGet_Access_by_LoginDelegate, this.onGet_Access_by_LoginCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.Get_Access_by_Login_SysResult Get_Access_by_Login_Sys(TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest request) {
+        public RadiusTest.Radius2.Get_Access_by_Login_SysResult Get_Access_by_Login_Sys(RadiusTest.Radius2.Get_Access_by_Login_SysRequest request) {
             return base.Channel.Get_Access_by_Login_Sys(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Access_by_Login_Sys(TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginGet_Access_by_Login_Sys(RadiusTest.Radius2.Get_Access_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGet_Access_by_Login_Sys(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Get_Access_by_Login_SysResult EndGet_Access_by_Login_Sys(System.IAsyncResult result) {
+        public RadiusTest.Radius2.Get_Access_by_Login_SysResult EndGet_Access_by_Login_Sys(System.IAsyncResult result) {
             return base.Channel.EndGet_Access_by_Login_Sys(result);
         }
         
         private System.IAsyncResult OnBeginGet_Access_by_Login_Sys(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest request = ((TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest)(inValues[0]));
+            RadiusTest.Radius2.Get_Access_by_Login_SysRequest request = ((RadiusTest.Radius2.Get_Access_by_Login_SysRequest)(inValues[0]));
             return this.BeginGet_Access_by_Login_Sys(request, callback, asyncState);
         }
         
         private object[] OnEndGet_Access_by_Login_Sys(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Get_Access_by_Login_SysResult retVal = this.EndGet_Access_by_Login_Sys(result);
+            RadiusTest.Radius2.Get_Access_by_Login_SysResult retVal = this.EndGet_Access_by_Login_Sys(result);
             return new object[] {
                     retVal};
         }
@@ -4925,11 +4925,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void Get_Access_by_Login_SysAsync(TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest request) {
+        public void Get_Access_by_Login_SysAsync(RadiusTest.Radius2.Get_Access_by_Login_SysRequest request) {
             this.Get_Access_by_Login_SysAsync(request, null);
         }
         
-        public void Get_Access_by_Login_SysAsync(TgappWeb.RadiusAsync.Get_Access_by_Login_SysRequest request, object userState) {
+        public void Get_Access_by_Login_SysAsync(RadiusTest.Radius2.Get_Access_by_Login_SysRequest request, object userState) {
             if ((this.onBeginGet_Access_by_Login_SysDelegate == null)) {
                 this.onBeginGet_Access_by_Login_SysDelegate = new BeginOperationDelegate(this.OnBeginGet_Access_by_Login_Sys);
             }
@@ -4943,27 +4943,27 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndGet_Access_by_Login_SysDelegate, this.onGet_Access_by_Login_SysCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult Get_Sessions_by_Login(TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request) {
+        public RadiusTest.Radius2.Get_Sessions_by_LoginResult Get_Sessions_by_Login(RadiusTest.Radius2.Get_Sessions_by_LoginRequest request) {
             return base.Channel.Get_Sessions_by_Login(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Sessions_by_Login(TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginGet_Sessions_by_Login(RadiusTest.Radius2.Get_Sessions_by_LoginRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGet_Sessions_by_Login(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult EndGet_Sessions_by_Login(System.IAsyncResult result) {
+        public RadiusTest.Radius2.Get_Sessions_by_LoginResult EndGet_Sessions_by_Login(System.IAsyncResult result) {
             return base.Channel.EndGet_Sessions_by_Login(result);
         }
         
         private System.IAsyncResult OnBeginGet_Sessions_by_Login(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request = ((TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest)(inValues[0]));
+            RadiusTest.Radius2.Get_Sessions_by_LoginRequest request = ((RadiusTest.Radius2.Get_Sessions_by_LoginRequest)(inValues[0]));
             return this.BeginGet_Sessions_by_Login(request, callback, asyncState);
         }
         
         private object[] OnEndGet_Sessions_by_Login(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult retVal = this.EndGet_Sessions_by_Login(result);
+            RadiusTest.Radius2.Get_Sessions_by_LoginResult retVal = this.EndGet_Sessions_by_Login(result);
             return new object[] {
                     retVal};
         }
@@ -4975,11 +4975,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void Get_Sessions_by_LoginAsync(TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request) {
+        public void Get_Sessions_by_LoginAsync(RadiusTest.Radius2.Get_Sessions_by_LoginRequest request) {
             this.Get_Sessions_by_LoginAsync(request, null);
         }
         
-        public void Get_Sessions_by_LoginAsync(TgappWeb.RadiusAsync.Get_Sessions_by_LoginRequest request, object userState) {
+        public void Get_Sessions_by_LoginAsync(RadiusTest.Radius2.Get_Sessions_by_LoginRequest request, object userState) {
             if ((this.onBeginGet_Sessions_by_LoginDelegate == null)) {
                 this.onBeginGet_Sessions_by_LoginDelegate = new BeginOperationDelegate(this.OnBeginGet_Sessions_by_Login);
             }
@@ -4993,27 +4993,27 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndGet_Sessions_by_LoginDelegate, this.onGet_Sessions_by_LoginCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult Get_Sessions_by_Login_Sys(TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest request) {
+        public RadiusTest.Radius2.Get_Sessions_by_Login_SysResult Get_Sessions_by_Login_Sys(RadiusTest.Radius2.Get_Sessions_by_Login_SysRequest request) {
             return base.Channel.Get_Sessions_by_Login_Sys(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Sessions_by_Login_Sys(TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginGet_Sessions_by_Login_Sys(RadiusTest.Radius2.Get_Sessions_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGet_Sessions_by_Login_Sys(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult EndGet_Sessions_by_Login_Sys(System.IAsyncResult result) {
+        public RadiusTest.Radius2.Get_Sessions_by_Login_SysResult EndGet_Sessions_by_Login_Sys(System.IAsyncResult result) {
             return base.Channel.EndGet_Sessions_by_Login_Sys(result);
         }
         
         private System.IAsyncResult OnBeginGet_Sessions_by_Login_Sys(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest request = ((TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest)(inValues[0]));
+            RadiusTest.Radius2.Get_Sessions_by_Login_SysRequest request = ((RadiusTest.Radius2.Get_Sessions_by_Login_SysRequest)(inValues[0]));
             return this.BeginGet_Sessions_by_Login_Sys(request, callback, asyncState);
         }
         
         private object[] OnEndGet_Sessions_by_Login_Sys(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysResult retVal = this.EndGet_Sessions_by_Login_Sys(result);
+            RadiusTest.Radius2.Get_Sessions_by_Login_SysResult retVal = this.EndGet_Sessions_by_Login_Sys(result);
             return new object[] {
                     retVal};
         }
@@ -5025,11 +5025,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void Get_Sessions_by_Login_SysAsync(TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest request) {
+        public void Get_Sessions_by_Login_SysAsync(RadiusTest.Radius2.Get_Sessions_by_Login_SysRequest request) {
             this.Get_Sessions_by_Login_SysAsync(request, null);
         }
         
-        public void Get_Sessions_by_Login_SysAsync(TgappWeb.RadiusAsync.Get_Sessions_by_Login_SysRequest request, object userState) {
+        public void Get_Sessions_by_Login_SysAsync(RadiusTest.Radius2.Get_Sessions_by_Login_SysRequest request, object userState) {
             if ((this.onBeginGet_Sessions_by_Login_SysDelegate == null)) {
                 this.onBeginGet_Sessions_by_Login_SysDelegate = new BeginOperationDelegate(this.OnBeginGet_Sessions_by_Login_Sys);
             }
@@ -5043,27 +5043,27 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndGet_Sessions_by_Login_SysDelegate, this.onGet_Sessions_by_Login_SysCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult Get_Traffic_by_Login(TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request) {
+        public RadiusTest.Radius2.Get_Traffic_by_LoginResult Get_Traffic_by_Login(RadiusTest.Radius2.Get_Traffic_by_LoginRequest request) {
             return base.Channel.Get_Traffic_by_Login(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Traffic_by_Login(TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginGet_Traffic_by_Login(RadiusTest.Radius2.Get_Traffic_by_LoginRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGet_Traffic_by_Login(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult EndGet_Traffic_by_Login(System.IAsyncResult result) {
+        public RadiusTest.Radius2.Get_Traffic_by_LoginResult EndGet_Traffic_by_Login(System.IAsyncResult result) {
             return base.Channel.EndGet_Traffic_by_Login(result);
         }
         
         private System.IAsyncResult OnBeginGet_Traffic_by_Login(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request = ((TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest)(inValues[0]));
+            RadiusTest.Radius2.Get_Traffic_by_LoginRequest request = ((RadiusTest.Radius2.Get_Traffic_by_LoginRequest)(inValues[0]));
             return this.BeginGet_Traffic_by_Login(request, callback, asyncState);
         }
         
         private object[] OnEndGet_Traffic_by_Login(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult retVal = this.EndGet_Traffic_by_Login(result);
+            RadiusTest.Radius2.Get_Traffic_by_LoginResult retVal = this.EndGet_Traffic_by_Login(result);
             return new object[] {
                     retVal};
         }
@@ -5075,11 +5075,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void Get_Traffic_by_LoginAsync(TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request) {
+        public void Get_Traffic_by_LoginAsync(RadiusTest.Radius2.Get_Traffic_by_LoginRequest request) {
             this.Get_Traffic_by_LoginAsync(request, null);
         }
         
-        public void Get_Traffic_by_LoginAsync(TgappWeb.RadiusAsync.Get_Traffic_by_LoginRequest request, object userState) {
+        public void Get_Traffic_by_LoginAsync(RadiusTest.Radius2.Get_Traffic_by_LoginRequest request, object userState) {
             if ((this.onBeginGet_Traffic_by_LoginDelegate == null)) {
                 this.onBeginGet_Traffic_by_LoginDelegate = new BeginOperationDelegate(this.OnBeginGet_Traffic_by_Login);
             }
@@ -5093,27 +5093,27 @@ namespace TgappWeb.RadiusAsync {
                         request}, this.onEndGet_Traffic_by_LoginDelegate, this.onGet_Traffic_by_LoginCompletedDelegate, userState);
         }
         
-        public TgappWeb.RadiusAsync.Stop_Radius_SessionResult Stop_Radius_Session(TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request) {
+        public RadiusTest.Radius2.Stop_Radius_SessionResult Stop_Radius_Session(RadiusTest.Radius2.Stop_Radius_SessionRequest request) {
             return base.Channel.Stop_Radius_Session(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginStop_Radius_Session(TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request, System.AsyncCallback callback, object asyncState) {
+        public System.IAsyncResult BeginStop_Radius_Session(RadiusTest.Radius2.Stop_Radius_SessionRequest request, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginStop_Radius_Session(request, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public TgappWeb.RadiusAsync.Stop_Radius_SessionResult EndStop_Radius_Session(System.IAsyncResult result) {
+        public RadiusTest.Radius2.Stop_Radius_SessionResult EndStop_Radius_Session(System.IAsyncResult result) {
             return base.Channel.EndStop_Radius_Session(result);
         }
         
         private System.IAsyncResult OnBeginStop_Radius_Session(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request = ((TgappWeb.RadiusAsync.Stop_Radius_SessionRequest)(inValues[0]));
+            RadiusTest.Radius2.Stop_Radius_SessionRequest request = ((RadiusTest.Radius2.Stop_Radius_SessionRequest)(inValues[0]));
             return this.BeginStop_Radius_Session(request, callback, asyncState);
         }
         
         private object[] OnEndStop_Radius_Session(System.IAsyncResult result) {
-            TgappWeb.RadiusAsync.Stop_Radius_SessionResult retVal = this.EndStop_Radius_Session(result);
+            RadiusTest.Radius2.Stop_Radius_SessionResult retVal = this.EndStop_Radius_Session(result);
             return new object[] {
                     retVal};
         }
@@ -5125,11 +5125,11 @@ namespace TgappWeb.RadiusAsync {
             }
         }
         
-        public void Stop_Radius_SessionAsync(TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request) {
+        public void Stop_Radius_SessionAsync(RadiusTest.Radius2.Stop_Radius_SessionRequest request) {
             this.Stop_Radius_SessionAsync(request, null);
         }
         
-        public void Stop_Radius_SessionAsync(TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request, object userState) {
+        public void Stop_Radius_SessionAsync(RadiusTest.Radius2.Stop_Radius_SessionRequest request, object userState) {
             if ((this.onBeginStop_Radius_SessionDelegate == null)) {
                 this.onBeginStop_Radius_SessionDelegate = new BeginOperationDelegate(this.OnBeginStop_Radius_Session);
             }

@@ -3,6 +3,9 @@
 	$('#alert-danger-datebgn').hide();
 	$('#alert-danger-dateend').hide();		
 	Init();
+	if (document.getElementById("p_login").value == "" ) {
+		$('#login_head').hide();
+	}
 });
 
 function Init() {
@@ -72,6 +75,12 @@ function ResultClickAutorization(index) {
 
 function ResultClickSessions(index) {	
 		var tr = document.getElementById("tr_sessions_"+index);		
+		tr.className = "success";
+};
+
+
+function ResultClickTraffic(index) {	
+		var tr = document.getElementById("tr_traffic_"+index);		
 		tr.className = "success";
 };
 
