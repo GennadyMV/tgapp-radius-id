@@ -1,0 +1,128 @@
+﻿@{
+Layout = "";
+}
+
+@{
+int index = 0;
+}
+
+@if (ViewBag.Error != null) {
+@ViewBag.Error
+}
+else
+{
+
+
+<h4>
+	<p>
+		@ViewBag.TrafficTitle 
+	</p>
+	<p>
+		Группировать по
+		<select id="select_group" onchange="SelectGroup(this.options[this.selectedIndex].value)">
+			@if ("day" == ViewBag.Group)
+			{
+				<option value="day" selected>День</option>
+			}
+			else
+			{
+				<option value="day">День</option>
+			}
+			
+			@if ("month" == ViewBag.Group)
+			{
+				<option value="month" selected>Месяц</option>
+			}
+			else
+			{
+				<option value="month">Месяц</option>
+			}
+		</select>
+		, расширить на
+		<input class="inline" type="number" name="last_interval" value="@(ViewBag.Last)" class="form-control" id="last_interval" onchange="SelectLast(this.value)">
+		интервалов.
+	</p>
+</h4>
+<table class="table table-bordered table-hover">
+<thead>
+  <tr>
+    <th>Период</th>
+	<th>Направление</th>
+	<th>Сервис</th>
+	<th>Объем</th>
+  </tr>  
+</thead>
+<tbody>
+
+
+  @foreach(var item in ViewBag.ResultSet)
+  {
+  {
+  index++;
+  }
+
+
+  <tr id="tr_tariff_@(index)" class="resultrow" onclick="ResultClickTariff(@index)" data-toggle="modal" data-target="#myModalTariff@(index)" data-toggle="popover" data-placement="top" title="@(item.serv_name)">
+
+
+      <td>
+			@item.period
+		</td>
+		<td>
+			@item.code_value
+		</td>
+		<td>
+			@item.service
+		</td>
+		
+		
+		  <td style="text-align:right">
+			@String.Format("{0:N0}", (UInt64) @item.tr_value)
+		  </td>
+  
+</tr>
+	
+}
+</tbody>
+</table>
+}
+
+@{
+index=0;
+}
+
+
+@if (ViewBag.ResultSet != null)
+{
+foreach(var item in ViewBag.ResultSet)
+{
+
+{
+index++;
+}
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModalTariff@(index)" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Детализация параметра service</h4>
+      </div>
+      <div class="modal-body">
+        <p>@item.serv_name</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+}
+}

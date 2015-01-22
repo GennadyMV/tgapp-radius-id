@@ -42,6 +42,9 @@ namespace TgappWeb.Controllers
                 case 423:
                     ViewBag.Filial = "Приморский филиал";
                     break;
+                case 424:
+                    ViewBag.Filial = "Сахалинский филиал";
+                    break;
                 default:
                     ViewBag.Filial = "Филиал не определён по номеру: " + filial.ToString();
                     break;
@@ -199,7 +202,7 @@ namespace TgappWeb.Controllers
                 ViewBag.DictionaryIn = dictionary_in;
                 ViewBag.DictionaryOut = dictionary_out;
                 
-                ViewBag.TrafficTitle = String.Format("Полный трафик {0} за период с {1} по {2} , с разбиением на интервалы по ", 
+                ViewBag.TrafficTitle = String.Format("Полный трафик {0} за период с {1} по {2}, с разбиением на интервалы по ", 
                     login, dbgn.ToShortDateString(), dend.ToShortDateString());
 
                 ViewBag.Interval2 = interval2;
@@ -208,6 +211,65 @@ namespace TgappWeb.Controllers
                 ViewBag.DateBgn = datebgn;
                 ViewBag.DateEnd = dateend;
                 ViewBag.Interval = interval;
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+
+            return View();
+        }
+
+        public ActionResult GetTrafficByServices(string filial, string login, string datebgn, string dateend, int interval, string group="day", int last=0)
+        {
+            try
+            {
+                var radiusClient = new RadiusAsync.radius2Client("http");
+
+                DateTime dbgn;
+                DateTime dend;
+                if (interval > 0)
+                {
+                    dbgn = DateTime.Now.AddMinutes(-1 * interval);
+                    dend = DateTime.Now;
+                }
+                else
+                {
+                    dbgn = DateTime.ParseExact(datebgn, "dd.MM.yyyy", new CultureInfo("en-US"));
+                    dend = DateTime.ParseExact(dateend, "dd.MM.yyyy", new CultureInfo("en-US"));
+                }
+
+                RadiusAsync.Get_Traffic_by_ServicesResult theTrafficResult;
+                theTrafficResult = radiusClient.Get_Traffic_by_Services(new Get_Traffic_by_ServicesRequest()
+                {
+                    Command = new MetaCommand()
+                    {
+                        Operation = DbOperation.ExecuteQuery
+                    },
+                    Connection = new MetaConnection() { Connection = "*.*" },
+                    Parameters =//параметры функции
+                        new Get_Traffic_by_ServicesInputParameters()
+                        {
+                            p_Date_Beg = dbgn,
+                            p_Date_End = dend,
+                            p_Login = login,
+                            p_Filial = filial,
+                            p_Group = group,
+                            p_Last = last
+                        }
+                });
+                ViewBag.ResultSet = theTrafficResult.ResultSet;
+
+                ViewBag.TrafficTitle = String.Format("Тарифицированный трафик {0} по услугам за период с {1} по {2}.",
+                        login, dbgn.ToShortDateString(), dend.ToShortDateString());
+
+                ViewBag.Filial = filial;
+                ViewBag.Login = login;
+                ViewBag.DateBgn = datebgn;
+                ViewBag.DateEnd = dateend;
+                ViewBag.Interval = interval;
+                ViewBag.Group = group;
+                ViewBag.Last = last;
             }
             catch (Exception ex)
             {
@@ -313,6 +375,42 @@ namespace TgappWeb.Controllers
             }
 
             return View();
+        }
+
+        public ActionResult GetAccessSysdate(string login="", string mac="", string nas="", decimal interval=0)
+        {
+            try
+            {
+                var radiusClient = new RadiusAsync.radius2Client("http");
+                RadiusAsync.Get_Access_SysdateRequest theAccessSysdateRequest;
+                theAccessSysdateRequest = new Get_Access_SysdateRequest();
+
+                theAccessSysdateRequest.Command = new MetaCommand()
+                {
+                    Operation = DbOperation.ExecuteQuery
+                };
+                theAccessSysdateRequest.Connection = new MetaConnection() { Connection = "*.*" };
+                theAccessSysdateRequest.Parameters = new Get_Access_SysdateInputParameters()
+                {
+                    p_Login = login,
+                    p_Interval = interval,
+                    p_MAC = mac,
+                    p_NAS_port_ID = nas
+                };
+                RadiusAsync.Get_Access_SysdateResult theAccessSysdateResult;
+                theAccessSysdateResult = radiusClient.Get_Access_Sysdate(theAccessSysdateRequest);
+
+                ViewBag.ResultSet = theAccessSysdateResult.ResultSet;
+                ViewBag.Mac = mac;
+                ViewBag.Nas = nas;
+                ViewBag.Login = login;
+                ViewBag.Interval = interval;
+            }
+            catch (Exception ex)
+            {
+                ViewBag.StatusString = ex.Message;
+            }
+            return View("GetAccessByLogin");
         }
 
         

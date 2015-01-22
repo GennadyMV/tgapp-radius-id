@@ -14,19 +14,124 @@ else
 <h4>
   @ViewBag.TrafficTitle 
   <select onchange="SelectInterval(this.options[this.selectedIndex].value)">
-    @for(int i=1; i<=744; i++)
+    @if (1==@ViewBag.Interval2)
     {
-      if (i==@ViewBag.Interval2) 
-      {
-        <option value="@(i)" selected>@i</option>
-      }
-      else
-      {
-        <option value="@(i)">@i</option>
-      }
-    }    
+      <option value="1" selected>1 час</option>
+    }
+    else
+    {
+      <option value="1">1 час</option>
+    }
+
+    @if (2==@ViewBag.Interval2)
+    {
+      <option value="2" selected>2 часа</option>
+    }
+    else
+    {
+      <option value="2">2 часа</option>
+    }
+
+    @if (3==@ViewBag.Interval2)
+    {
+      <option value="3" selected>3 часа</option>
+    }
+    else
+    {
+      <option value="3">3 часа</option>
+    }
+
+    @if (4==@ViewBag.Interval2)
+    {
+      <option value="4" selected>4 часа</option>
+    }
+    else
+    {
+      <option value="4">4 часа</option>
+    }
+
+    @if (6==@ViewBag.Interval2)
+    {
+      <option value="6" selected>6 часов</option>
+    }
+    else
+    {
+      <option value="6">6 часов</option>
+    }
+
+    @if (8==@ViewBag.Interval2)
+    {
+      <option value="8" selected>8 часов</option>
+    }
+    else
+    {
+      <option value="8">8 часов</option>
+    }
+
+    @if (12==@ViewBag.Interval2)
+    {
+      <option value="12" selected>12 часов</option>
+    }
+    else
+    {
+      <option value="12">12 часов</option>
+    }
+
+    @if (24==@ViewBag.Interval2)
+    {
+      <option value="24" selected>24 часа</option>
+    }
+    else
+    {
+      <option value="24">24 часа</option>
+    }
+
+    @if (48==@ViewBag.Interval2)
+    {
+      <option value="48" selected>2 суток</option>
+    }
+    else
+    {
+      <option value="48">2 суток</option>
+    }
+
+    @if (72==@ViewBag.Interval2)
+    {
+      <option value="72" selected>3 суток</option>
+    }
+    else
+    {
+      <option value="72">3 суток</option>
+    }
+
+    @if (120==@ViewBag.Interval2)
+    {
+      <option value="120" selected>5 суток</option>
+    }
+    else
+    {
+      <option value="120">5 суток</option>
+    }
+
+    @if (168==@ViewBag.Interval2)
+    {
+      <option value="168" selected>7 суток</option>
+    }
+    else
+    {
+      <option value="168">7 суток</option>
+    }
+
+    @if (744==@ViewBag.Interval2)
+    {
+      <option value="744" selected>31 сутки</option>
+    }
+    else
+    {
+      <option value="744">31 сутки</option>
+    }
+    
   </select>
-  (час)
 </h4>
 <table class="table table-bordered table-hover">
 <thead>
@@ -41,13 +146,6 @@ else
     <th style="text-align:center">входящий</th>
     <th style="text-align:center">исходящий</th>
   </tr>  
-	<tr>
-		<th>zone_start_date</th>
-		<th>zone_stop_date</th>
-		<th>code_value</th>
-    <th>bytes_in</th>
-		<th>bytes_out</th>
-	</tr>
   <tr>
     <th style="text-align:right" colspan="3">Итого:</th>    
     <th style="text-align:right">@String.Format("{0:N0}", (UInt64) @ViewBag.TotalBytesIn)</th>
@@ -66,16 +164,36 @@ else
 </thead>
 <tbody>
 
+  @{
+  string name_code = ViewBag.ResultSet[0].code_value;
+  int index_code = 1;
+  string show_class = "success";
+  }
 
   @foreach(var item in ViewBag.ResultSet)
   {
-    {
-    index++;
-    }
+  {
+  index++;
+  }
 
-    <tr id="tr_traffic_@(index)" class="resultrow" onclick="ResultClickTraffic(@index)" data-toggle="modal" data-target="#myModalTraffic@(index)" data-toggle="popover" data-placement="top" title="@(item.code_text)">
-		
-		<td>
+  if (name_code == item.code_value)
+  {
+  if (index_code == 1)
+  {
+  index_code = 0;
+  show_class = "success";
+  }
+  else {
+  index_code = 1;
+  show_class = "";
+  }
+  }
+
+
+  <tr id="tr_traffic_@(index)" class="resultrow @(show_class)" onclick="ResultClickTraffic(@index)" data-toggle="modal" data-target="#myModalTraffic@(index)" data-toggle="popover" data-placement="top" title="@(item.code_text)">
+
+
+      <td>
 			@item.zone_start_date
 		</td>
 		<td>
@@ -103,7 +221,10 @@ else
 index=0;
 }
 
-@foreach(var item in ViewBag.ResultSet)
+
+@if (ViewBag.ResultSet != null)
+{
+foreach(var item in ViewBag.ResultSet)
 {
 
 {
@@ -133,4 +254,5 @@ index++;
   </div>
 </div>
 
+}
 }

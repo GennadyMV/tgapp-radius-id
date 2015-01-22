@@ -718,6 +718,1103 @@ namespace TgappWeb.RadiusAsync {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string loginField;
+        
+        private string periodField;
+        
+        private string code_valueField;
+        
+        private string serviceField;
+        
+        private string serv_nameField;
+        
+        private System.Nullable<decimal> tr_valueField;
+        
+        private string tr_unitField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string login {
+            get {
+                return this.loginField;
+            }
+            set {
+                this.loginField = value;
+                this.RaisePropertyChanged("login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string period {
+            get {
+                return this.periodField;
+            }
+            set {
+                this.periodField = value;
+                this.RaisePropertyChanged("period");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string code_value {
+            get {
+                return this.code_valueField;
+            }
+            set {
+                this.code_valueField = value;
+                this.RaisePropertyChanged("code_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string service {
+            get {
+                return this.serviceField;
+            }
+            set {
+                this.serviceField = value;
+                this.RaisePropertyChanged("service");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string serv_name {
+            get {
+                return this.serv_nameField;
+            }
+            set {
+                this.serv_nameField = value;
+                this.RaisePropertyChanged("serv_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> tr_value {
+            get {
+                return this.tr_valueField;
+            }
+            set {
+                this.tr_valueField = value;
+                this.RaisePropertyChanged("tr_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string tr_unit {
+            get {
+                return this.tr_unitField;
+            }
+            set {
+                this.tr_unitField = value;
+                this.RaisePropertyChanged("tr_unit");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_Traffic_by_Services_SysOutputParameters parametersField;
+        
+        private Get_Traffic_by_Services_SysEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_Traffic_by_Services_SysOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_Traffic_by_Services_SysEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private System.Nullable<decimal> p_IntervalField;
+        
+        private string p_LoginField;
+        
+        private string p_GroupField;
+        
+        private System.Nullable<decimal> p_LastField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> p_Interval {
+            get {
+                return this.p_IntervalField;
+            }
+            set {
+                this.p_IntervalField = value;
+                this.RaisePropertyChanged("p_Interval");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string p_Group {
+            get {
+                return this.p_GroupField;
+            }
+            set {
+                this.p_GroupField = value;
+                this.RaisePropertyChanged("p_Group");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> p_Last {
+            get {
+                return this.p_LastField;
+            }
+            set {
+                this.p_LastField = value;
+                this.RaisePropertyChanged("p_Last");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_Traffic_by_Services_SysInputParameters parametersField;
+        
+        public Get_Traffic_by_Services_SysRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_Traffic_by_Services_SysInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string loginField;
+        
+        private string periodField;
+        
+        private string code_valueField;
+        
+        private string serviceField;
+        
+        private string serv_nameField;
+        
+        private System.Nullable<decimal> tr_valueField;
+        
+        private string tr_unitField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string login {
+            get {
+                return this.loginField;
+            }
+            set {
+                this.loginField = value;
+                this.RaisePropertyChanged("login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string period {
+            get {
+                return this.periodField;
+            }
+            set {
+                this.periodField = value;
+                this.RaisePropertyChanged("period");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string code_value {
+            get {
+                return this.code_valueField;
+            }
+            set {
+                this.code_valueField = value;
+                this.RaisePropertyChanged("code_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string service {
+            get {
+                return this.serviceField;
+            }
+            set {
+                this.serviceField = value;
+                this.RaisePropertyChanged("service");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string serv_name {
+            get {
+                return this.serv_nameField;
+            }
+            set {
+                this.serv_nameField = value;
+                this.RaisePropertyChanged("serv_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> tr_value {
+            get {
+                return this.tr_valueField;
+            }
+            set {
+                this.tr_valueField = value;
+                this.RaisePropertyChanged("tr_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string tr_unit {
+            get {
+                return this.tr_unitField;
+            }
+            set {
+                this.tr_unitField = value;
+                this.RaisePropertyChanged("tr_unit");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_Traffic_by_ServicesOutputParameters parametersField;
+        
+        private Get_Traffic_by_ServicesEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_Traffic_by_ServicesOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_Traffic_by_ServicesEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private System.Nullable<System.DateTime> p_Date_BegField;
+        
+        private System.Nullable<System.DateTime> p_Date_EndField;
+        
+        private string p_LoginField;
+        
+        private string p_GroupField;
+        
+        private System.Nullable<decimal> p_LastField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> p_Date_Beg {
+            get {
+                return this.p_Date_BegField;
+            }
+            set {
+                this.p_Date_BegField = value;
+                this.RaisePropertyChanged("p_Date_Beg");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> p_Date_End {
+            get {
+                return this.p_Date_EndField;
+            }
+            set {
+                this.p_Date_EndField = value;
+                this.RaisePropertyChanged("p_Date_End");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string p_Group {
+            get {
+                return this.p_GroupField;
+            }
+            set {
+                this.p_GroupField = value;
+                this.RaisePropertyChanged("p_Group");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> p_Last {
+            get {
+                return this.p_LastField;
+            }
+            set {
+                this.p_LastField = value;
+                this.RaisePropertyChanged("p_Last");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_Traffic_by_ServicesInputParameters parametersField;
+        
+        public Get_Traffic_by_ServicesRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_Traffic_by_ServicesInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string loginField;
+        
+        private System.Nullable<System.DateTime> zone_start_dateField;
+        
+        private System.Nullable<System.DateTime> zone_stop_dateField;
+        
+        private string code_valueField;
+        
+        private string code_textField;
+        
+        private System.Nullable<decimal> bytes_inField;
+        
+        private System.Nullable<decimal> bytes_outField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string login {
+            get {
+                return this.loginField;
+            }
+            set {
+                this.loginField = value;
+                this.RaisePropertyChanged("login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> zone_start_date {
+            get {
+                return this.zone_start_dateField;
+            }
+            set {
+                this.zone_start_dateField = value;
+                this.RaisePropertyChanged("zone_start_date");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> zone_stop_date {
+            get {
+                return this.zone_stop_dateField;
+            }
+            set {
+                this.zone_stop_dateField = value;
+                this.RaisePropertyChanged("zone_stop_date");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string code_value {
+            get {
+                return this.code_valueField;
+            }
+            set {
+                this.code_valueField = value;
+                this.RaisePropertyChanged("code_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string code_text {
+            get {
+                return this.code_textField;
+            }
+            set {
+                this.code_textField = value;
+                this.RaisePropertyChanged("code_text");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> bytes_in {
+            get {
+                return this.bytes_inField;
+            }
+            set {
+                this.bytes_inField = value;
+                this.RaisePropertyChanged("bytes_in");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public System.Nullable<decimal> bytes_out {
+            get {
+                return this.bytes_outField;
+            }
+            set {
+                this.bytes_outField = value;
+                this.RaisePropertyChanged("bytes_out");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_Traffic_by_Login_SysOutputParameters parametersField;
+        
+        private Get_Traffic_by_Login_SysEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_Traffic_by_Login_SysOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_Traffic_by_Login_SysEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private System.Nullable<decimal> p_PeriodField;
+        
+        private string p_LoginField;
+        
+        private System.Nullable<decimal> p_IntervalField;
+        
+        private string p_ServicesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> p_Period {
+            get {
+                return this.p_PeriodField;
+            }
+            set {
+                this.p_PeriodField = value;
+                this.RaisePropertyChanged("p_Period");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> p_Interval {
+            get {
+                return this.p_IntervalField;
+            }
+            set {
+                this.p_IntervalField = value;
+                this.RaisePropertyChanged("p_Interval");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string p_Services {
+            get {
+                return this.p_ServicesField;
+            }
+            set {
+                this.p_ServicesField = value;
+                this.RaisePropertyChanged("p_Services");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_Traffic_by_Login_SysInputParameters parametersField;
+        
+        public Get_Traffic_by_Login_SysRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_Traffic_by_Login_SysInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Traffic_by_LoginEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string loginField;
@@ -4070,6 +5167,12 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4098,6 +5201,12 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4126,6 +5235,12 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4154,6 +5269,12 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4182,6 +5303,12 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4210,6 +5337,12 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4238,6 +5371,12 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4266,6 +5405,12 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4294,6 +5439,12 @@ namespace TgappWeb.RadiusAsync {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4317,11 +5468,119 @@ namespace TgappWeb.RadiusAsync {
         
         TgappWeb.RadiusAsync.Get_Traffic_by_LoginResult EndGet_Traffic_by_Login(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_SysResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysResult Get_Traffic_by_Login_Sys(TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_SysResponse")]
+        System.IAsyncResult BeginGet_Traffic_by_Login_Sys(TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState);
+        
+        TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysResult EndGet_Traffic_by_Login_Sys(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_ServicesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_ServicesFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        TgappWeb.RadiusAsync.Get_Traffic_by_ServicesResult Get_Traffic_by_Services(TgappWeb.RadiusAsync.Get_Traffic_by_ServicesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_ServicesResponse")]
+        System.IAsyncResult BeginGet_Traffic_by_Services(TgappWeb.RadiusAsync.Get_Traffic_by_ServicesRequest request, System.AsyncCallback callback, object asyncState);
+        
+        TgappWeb.RadiusAsync.Get_Traffic_by_ServicesResult EndGet_Traffic_by_Services(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_SysResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_SysFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysResult Get_Traffic_by_Services_Sys(TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_SysResponse")]
+        System.IAsyncResult BeginGet_Traffic_by_Services_Sys(TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysRequest request, System.AsyncCallback callback, object asyncState);
+        
+        TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysResult EndGet_Traffic_by_Services_Sys(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session", ReplyAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(TgappWeb.RadiusAsync.DbException), Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
@@ -4523,6 +5782,63 @@ namespace TgappWeb.RadiusAsync {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Traffic_by_Login_SysCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Traffic_by_Login_SysCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Traffic_by_ServicesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Traffic_by_ServicesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TgappWeb.RadiusAsync.Get_Traffic_by_ServicesResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TgappWeb.RadiusAsync.Get_Traffic_by_ServicesResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Traffic_by_Services_SysCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Traffic_by_Services_SysCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Stop_Radius_SessionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -4598,6 +5914,24 @@ namespace TgappWeb.RadiusAsync {
         
         private System.Threading.SendOrPostCallback onGet_Traffic_by_LoginCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGet_Traffic_by_Login_SysDelegate;
+        
+        private EndOperationDelegate onEndGet_Traffic_by_Login_SysDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Traffic_by_Login_SysCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Traffic_by_ServicesDelegate;
+        
+        private EndOperationDelegate onEndGet_Traffic_by_ServicesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Traffic_by_ServicesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Traffic_by_Services_SysDelegate;
+        
+        private EndOperationDelegate onEndGet_Traffic_by_Services_SysDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Traffic_by_Services_SysCompletedDelegate;
+        
         private BeginOperationDelegate onBeginStop_Radius_SessionDelegate;
         
         private EndOperationDelegate onEndStop_Radius_SessionDelegate;
@@ -4640,6 +5974,12 @@ namespace TgappWeb.RadiusAsync {
         public event System.EventHandler<Get_Sessions_by_Login_SysCompletedEventArgs> Get_Sessions_by_Login_SysCompleted;
         
         public event System.EventHandler<Get_Traffic_by_LoginCompletedEventArgs> Get_Traffic_by_LoginCompleted;
+        
+        public event System.EventHandler<Get_Traffic_by_Login_SysCompletedEventArgs> Get_Traffic_by_Login_SysCompleted;
+        
+        public event System.EventHandler<Get_Traffic_by_ServicesCompletedEventArgs> Get_Traffic_by_ServicesCompleted;
+        
+        public event System.EventHandler<Get_Traffic_by_Services_SysCompletedEventArgs> Get_Traffic_by_Services_SysCompleted;
         
         public event System.EventHandler<Stop_Radius_SessionCompletedEventArgs> Stop_Radius_SessionCompleted;
         
@@ -5091,6 +6431,156 @@ namespace TgappWeb.RadiusAsync {
             }
             base.InvokeAsync(this.onBeginGet_Traffic_by_LoginDelegate, new object[] {
                         request}, this.onEndGet_Traffic_by_LoginDelegate, this.onGet_Traffic_by_LoginCompletedDelegate, userState);
+        }
+        
+        public TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysResult Get_Traffic_by_Login_Sys(TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysRequest request) {
+            return base.Channel.Get_Traffic_by_Login_Sys(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Traffic_by_Login_Sys(TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Traffic_by_Login_Sys(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysResult EndGet_Traffic_by_Login_Sys(System.IAsyncResult result) {
+            return base.Channel.EndGet_Traffic_by_Login_Sys(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Traffic_by_Login_Sys(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysRequest request = ((TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysRequest)(inValues[0]));
+            return this.BeginGet_Traffic_by_Login_Sys(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Traffic_by_Login_Sys(System.IAsyncResult result) {
+            TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysResult retVal = this.EndGet_Traffic_by_Login_Sys(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Traffic_by_Login_SysCompleted(object state) {
+            if ((this.Get_Traffic_by_Login_SysCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Traffic_by_Login_SysCompleted(this, new Get_Traffic_by_Login_SysCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Traffic_by_Login_SysAsync(TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysRequest request) {
+            this.Get_Traffic_by_Login_SysAsync(request, null);
+        }
+        
+        public void Get_Traffic_by_Login_SysAsync(TgappWeb.RadiusAsync.Get_Traffic_by_Login_SysRequest request, object userState) {
+            if ((this.onBeginGet_Traffic_by_Login_SysDelegate == null)) {
+                this.onBeginGet_Traffic_by_Login_SysDelegate = new BeginOperationDelegate(this.OnBeginGet_Traffic_by_Login_Sys);
+            }
+            if ((this.onEndGet_Traffic_by_Login_SysDelegate == null)) {
+                this.onEndGet_Traffic_by_Login_SysDelegate = new EndOperationDelegate(this.OnEndGet_Traffic_by_Login_Sys);
+            }
+            if ((this.onGet_Traffic_by_Login_SysCompletedDelegate == null)) {
+                this.onGet_Traffic_by_Login_SysCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Traffic_by_Login_SysCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Traffic_by_Login_SysDelegate, new object[] {
+                        request}, this.onEndGet_Traffic_by_Login_SysDelegate, this.onGet_Traffic_by_Login_SysCompletedDelegate, userState);
+        }
+        
+        public TgappWeb.RadiusAsync.Get_Traffic_by_ServicesResult Get_Traffic_by_Services(TgappWeb.RadiusAsync.Get_Traffic_by_ServicesRequest request) {
+            return base.Channel.Get_Traffic_by_Services(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Traffic_by_Services(TgappWeb.RadiusAsync.Get_Traffic_by_ServicesRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Traffic_by_Services(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TgappWeb.RadiusAsync.Get_Traffic_by_ServicesResult EndGet_Traffic_by_Services(System.IAsyncResult result) {
+            return base.Channel.EndGet_Traffic_by_Services(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Traffic_by_Services(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TgappWeb.RadiusAsync.Get_Traffic_by_ServicesRequest request = ((TgappWeb.RadiusAsync.Get_Traffic_by_ServicesRequest)(inValues[0]));
+            return this.BeginGet_Traffic_by_Services(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Traffic_by_Services(System.IAsyncResult result) {
+            TgappWeb.RadiusAsync.Get_Traffic_by_ServicesResult retVal = this.EndGet_Traffic_by_Services(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Traffic_by_ServicesCompleted(object state) {
+            if ((this.Get_Traffic_by_ServicesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Traffic_by_ServicesCompleted(this, new Get_Traffic_by_ServicesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Traffic_by_ServicesAsync(TgappWeb.RadiusAsync.Get_Traffic_by_ServicesRequest request) {
+            this.Get_Traffic_by_ServicesAsync(request, null);
+        }
+        
+        public void Get_Traffic_by_ServicesAsync(TgappWeb.RadiusAsync.Get_Traffic_by_ServicesRequest request, object userState) {
+            if ((this.onBeginGet_Traffic_by_ServicesDelegate == null)) {
+                this.onBeginGet_Traffic_by_ServicesDelegate = new BeginOperationDelegate(this.OnBeginGet_Traffic_by_Services);
+            }
+            if ((this.onEndGet_Traffic_by_ServicesDelegate == null)) {
+                this.onEndGet_Traffic_by_ServicesDelegate = new EndOperationDelegate(this.OnEndGet_Traffic_by_Services);
+            }
+            if ((this.onGet_Traffic_by_ServicesCompletedDelegate == null)) {
+                this.onGet_Traffic_by_ServicesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Traffic_by_ServicesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Traffic_by_ServicesDelegate, new object[] {
+                        request}, this.onEndGet_Traffic_by_ServicesDelegate, this.onGet_Traffic_by_ServicesCompletedDelegate, userState);
+        }
+        
+        public TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysResult Get_Traffic_by_Services_Sys(TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysRequest request) {
+            return base.Channel.Get_Traffic_by_Services_Sys(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Traffic_by_Services_Sys(TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Traffic_by_Services_Sys(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysResult EndGet_Traffic_by_Services_Sys(System.IAsyncResult result) {
+            return base.Channel.EndGet_Traffic_by_Services_Sys(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Traffic_by_Services_Sys(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysRequest request = ((TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysRequest)(inValues[0]));
+            return this.BeginGet_Traffic_by_Services_Sys(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Traffic_by_Services_Sys(System.IAsyncResult result) {
+            TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysResult retVal = this.EndGet_Traffic_by_Services_Sys(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Traffic_by_Services_SysCompleted(object state) {
+            if ((this.Get_Traffic_by_Services_SysCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Traffic_by_Services_SysCompleted(this, new Get_Traffic_by_Services_SysCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Traffic_by_Services_SysAsync(TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysRequest request) {
+            this.Get_Traffic_by_Services_SysAsync(request, null);
+        }
+        
+        public void Get_Traffic_by_Services_SysAsync(TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysRequest request, object userState) {
+            if ((this.onBeginGet_Traffic_by_Services_SysDelegate == null)) {
+                this.onBeginGet_Traffic_by_Services_SysDelegate = new BeginOperationDelegate(this.OnBeginGet_Traffic_by_Services_Sys);
+            }
+            if ((this.onEndGet_Traffic_by_Services_SysDelegate == null)) {
+                this.onEndGet_Traffic_by_Services_SysDelegate = new EndOperationDelegate(this.OnEndGet_Traffic_by_Services_Sys);
+            }
+            if ((this.onGet_Traffic_by_Services_SysCompletedDelegate == null)) {
+                this.onGet_Traffic_by_Services_SysCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Traffic_by_Services_SysCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Traffic_by_Services_SysDelegate, new object[] {
+                        request}, this.onEndGet_Traffic_by_Services_SysDelegate, this.onGet_Traffic_by_Services_SysCompletedDelegate, userState);
         }
         
         public TgappWeb.RadiusAsync.Stop_Radius_SessionResult Stop_Radius_Session(TgappWeb.RadiusAsync.Stop_Radius_SessionRequest request) {

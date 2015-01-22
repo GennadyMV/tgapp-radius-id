@@ -76,11 +76,20 @@ function ResultClickAutorization(index) {
 function ResultClickSessions(index) {	
 		var tr = document.getElementById("tr_sessions_"+index);		
 		tr.className = "success";
+			
+		$($(tr).attr("data-target")).draggable({
+			handle: ".modal-header"
+		});
 };
 
 
 function ResultClickTraffic(index) {	
 		var tr = document.getElementById("tr_traffic_"+index);		
+		tr.className = "success";
+};
+
+function ResultClickTariff(index) {	
+		var tr = document.getElementById("tr_tariff_"+index);		
 		tr.className = "success";
 };
 

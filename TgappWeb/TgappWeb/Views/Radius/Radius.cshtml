@@ -171,13 +171,65 @@
 		<ul id="myTab" class="nav nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#autorization" aria-controls="autorization" role="tab" data-toggle="tab">ОШИБКИ АВТОРИЗАЦИИ</a></li>
 			<li role="presentation"><a href="#sessions" aria-controls="sessions" role="tab" data-toggle="tab">СПИСОК СЕССИЙ</a></li>		
-			<li role="presentation"><a href="#traffic" aria-controls="traffic" role="tab" data-toggle="tab">ТРАФИК</a></li>		
+			<li role="presentation"><a href="#traffic" aria-controls="traffic" role="tab" data-toggle="tab">ТРАФИК ПО ПЕРИОДАМ</a></li>		
+			<li role="presentation"><a href="#tariff" aria-controls="traffic" role="tab" data-toggle="tab">ТРАФИК ПО СЕРВИСАМ</a></li>		
 		</ul>
 
 		<div class="tab-content">
-			<div role="tabpanel" class="tab-pane active" id="autorization"></div>
-			<div role="tabpanel" class="tab-pane" id="sessions"></div>
-			<div role="tabpanel" class="tab-pane" id="traffic"></div>
+			<div role="tabpanel" class="tab-pane active" id="autorization">
+			
+			@{
+								string collapse_status = "out";
+							}
+
+							@if (ViewBag.Mac != null && ViewBag.Nas != null && ViewBag.Login != null && ViewBag.Interval != null )
+							{
+								if (ViewBag.Mac.Length > 0 || ViewBag.Nas.Length > 0 || ViewBag.Login.Length > 0 || ViewBag.Interval > 0 )
+								{
+									collapse_status = "in";
+								}
+							}
+
+							<input type="button" class="btn btn-default" data-toggle="collapse" data-target="#toggleDemo" value="Расширенный поиск">
+							<!-- Collapsible Element HTML -->
+							<div id="toggleDemo" class="collapse @(collapse_status)">
+								<div class="row">
+									<div class="col-xs-3">
+										<input type="text" class="form-control" value="@(ViewBag.Mac)" id="access_mac" placeholder="Введите MAC адрес">
+									</div>
+									<div class="col-xs-3">
+										<input type="text" class="form-control" value="@(ViewBag.Nas)" id="access_nas" placeholder="Введите NAS порт">
+									</div>
+									<div class="col-xs-2">
+										<input type="text" name="access_login" value="@(ViewBag.Login)" class="form-control" id="access_login" placeholder="Введите логин">
+									</div>
+		
+									<div class="col-xs-2">
+										<input type="number" name="access_interval" value="@(ViewBag.Interval)" class="form-control" id="access_interval" placeholder="Интервал (мин)">
+									</div>
+
+									<div class="cal-xs-2">
+										<input type="button" name="submit" class="btn btn-default" value="Получить данные" onclick="SubmitSearchAccess(0)"/>
+									</div>
+								</div>
+							</div>
+
+
+				<div id="autorization_result">
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="sessions">
+				<div id="sessions_result">
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="traffic">
+				<div id="traffic_result">
+				</div>
+			</div>			
+			<div role="tabpanel" class="tab-pane" id="tariff">
+				<div id="tariff_result">
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -208,20 +260,106 @@
 				{
 					document.getElementById("login_head").innerHTML = document.getElementById("login").value;
 				}
-				$('#autorization').text("Загрузка...");
-				$('#sessions').text("Загрузка...");
-				$('#traffic').text("Загрузка...");
+				$('#autorization_result').text("Запрос выполняется...");
+				$('#sessions_result').text("Запрос выполняется...");
+				$('#traffic_result').text("Запрос выполняется...");
+				$('#tariff_result').text("Запрос выполняется...");
 
 				$.get('@Url.Action("GetAccessByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
-					document.getElementById("autorization").innerHTML = data;
+					document.getElementById("autorization_result").innerHTML = data;
+					//$("#access_table").tablesorter();					
+
+					InitTableAccess();
+
 				});
 				$.get('@Url.Action("GetSessionsByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
-					document.getElementById("sessions").innerHTML = data;
+					document.getElementById("sessions_result").innerHTML = data;
 				});
 				$.get('@Url.Action("GetTrafficByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
-					document.getElementById("traffic").innerHTML = data;
+					document.getElementById("traffic_result").innerHTML = data;
+				});
+				
+				$.get('@Url.Action("GetTrafficByServices", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
+					document.getElementById("tariff_result").innerHTML = data;
 				});
 			}
+		}
+
+		function InitTableAccess()
+		{
+			$("#access_table").tablesorter({
+						// this will apply the bootstrap theme if "uitheme" widget is included
+						// the widgetOptions.uitheme is no longer required to be set
+						theme : "bootstrap",
+
+						widthFixed: true,
+
+						headerTemplate : '{content} {icon}', // new in v2.7. Needed to add the bootstrap icon!
+
+						// widget code contained in the jquery.tablesorter.widgets.js file
+						// use the zebra stripe widget if you plan on hiding any rows (filter widget)
+						widgets : [ "uitheme", "filter", "zebra" ],
+
+						widgetOptions : {
+						  // using the default zebra striping class name, so it actually isn't included in the theme variable above
+						  // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+						  //zebra : ["even", "odd"],
+
+						  // reset filters button
+						 // filter_reset : ".reset"
+
+						  // set the uitheme widget to use the bootstrap theme class names
+						  // this is no longer required, if theme is set
+						  // ,uitheme : "bootstrap"
+						  filter_childRows: false,
+
+							// filter widget: If true, a filter will be added to the top of
+							// each table column.
+							filter_columnFilters: false,
+
+							// filter widget: css class applied to the table row containing the
+							// filters & the inputs within that row
+							filter_cssFilter: "tablesorter-filter",
+
+							// filter widget: Customize the filter widget by adding a select
+							// dropdown with content, custom options or custom filter functions
+							// see http://goo.gl/HQQLW for more details
+							filter_functions: null,
+
+							// filter widget: Set this option to true to hide the filter row
+							// initially. The rows is revealed by hovering over the filter
+							// row or giving any filter input/select focus.
+							filter_hideFilters: false,
+
+							// filter widget: Set this option to false to keep the searches
+							// case sensitive
+							filter_ignoreCase: true,
+
+							// filter widget: jQuery selector string of an element used to
+							// reset the filters.
+							filter_reset: null,
+
+							// Delay in milliseconds before the filter widget starts searching;
+							// This option prevents searching for every character while typing
+							// and should make searching large tables faster.
+							filter_searchDelay: 300,
+
+							// Set this option to true if filtering is performed on the server-side.
+							filter_serversideFiltering: false,
+
+							// filter widget: Set this option to true to use the filter to find
+							// text from the start of the column. So typing in "a" will find
+							// "albert" but not "frank", both have a's; default is false
+							filter_startsWith: false,
+
+							// filter widget: If true, ALL filter searches will only use parsed
+							// data. To only use parsed data in specific columns, set this option
+							// to false and add class name "filter-parsed" to the header
+							filter_useParsedData: false,
+
+
+						}
+					  }) ;
 		}
 
 		function ChangePassword() {
@@ -244,15 +382,39 @@
 
 		function SelectInterval(interval)
 		{
+			$('#traffic_result').text("Запрос выполняется...");
 			$.get('@Url.Action("GetTrafficByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, interval2:interval }, function(data) { 				
-					document.getElementById("traffic").innerHTML = data;					
+					document.getElementById("traffic_result").innerHTML = data;										
 				});
+		}
 
-		  }
+		function SelectGroup(group)
+		{
+			$.get('@Url.Action("GetTrafficByServices", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, group: group, last:document.getElementById("last_interval").value }, function(data) { 				
+					document.getElementById("tariff_result").innerHTML = data;
+				});
+			$('#tariff_result').text("Запрос выполняется...");
+		}
+
+		function SelectLast(last)
+		{
+			$.get('@Url.Action("GetTrafficByServices", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, group: document.getElementById("select_group").value, last:last }, function(data) { 				
+					document.getElementById("tariff_result").innerHTML = data;
+				});
+			$('#tariff_result').text("Запрос выполняется...");
+		}
+
+		function SubmitSearchAccess()
+		{			
+			$.get('@Url.Action("GetAccessSysdate", "Radius")', { login:document.getElementById("access_login").value, mac:document.getElementById("access_mac").value, nas:document.getElementById("access_nas").value, interval:document.getElementById("access_interval").value }, function(data) { 				
+					document.getElementById("autorization_result").innerHTML = data;
+					InitTableAccess();
+				});
+			$('#autorization_result').text("Запрос выполняется...");
+		}
 
 	</script>
 
-</div>
 
 <!-- Modal Change Password -->
 <div class="modal fade" id="myModalChangePassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -275,3 +437,5 @@
     </div>
   </div>
 </div>
+
+
