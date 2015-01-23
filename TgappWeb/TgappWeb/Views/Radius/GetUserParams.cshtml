@@ -1,0 +1,181 @@
+﻿@{
+Layout = "";
+}
+
+@{
+int index = 0;
+}
+
+@if (ViewBag.Error != null) {
+@ViewBag.Error
+}
+else
+{
+
+
+<table class="table table-bordered">
+	<tr>
+		<td>Подключение:</td>
+		<td>@ViewBag.ResultSet[0].user_name</td>
+	</tr>
+	<tr>
+		<td>Модель доступа:</td>
+		<td>@ViewBag.ResultSet[0].uc_code, @ViewBag.ResultSet[0].uc_descr</td>
+	</tr>
+	<tr>
+		<td>Тарифный план:</td>
+		<td>@ViewBag.ResultSet[0].tfp_code, @ViewBag.ResultSet[0].tfp_name</td>
+	</tr>
+</table>
+
+<h4>
+	Сервисы подключения
+</h4>
+
+<table class="table table-bordered table-hover">
+<thead>
+  <tr>
+    <th>Тип сервиса</th>
+	<th>Код</th>
+	<th>Дата регистрации</th>
+	<th>Логин</th>
+  </tr>  
+</thead>
+<tbody>
+
+
+  @foreach(var item in ViewBag.ServiceResultSet)
+  {
+  <tr>
+      <td>
+			@item.sl_descr
+		</td>
+		<td>
+			@item.sl_type			
+		</td>
+		<td>
+			@item.input_date
+		</td>
+		
+		<td>
+			@item.login
+		</td>  
+</tr>
+	
+}
+</tbody>
+</table>
+
+
+
+
+
+<h4>
+	Атрибуты сервиса Radius
+</h4>
+
+<table class="table table-bordered table-hover">
+<thead>
+  <tr>
+    <th>Сервис</th>
+	<th>Тип</th>
+	<th>Код производителя</th>
+	<th>Атрибут</th>
+	<th>Значение</th>
+  </tr>  
+</thead>
+<tbody>
+
+
+  @foreach(var item in ViewBag.ServiceAtrsResultSet)
+  {
+  <tr>
+      <td>
+			@item.logname
+		</td>
+		<td>
+			@item.sl_type
+		</td>
+		<td>
+			@item.vn_code
+		</td>
+		
+		<td>
+			@item.atr_name
+		</td>  
+				
+		<td>
+			@item.atr_value
+		</td>  
+</tr>
+	
+}
+</tbody>
+</table>
+
+
+
+<h4>
+	Блокировки
+</h4>
+
+<table class="table table-bordered table-hover">
+<thead>
+  <tr>
+    <th>Абонент</th>
+	<th>Подключение</th>
+	<th>Дата начала</th>
+	<th>Дата окончания</th>
+	<th>Код</th>
+	<th>Описание</th>
+	<th>Код типа</th>
+	<th>Тип</th>
+	<th>Статус</th>
+  </tr>  
+</thead>
+<tbody>
+
+
+  @foreach(var item in ViewBag.BlockingResultSet)
+  {
+  <tr>
+      <td>
+			@item.ab_id
+		</td>
+		<td>
+			@item.user_name
+		</td>
+		<td>
+			@item.date_from
+		</td>
+		
+		<td>
+			@item.date_to
+		</td>  
+				
+		<td>
+			@item.blk_code
+		</td>  
+		
+		<td>
+			@item.blk_name
+		</td>  
+				
+		<td>
+			@item.blk_type
+		</td>  
+		
+		<td>
+			@item.blk_type_name
+		</td>  
+		
+		<td>
+			@item.status
+		</td>  
+</tr>
+	
+}
+</tbody>
+</table>
+
+}

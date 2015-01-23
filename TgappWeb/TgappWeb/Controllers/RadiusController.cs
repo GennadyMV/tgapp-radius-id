@@ -220,7 +220,7 @@ namespace TgappWeb.Controllers
             return View();
         }
 
-        public ActionResult GetTrafficByServices(string filial, string login, string datebgn, string dateend, int interval, string group="day", int last=0)
+        public ActionResult GetTrafficByServices(string filial, string login, string datebgn, string dateend, int interval, string group="month", int last=0)
         {
             try
             {
@@ -411,6 +411,84 @@ namespace TgappWeb.Controllers
                 ViewBag.StatusString = ex.Message;
             }
             return View("GetAccessByLogin");
+        }
+
+        public ActionResult GetUserParams(string filial, string login)
+        {
+            try
+            {
+                var radiusClient = new RadiusAsync.radius2Client("http");
+                RadiusAsync.Get_User_ParamsRequest theUserRequest;
+
+                theUserRequest = new Get_User_ParamsRequest();
+                theUserRequest.Command = new MetaCommand()
+                {
+                    Operation = DbOperation.ExecuteQuery
+                };
+                theUserRequest.Connection = new MetaConnection() { Connection = "*.*" };
+                theUserRequest.Parameters = new Get_User_ParamsInputParameters()
+                {
+                    p_Login = login,
+                    p_Filial = filial
+                };
+                RadiusAsync.Get_User_ParamsResult theUserResult;
+                theUserResult = radiusClient.Get_User_Params(theUserRequest);
+
+                ViewBag.ResultSet = theUserResult.ResultSet;
+
+                RadiusAsync.Get_User_ServicesRequest theUserServiceRequest;
+                theUserServiceRequest = new RadiusAsync.Get_User_ServicesRequest();
+                theUserServiceRequest.Command = new MetaCommand()
+                {
+                    Operation = DbOperation.ExecuteQuery
+                };
+                theUserServiceRequest.Connection = new MetaConnection() { Connection = "*.*" };
+                theUserServiceRequest.Parameters = new Get_User_ServicesInputParameters()
+                {
+                    p_Filial = filial,
+                    p_Login = login
+                };
+                RadiusAsync.Get_User_ServicesResult theUserServiceResult;
+                theUserServiceResult = radiusClient.Get_User_Services(theUserServiceRequest);
+                ViewBag.ServiceResultSet = theUserServiceResult.ResultSet;
+
+                RadiusAsync.Get_Service_AtrsRequest theServiceAtrsRequest;
+                theServiceAtrsRequest = new Get_Service_AtrsRequest();
+                theServiceAtrsRequest.Command = new MetaCommand()
+                {
+                    Operation = DbOperation.ExecuteQuery
+                };
+                theServiceAtrsRequest.Connection = new MetaConnection() { Connection = "*.*" };
+                theServiceAtrsRequest.Parameters = new Get_Service_AtrsInputParameters()
+                {
+                    p_Filial = filial,
+                    p_Login = login
+                };
+                RadiusAsync.Get_Service_AtrsResult theServiceAtrsResult;
+                theServiceAtrsResult = radiusClient.Get_Service_Atrs(theServiceAtrsRequest);
+                ViewBag.ServiceAtrsResultSet = theServiceAtrsResult.ResultSet;
+
+                RadiusAsync.Get_BlockingRequest theBlockingRequest;
+                theBlockingRequest = new Get_BlockingRequest();
+                theBlockingRequest.Command = new MetaCommand()
+                {
+                    Operation = DbOperation.ExecuteQuery
+                };
+                theBlockingRequest.Connection = new MetaConnection() { Connection = "*.*" };
+                theBlockingRequest.Parameters = new Get_BlockingInputParameters()
+                {
+                    p_Filial = filial,
+                    p_Login = login
+                };
+                RadiusAsync.Get_BlockingResult theBlockingResult;
+                theBlockingResult = radiusClient.Get_Blocking(theBlockingRequest);
+                ViewBag.BlockingResultSet = theBlockingResult.ResultSet;                     
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+            return View();
         }
 
         

@@ -39,7 +39,7 @@ else
 			}
 		</select>
 		, расширить на
-		<input class="inline" type="number" name="last_interval" value="@(ViewBag.Last)" class="form-control" id="last_interval" onchange="SelectLast(this.value)">
+		<input class="inline" type="number" name="last_interval" value="@(ViewBag.Last)" class="form-control" id="last_interval" onchange="SelectLast(this.value)" onkeydown="if (event.keyCode == 13) { SelectLast(this.value); return false; }">
 		интервалов.
 	</p>
 </h4>

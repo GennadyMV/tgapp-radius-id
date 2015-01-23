@@ -172,7 +172,8 @@
 			<li role="presentation" class="active"><a href="#autorization" aria-controls="autorization" role="tab" data-toggle="tab">ОШИБКИ АВТОРИЗАЦИИ</a></li>
 			<li role="presentation"><a href="#sessions" aria-controls="sessions" role="tab" data-toggle="tab">СПИСОК СЕССИЙ</a></li>		
 			<li role="presentation"><a href="#traffic" aria-controls="traffic" role="tab" data-toggle="tab">ТРАФИК ПО ПЕРИОДАМ</a></li>		
-			<li role="presentation"><a href="#tariff" aria-controls="traffic" role="tab" data-toggle="tab">ТРАФИК ПО СЕРВИСАМ</a></li>		
+			<li role="presentation"><a href="#tariff" aria-controls="tariff" role="tab" data-toggle="tab">ТРАФИК ПО СЕРВИСАМ</a></li>		
+			<li role="presentation"><a href="#params" aria-controls="params" role="tab" data-toggle="tab">ПАРАМЕТРЫ</a></li>		
 		</ul>
 
 		<div class="tab-content">
@@ -195,17 +196,36 @@
 							<div id="toggleDemo" class="collapse @(collapse_status)">
 								<div class="row">
 									<div class="col-xs-3">
-										<input type="text" class="form-control" value="@(ViewBag.Mac)" id="access_mac" placeholder="Введите MAC адрес">
+										MAC адрес:
 									</div>
 									<div class="col-xs-3">
-										<input type="text" class="form-control" value="@(ViewBag.Nas)" id="access_nas" placeholder="Введите NAS порт">
+										NAS порт:
 									</div>
 									<div class="col-xs-2">
-										<input type="text" name="access_login" value="@(ViewBag.Login)" class="form-control" id="access_login" placeholder="Введите логин">
+										Логин:
 									</div>
 		
 									<div class="col-xs-2">
-										<input type="number" name="access_interval" value="@(ViewBag.Interval)" class="form-control" id="access_interval" placeholder="Интервал (мин)">
+										Интервал (мин):
+									</div>
+
+									<div class="cal-xs-2">
+										
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-3">
+										<input type="text" class="form-control" value="@(ViewBag.Mac)" id="access_mac">
+									</div>
+									<div class="col-xs-3">
+										<input type="text" class="form-control" value="@(ViewBag.Nas)" id="access_nas">
+									</div>
+									<div class="col-xs-2">
+										<input type="text" name="access_login" value="@(ViewBag.Login)" class="form-control" id="access_login">
+									</div>
+		
+									<div class="col-xs-2">
+										<input type="number" name="access_interval" value="@(ViewBag.Interval)" class="form-control" id="access_interval">
 									</div>
 
 									<div class="cal-xs-2">
@@ -228,6 +248,10 @@
 			</div>			
 			<div role="tabpanel" class="tab-pane" id="tariff">
 				<div id="tariff_result">
+				</div>
+			</div>						
+			<div role="tabpanel" class="tab-pane" id="params">
+				<div id="params_result">
 				</div>
 			</div>
 		</div>
@@ -264,6 +288,7 @@
 				$('#sessions_result').text("Запрос выполняется...");
 				$('#traffic_result').text("Запрос выполняется...");
 				$('#tariff_result').text("Запрос выполняется...");
+				$('#params_result').text("Запрос выполняется...");
 
 				$.get('@Url.Action("GetAccessByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("autorization_result").innerHTML = data;
@@ -281,6 +306,10 @@
 				
 				$.get('@Url.Action("GetTrafficByServices", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("tariff_result").innerHTML = data;
+				});
+								
+				$.get('@Url.Action("GetUserParams", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value}, function(data) { 				
+					document.getElementById("params_result").innerHTML = data;
 				});
 			}
 		}

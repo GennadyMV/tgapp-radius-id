@@ -165,13 +165,17 @@ else
 <tbody>
 
   @{
-  string name_code = ViewBag.ResultSet[0].code_value;
-  int index_code = 1;
-  string show_class = "success";
+	  string name_code = "";
+	  int index_code = 0;
+	  string show_class = "success";
   }
 
   @foreach(var item in ViewBag.ResultSet)
   {
+	if (index == 0)
+	{
+		name_code = ViewBag.ResultSet[0].code_value;
+	}
   {
   index++;
   }

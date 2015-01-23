@@ -166,6 +166,12 @@
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Access_SysdateResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_BlockingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Service_AtrsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Sessions_by_LoginResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -184,6 +190,12 @@
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_Traffic_by_Services_SysResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_User_ParamsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Get_User_ServicesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\RadiusAsync\TgappWeb.RadiusAsync.Stop_Radius_SessionResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -194,6 +206,7 @@
     <Content Include="Views\Radius\ChangePassword.cshtml" />
     <Content Include="Views\Radius\GetTrafficByLogin.cshtml" />
     <Content Include="Views\Radius\GetTrafficByServices.cshtml" />
+    <Content Include="Views\Radius\GetUserParams.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
