@@ -290,26 +290,97 @@
 				$('#tariff_result').text("Запрос выполняется...");
 				$('#params_result').text("Запрос выполняется...");
 
+				$.ajaxSetup({cache: false});
+				/*
 				$.get('@Url.Action("GetAccessByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("autorization_result").innerHTML = data;
-					//$("#access_table").tablesorter();					
-
 					InitTableAccess();
-
 				});
+				*/
+				var param = { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval };
+				$.ajax({
+					cache: false,
+					url: '@Url.Action("GetAccessByLogin", "Radius")',
+					data: param,
+					success: function(data) {
+						document.getElementById("autorization_result").innerHTML = data;
+						InitTableAccess();
+					},
+					error: function(x,e) {
+						document.getElementById("autorization_result").innerHTML = '<p>Ошибка запроса</p>';
+					}
+				});
+				
+				/*
 				$.get('@Url.Action("GetSessionsByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("sessions_result").innerHTML = data;
 				});
+				*/				
+				var param = { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval };
+				$.ajax({
+					cache: false,
+					url: '@Url.Action("GetSessionsByLogin", "Radius")',
+					data: param,
+					success: function(data) {
+						document.getElementById("sessions_result").innerHTML = data;
+					},
+					error: function(x,e) {
+						document.getElementById("sessions_result").innerHTML = '<p>Ошибка запроса</p>';
+					}
+				});
+
+				/*
 				$.get('@Url.Action("GetTrafficByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("traffic_result").innerHTML = data;
 				});
-				
+				*/
+						
+				var param = { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval };
+				$.ajax({
+					cache: false,
+					url: '@Url.Action("GetTrafficByLogin", "Radius")',
+					data: param,
+					success: function(data) {
+						document.getElementById("traffic_result").innerHTML = data;
+					},
+					error: function(x,e) {
+						document.getElementById("traffic_result").innerHTML = '<p>Ошибка запроса</p>';
+					}
+				});
+
+				/*
 				$.get('@Url.Action("GetTrafficByServices", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
 					document.getElementById("tariff_result").innerHTML = data;
+				});*/
+
+				var param = { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval };
+				$.ajax({
+					cache: false,
+					url: '@Url.Action("GetTrafficByServices", "Radius")',
+					data: param,
+					success: function(data) {
+						document.getElementById("tariff_result").innerHTML = data;
+					},
+					error: function(x,e) {
+						document.getElementById("tariff_result").innerHTML = '<p>Ошибка запроса</p>';
+					}
 				});
-								
+				/*				
 				$.get('@Url.Action("GetUserParams", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value}, function(data) { 				
 					document.getElementById("params_result").innerHTML = data;
+				});
+				*/				
+				var param = { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value};
+				$.ajax({
+					cache: false,
+					url: '@Url.Action("GetUserParams", "Radius")',
+					data: param,
+					success: function(data) {
+						document.getElementById("params_result").innerHTML = data;
+					},
+					error: function(x,e) {
+						document.getElementById("params_result").innerHTML = '<p>Ошибка запроса</p>';
+					}
 				});
 			}
 		}
@@ -411,25 +482,70 @@
 
 		function SelectInterval(interval)
 		{
-			$('#traffic_result').text("Запрос выполняется...");
+			$.ajaxSetup({cache: false});
+			/*
 			$.get('@Url.Action("GetTrafficByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, interval2:interval }, function(data) { 				
 					document.getElementById("traffic_result").innerHTML = data;										
 				});
+			*/
+			var param = { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, interval2:interval };
+			$.ajax({
+				cache: false,
+				url: '@Url.Action("GetTrafficByLogin", "Radius")',
+				data: param,
+				success: function(data) {
+					document.getElementById("traffic_result").innerHTML = data;
+				},
+				error: function(x,e) {
+					document.getElementById("traffic_result").innerHTML = '<p>Ошибка запроса</p>';
+				}
+			});
+			$('#traffic_result').text("Запрос выполняется...");
 		}
 
 		function SelectGroup(group)
 		{
+			$.ajaxSetup({cache: false});
+			/*
 			$.get('@Url.Action("GetTrafficByServices", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, group: group, last:document.getElementById("last_interval").value }, function(data) { 				
 					document.getElementById("tariff_result").innerHTML = data;
 				});
+			*/
+			var param = { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, group: group, last:document.getElementById("last_interval").value };
+			$.ajax({
+				cache: false,
+				url: '@Url.Action("GetTrafficByServices", "Radius")',
+				data: param,
+				success: function(data) {
+					document.getElementById("tariff_result").innerHTML = data;
+				},
+				error: function(x,e) {
+					document.getElementById("tariff_result").innerHTML = '<p>Ошибка запроса</p>';
+				}
+			});
 			$('#tariff_result').text("Запрос выполняется...");
 		}
 
 		function SelectLast(last)
 		{
+			$.ajaxSetup({cache: false});
+			/*
 			$.get('@Url.Action("GetTrafficByServices", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, group: document.getElementById("select_group").value, last:last }, function(data) { 				
 					document.getElementById("tariff_result").innerHTML = data;
 				});
+			*/
+			var param = { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:document.getElementById("period").value, group: document.getElementById("select_group").value, last:last };
+			$.ajax({
+				cache: false,
+				url: '@Url.Action("GetTrafficByServices", "Radius")',
+				data: param,
+				success: function(data) {
+					document.getElementById("tariff_result").innerHTML = data;
+				},
+				error: function(x,e) {
+					document.getElementById("tariff_result").innerHTML = '<p>Ошибка запроса</p>';
+				}
+			});
 			$('#tariff_result').text("Запрос выполняется...");
 		}
 

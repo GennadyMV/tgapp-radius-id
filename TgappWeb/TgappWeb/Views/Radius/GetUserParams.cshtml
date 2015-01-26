@@ -16,15 +16,17 @@ else
 <table class="table table-bordered">
 	<tr>
 		<td>Подключение:</td>
-		<td>@ViewBag.ResultSet[0].user_name</td>
+		<td colspan="2">@ViewBag.ResultSet[0].user_name</td>
 	</tr>
 	<tr>
 		<td>Модель доступа:</td>
-		<td>@ViewBag.ResultSet[0].uc_code, @ViewBag.ResultSet[0].uc_descr</td>
+		<td>@ViewBag.ResultSet[0].uc_code</td>
+		<td>@ViewBag.ResultSet[0].uc_descr</td>
 	</tr>
 	<tr>
 		<td>Тарифный план:</td>
-		<td>@ViewBag.ResultSet[0].tfp_code, @ViewBag.ResultSet[0].tfp_name</td>
+		<td>@ViewBag.ResultSet[0].tfp_code</td>
+		<td>@ViewBag.ResultSet[0].tfp_name</td>
 	</tr>
 </table>
 
