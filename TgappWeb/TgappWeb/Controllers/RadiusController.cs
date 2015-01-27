@@ -21,6 +21,7 @@ namespace TgappWeb.Controllers
         public ActionResult Radius(string mode="view", int filial=423, string login="", string date_beg="", string date_end="", int period=0 )
         {
             var radiusClient = new radius2Client("http");
+
             RadiusAsync.FilialsResult theFilialsResult;
             theFilialsResult = radiusClient.Filials(new FilialsRequest()
             {

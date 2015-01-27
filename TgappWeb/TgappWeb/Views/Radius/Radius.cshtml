@@ -191,9 +191,10 @@
 								}
 							}
 
-							<input type="button" class="btn btn-default" data-toggle="collapse" data-target="#toggleDemo" value="Расширенный поиск">
+							<input type="button" class="btn btn-default" data-toggle="collapse" data-target="#toggleDemo" value="Расширенный поиск">							
 							<!-- Collapsible Element HTML -->
 							<div id="toggleDemo" class="collapse @(collapse_status)">
+							<code>(*) расширенный поиск работает только по данным новых BRAS.</code>
 								<div class="row">
 									<div class="col-xs-3">
 										MAC адрес:
@@ -291,12 +292,18 @@
 				$('#params_result').text("Запрос выполняется...");
 
 				$.ajaxSetup({cache: false});
-				/*
+				
 				$.get('@Url.Action("GetAccessByLogin", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval }, function(data) { 				
-					document.getElementById("autorization_result").innerHTML = data;
-					InitTableAccess();
+					//document.getElementById("autorization_result").innerHTML = data;
+					
+
+						
+						
+					
+					
+					//InitTableAccess();
 				});
-				*/
+				
 				var param = { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, datebgn:document.getElementById("datebgn").value, dateend:document.getElementById("dateend").value, interval:interval };
 				$.ajax({
 					cache: false,
@@ -387,6 +394,33 @@
 
 		function InitTableAccess()
 		{
+			
+		/*
+			$("#access_table").jqxDataTable(
+            {
+                altrows: true,
+                sortable: true
+            });
+			*/
+			/*
+			$("#access_table").jqxGrid(
+            {
+                altrows: true,
+                sortable: true,
+				groupable: true,
+                columns: [
+                  { text: 'Логин', dataField: 'login', width: '80%' },
+				  { text: 'Время', dataField: 'zone_date', width: 100 },
+                  { text: 'NAS', dataField: 'nas', width: 120 },
+				  { text: 'NAS-порт', dataField: 'nas_port', width: '100%' },
+				  { text: 'MAC-адрес', dataField: 'mac_addr', width: 150 },
+				  { text: '#', dataField: 'num', width: 50 },
+				  { text: 'Ошибка', dataField: 'error', width: '80%' }
+                ],
+				groups: ['login']
+            });
+			*/
+		/*
 			$("#access_table").tablesorter({
 						// this will apply the bootstrap theme if "uitheme" widget is included
 						// the widgetOptions.uitheme is no longer required to be set
@@ -460,6 +494,8 @@
 
 						}
 					  }) ;
+
+					  */
 		}
 
 		function ChangePassword() {
@@ -552,8 +588,90 @@
 		function SubmitSearchAccess()
 		{			
 			$.get('@Url.Action("GetAccessSysdate", "Radius")', { login:document.getElementById("access_login").value, mac:document.getElementById("access_mac").value, nas:document.getElementById("access_nas").value, interval:document.getElementById("access_interval").value }, function(data) { 				
-					document.getElementById("autorization_result").innerHTML = data;
-					InitTableAccess();
+					//document.getElementById("autorization_result").innerHTML = data;
+					//InitTableAccess();
+
+/*
+					var data = [{ "empName": "test", "age": "67", "department": { "id": "1234", "name": "Sales" }, "author": "ravi"},					{ "empName": "test", "age": "67", "department": { "id": "1234", "name": "Sales" }, "author": "ravi"}];
+						// prepare the data
+var source =
+{
+    datatype: "json",
+    datafields: [
+        { name: 'empName' },
+        { name: 'age' },
+        { name: 'id', map: 'department>id' },
+        { name: 'name', map: 'department>name' },
+        { name: 'author' }
+    ],
+    localdata: data
+};
+var dataAdapter = new $.jqx.dataAdapter(source);
+
+$("#autorization_result").jqxGrid(
+            {
+                width: 670,
+                source: dataAdapter,				
+				groupable: true,
+                columns: [
+                  { text: 'Year', datafield: 'empName', width: 100, minwidth: 90, maxwidth: 150 },
+                  { text: 'HPI', datafield: 'age', cellsformat: 'f2', width: 100 },
+                  { text: 'Build Cost', datafield: 'id', cellsformat: 'c2', width: 180 },
+                  { text: 'Population', datafield: 'name', cellsformat: 'f2', width: 100 },
+                  { text: 'Rate', datafield: 'author', cellsformat: 'f5', minwidth: 100 }
+                ]
+            });
+*/
+
+					var data_json = data.replace(/}{/gi,'},{');
+					data_json = data_json.replace(/&quot;/gi,'"');
+					data_json = data_json.replace(/&#39;/gi, '');
+					console.log( data_json );
+					data_json = JSON.parse(data_json);
+
+					var source =
+					{
+						datatype: "json",
+						datafields: [
+							{ name: 'login' },
+							{ name: 'zone_date' },
+							{ name: 'nas' },
+							{ name: 'nas_port' },
+							{ name: 'mac_addr' },
+							{ name: 'num' },
+							{ name: 'error' }
+						],
+						localdata: data_json
+					};
+
+					var dataAdapter = new $.jqx.dataAdapter(source);
+
+					$("#autorization_result").jqxGrid(
+						{
+							width: '100%',
+							altrows: true,
+							sortable: true,
+							groupable: true,
+							source: dataAdapter,
+							//columnsresize: true,
+							columns: [
+							  { text: 'Логин', dataField: 'login', width: '80' },
+							  { text: 'Время', dataField: 'zone_date', width: 100 },
+							  { text: 'NAS', dataField: 'nas', width: 120 },
+							  { text: 'NAS-порт', dataField: 'nas_port', width: '100%' },
+							  { text: 'MAC-адрес', dataField: 'mac_addr', width: 150 },
+							  { text: '#', dataField: 'num', width: 50 },
+							  { text: 'Ошибка', dataField: 'error', width: '80%' }
+							],
+							groups: ['login']
+						});
+						
+
+
+
+
+
+
 				});
 			$('#autorization_result').text("Запрос выполняется...");
 		}

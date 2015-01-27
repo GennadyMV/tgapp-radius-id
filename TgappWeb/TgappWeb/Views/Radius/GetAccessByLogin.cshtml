@@ -5,113 +5,27 @@
     Layout = "";    
     }
 
+@{
+    ViewBag.Title = "Get_Access_by_Login";
+}
+@{
+    Layout = "";    
+    }
+
 	@{
 		int index = 0;
 	}
-		
-<table id="access_table" class="table table-bordered table-hover tablesorter">
-<thead>
-	<tr>
-		@if (ViewBag.Mac != null && ViewBag.Nas != null && ViewBag.Login != null && ViewBag.Interval != null )
+
+[
+	@foreach(var item in ViewBag.ResultSet)
+	{
+		if (ViewBag.Mac != null && ViewBag.Nas != null && ViewBag.Login != null && ViewBag.Interval != null )
 		{
 			if (ViewBag.Mac.Length > 0 || ViewBag.Nas.Length > 0 || ViewBag.Login.Length > 0 || ViewBag.Interval > 0 )
 			{
-				<th>Логин</th>
+				@("{\"login\":\""+(@item.login)+"\",")
 			}
 		}
-		<th>Время</th>
-		<th>NAS</th>
-		<th>NAS-порт</th>
-		<th>MAC-адрес</th>
-		<th>#</th>
-		<th>Ошибка</th>
-	</tr>
-</thead>
-<tbody>
-
-
-@foreach(var item in ViewBag.ResultSet)
-{
-
-{
-	index++;
-}
-
-<tr id="tr_autorization_@(index)" class="resultrow" onclick="ResultClickAutorization(@index)" data-toggle="modal" data-target="#myModalAutorization@(index)" data-toggle="popover" data-placement="top" title="Нажмите для детального просмотра...">
-		@if (ViewBag.Mac != null && ViewBag.Nas != null && ViewBag.Login != null && ViewBag.Interval != null )
-		{
-			if (ViewBag.Mac.Length > 0 || ViewBag.Nas.Length > 0 || ViewBag.Login.Length > 0 || ViewBag.Interval > 0 )
-			{				
-				<td>
-					@item.login
-				</td>
-			}
-		}
-		<td>
-			@item.zone_date
-		</td>
-		<td>
-			@item.nas_name @item.nas_ip
-		</td>
-		<td>
-			@item.nas_port_id
-		</td>
-		<td>
-			@item.mac_addr
-		</td>
-		<td>
-			@item.err_code
-		</td>
-		<td>
-			@item.err_string
-		</td>		
-	</tr>
-	
-}
-</tbody>
-</table>
-
-@{
-	index=0;
-}
-
-@foreach(var item in ViewBag.ResultSet)
-{
-
-{
-	index++;
-}
-
-
-	
-<div class="modal fade" id="myModalAutorization@(index)" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Детализация ошибки авторизации</h4>
-      </div>
-      <div class="modal-body">
-        <p>Статус: @item.status</p>
-				<p>Время местное: @item.zone_date</p>
-				<p>Время системное: @item.sys_date</p>
-				<p>Адрес NAS: @item.nas_ip</p>
-				<p>Название NAS: @item.nas_name</p>
-				<p>Временная зона NAS: @item.nas_zone</p>
-				<p>Логин: @item.login</p>
-				<p>MAC адрес: @item.mac_addr</p>
-				<p>NAS порт: @item.nas_port_id</p>
-				<p>Код  тарифа: @item.tfp_code</p>
-				<p>Тариф: @item.tfp_name</p>
-				<p>Код ошибки: @item.err_code</p>
-				<p>Текст ошибки: @item.err_string</p>
-				<p>Описание ошибки: @item.err_info</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>        
-      </div>
-    </div>
-  </div>
-</div>
-
-}
+		@("\"zone_date\":\""+(@item.zone_date)+"\",\"nas\":\""+(@item.nas_ip)+"\",\"nas_port\":\""+(@item.nas_port_id)+"\",\"mac_addr\":\""+(@item.mac_addr)+"\",\"num\":\""+(@item.err_code)+"\",\"error\":\""+(@item.err_string)+"\"}")
+	}
+]

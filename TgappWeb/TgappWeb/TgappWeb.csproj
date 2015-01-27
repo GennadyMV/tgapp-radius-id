@@ -73,6 +73,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.tablesorter.pager.css" />
+    <Content Include="Content\jqx.base.css" />
     <Content Include="Content\tcal.css" />
     <Content Include="Content\theme.bootstrap.css" />
     <Content Include="Content\themes\base\images\tcal\cal.gif" />
@@ -115,6 +116,18 @@
     <Content Include="Scripts\jquery.tablesorter.js" />
     <Content Include="Scripts\jquery.tablesorter.pager.js" />
     <Content Include="Scripts\jquery.tablesorter.widgets.js" />
+    <Content Include="Scripts\jqxbuttons.js" />
+    <Content Include="Scripts\jqxcore.js" />
+    <Content Include="Scripts\jqxdata.js" />
+    <Content Include="Scripts\jqxdatatable.js" />
+    <Content Include="Scripts\jqxdropdownlist.js" />
+    <Content Include="Scripts\jqxgrid.grouping.js" />
+    <Content Include="Scripts\jqxgrid.js" />
+    <Content Include="Scripts\jqxgrid.selection.js" />
+    <Content Include="Scripts\jqxgrid.sort.js" />
+    <Content Include="Scripts\jqxlistbox.js" />
+    <Content Include="Scripts\jqxmenu.js" />
+    <Content Include="Scripts\jqxscrollbar.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\radius.js" />
     <Content Include="Scripts\respond.min.js" />
