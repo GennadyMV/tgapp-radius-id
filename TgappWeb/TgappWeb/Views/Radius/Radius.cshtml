@@ -463,19 +463,19 @@
 		}
 
 		function ChangePassword() {
-			$.get('@Url.Action("ChangePassword", "Radius")', { filial:"1", login:document.getElementById("login").value, new_pass:document.getElementById("exampleInputNewPass").value  }, function(data) { 				
+			$.get('@Url.Action("ChangePassword", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value, new_pass:document.getElementById("exampleInputNewPass").value  }, function(data) { 				
 					alert( data );
 			});
 		}
 
 		function StopRadiusSession() {
-			$.get('@Url.Action("StopRadiusSession", "Radius")', { filial:"1", login:document.getElementById("login").value  }, function(data) { 				
+			$.get('@Url.Action("StopRadiusSession", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value  }, function(data) { 				
 					alert( data );
 			});
 		}
 
 		function CheckProfile() {
-			$.get('@Url.Action("CheckProfile", "Radius")', { filial:"1", login:document.getElementById("login").value  }, function(data) { 				
+			$.get('@Url.Action("CheckProfile", "Radius")', { filial:document.getElementById("filial_code").value, login:document.getElementById("login").value  }, function(data) { 				
 					alert( data );
 			});
 		}

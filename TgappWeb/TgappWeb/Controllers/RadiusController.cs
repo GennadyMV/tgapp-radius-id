@@ -303,45 +303,61 @@ namespace TgappWeb.Controllers
 
         public ActionResult CheckProfile(string filial, string login)
         {
-            var radiusClient = new RadiusAsync.radius2Client("http");
-            Check_ProfileRequest theCheckProfileRequest;
-            theCheckProfileRequest = new Check_ProfileRequest();
-            theCheckProfileRequest.Command = new MetaCommand()
+            ViewBag.StatusString = " Перезагрузка профиля прошла успешно";            
+            try
             {
-                Operation = DbOperation.ExecuteQuery
-            };
-            theCheckProfileRequest.Connection = new MetaConnection() { Connection = "*.*" };
-            theCheckProfileRequest.Parameters = new Check_ProfileInputParameters()
-            {
-                p_Filial = filial.ToString(),
-                p_Login = login
-            };
+                var radiusClient = new RadiusAsync.radius2Client("http");
+                Check_ProfileRequest theCheckProfileRequest;
+                theCheckProfileRequest = new Check_ProfileRequest();
+                theCheckProfileRequest.Command = new MetaCommand()
+                {
+                    Operation = DbOperation.ExecuteQuery
+                };
+                theCheckProfileRequest.Connection = new MetaConnection() { Connection = "*.*" };
+                theCheckProfileRequest.Parameters = new Check_ProfileInputParameters()
+                {
+                    p_Filial = filial.ToString(),
+                    p_Login = login
+                };
 
-            Check_ProfileResult theCheckProfileResult;
-            theCheckProfileResult = radiusClient.Check_Profile(theCheckProfileRequest);
+                Check_ProfileResult theCheckProfileResult;
+                theCheckProfileResult = radiusClient.Check_Profile(theCheckProfileRequest);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.StatusString = ex.Message;
+            }
 
             return View();
         }
 
         public ActionResult StopRadiusSession(string filial, string login)
         {
-            var radiusClient = new RadiusAsync.radius2Client("http");
-            
-            RadiusAsync.Stop_Radius_SessionRequest theStopRadiusSessionRequest;
-            theStopRadiusSessionRequest = new Stop_Radius_SessionRequest();
-            theStopRadiusSessionRequest.Command = new MetaCommand()
+            ViewBag.StatusString = "Сброс сессии выполнен успешно";            
+            try
             {
-                Operation = DbOperation.ExecuteQuery
-            };
-            theStopRadiusSessionRequest.Connection = new MetaConnection() { Connection = "*.*" };
-            theStopRadiusSessionRequest.Parameters = new Stop_Radius_SessionInputParameters()
-            {
-                p_Filial = filial.ToString(),
-                p_Login = login
-            };
+                var radiusClient = new RadiusAsync.radius2Client("http");
 
-            Stop_Radius_SessionResult theStopRadiusSessionResult;
-            theStopRadiusSessionResult = radiusClient.Stop_Radius_Session(theStopRadiusSessionRequest);
+                RadiusAsync.Stop_Radius_SessionRequest theStopRadiusSessionRequest;
+                theStopRadiusSessionRequest = new Stop_Radius_SessionRequest();
+                theStopRadiusSessionRequest.Command = new MetaCommand()
+                {
+                    Operation = DbOperation.ExecuteQuery
+                };
+                theStopRadiusSessionRequest.Connection = new MetaConnection() { Connection = "*.*" };
+                theStopRadiusSessionRequest.Parameters = new Stop_Radius_SessionInputParameters()
+                {
+                    p_Filial = filial.ToString(),
+                    p_Login = login
+                };
+
+                Stop_Radius_SessionResult theStopRadiusSessionResult;
+                theStopRadiusSessionResult = radiusClient.Stop_Radius_Session(theStopRadiusSessionRequest);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.StatusString = ex.Message;
+            }
 
             return View();
         }
