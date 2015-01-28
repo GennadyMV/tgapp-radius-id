@@ -718,6 +718,1671 @@ namespace RadiusTest.Radius2 {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ServicesEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<System.DateTime> input_dateField;
+        
+        private string sl_typeField;
+        
+        private string sl_descrField;
+        
+        private string loginField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<System.DateTime> input_date {
+            get {
+                return this.input_dateField;
+            }
+            set {
+                this.input_dateField = value;
+                this.RaisePropertyChanged("input_date");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string sl_type {
+            get {
+                return this.sl_typeField;
+            }
+            set {
+                this.sl_typeField = value;
+                this.RaisePropertyChanged("sl_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string sl_descr {
+            get {
+                return this.sl_descrField;
+            }
+            set {
+                this.sl_descrField = value;
+                this.RaisePropertyChanged("sl_descr");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string login {
+            get {
+                return this.loginField;
+            }
+            set {
+                this.loginField = value;
+                this.RaisePropertyChanged("login");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ServicesOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ServicesResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_User_ServicesOutputParameters parametersField;
+        
+        private Get_User_ServicesEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_User_ServicesOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_User_ServicesEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ServicesInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private string p_LoginField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ServicesRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_User_ServicesInputParameters parametersField;
+        
+        public Get_User_ServicesRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_User_ServicesInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ParamsEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string user_nameField;
+        
+        private string uc_codeField;
+        
+        private string uc_descrField;
+        
+        private string tfp_codeField;
+        
+        private string tfp_nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string user_name {
+            get {
+                return this.user_nameField;
+            }
+            set {
+                this.user_nameField = value;
+                this.RaisePropertyChanged("user_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string uc_code {
+            get {
+                return this.uc_codeField;
+            }
+            set {
+                this.uc_codeField = value;
+                this.RaisePropertyChanged("uc_code");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string uc_descr {
+            get {
+                return this.uc_descrField;
+            }
+            set {
+                this.uc_descrField = value;
+                this.RaisePropertyChanged("uc_descr");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string tfp_code {
+            get {
+                return this.tfp_codeField;
+            }
+            set {
+                this.tfp_codeField = value;
+                this.RaisePropertyChanged("tfp_code");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string tfp_name {
+            get {
+                return this.tfp_nameField;
+            }
+            set {
+                this.tfp_nameField = value;
+                this.RaisePropertyChanged("tfp_name");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ParamsOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ParamsResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_User_ParamsOutputParameters parametersField;
+        
+        private Get_User_ParamsEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_User_ParamsOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_User_ParamsEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ParamsInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private string p_LoginField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_User_ParamsRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_User_ParamsInputParameters parametersField;
+        
+        public Get_User_ParamsRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_User_ParamsInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string loginField;
+        
+        private string periodField;
+        
+        private string code_valueField;
+        
+        private string serviceField;
+        
+        private string serv_nameField;
+        
+        private System.Nullable<decimal> tr_valueField;
+        
+        private string tr_unitField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string login {
+            get {
+                return this.loginField;
+            }
+            set {
+                this.loginField = value;
+                this.RaisePropertyChanged("login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string period {
+            get {
+                return this.periodField;
+            }
+            set {
+                this.periodField = value;
+                this.RaisePropertyChanged("period");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string code_value {
+            get {
+                return this.code_valueField;
+            }
+            set {
+                this.code_valueField = value;
+                this.RaisePropertyChanged("code_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string service {
+            get {
+                return this.serviceField;
+            }
+            set {
+                this.serviceField = value;
+                this.RaisePropertyChanged("service");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string serv_name {
+            get {
+                return this.serv_nameField;
+            }
+            set {
+                this.serv_nameField = value;
+                this.RaisePropertyChanged("serv_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> tr_value {
+            get {
+                return this.tr_valueField;
+            }
+            set {
+                this.tr_valueField = value;
+                this.RaisePropertyChanged("tr_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string tr_unit {
+            get {
+                return this.tr_unitField;
+            }
+            set {
+                this.tr_unitField = value;
+                this.RaisePropertyChanged("tr_unit");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_Traffic_by_Services_SysOutputParameters parametersField;
+        
+        private Get_Traffic_by_Services_SysEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_Traffic_by_Services_SysOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_Traffic_by_Services_SysEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private System.Nullable<decimal> p_IntervalField;
+        
+        private string p_LoginField;
+        
+        private string p_GroupField;
+        
+        private System.Nullable<decimal> p_LastField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> p_Interval {
+            get {
+                return this.p_IntervalField;
+            }
+            set {
+                this.p_IntervalField = value;
+                this.RaisePropertyChanged("p_Interval");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string p_Group {
+            get {
+                return this.p_GroupField;
+            }
+            set {
+                this.p_GroupField = value;
+                this.RaisePropertyChanged("p_Group");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=4)]
+        public System.Nullable<decimal> p_Last {
+            get {
+                return this.p_LastField;
+            }
+            set {
+                this.p_LastField = value;
+                this.RaisePropertyChanged("p_Last");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Services_SysRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_Traffic_by_Services_SysInputParameters parametersField;
+        
+        public Get_Traffic_by_Services_SysRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_Traffic_by_Services_SysInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string loginField;
+        
+        private string periodField;
+        
+        private string code_valueField;
+        
+        private string serviceField;
+        
+        private string serv_nameField;
+        
+        private System.Nullable<decimal> tr_valueField;
+        
+        private string tr_unitField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string login {
+            get {
+                return this.loginField;
+            }
+            set {
+                this.loginField = value;
+                this.RaisePropertyChanged("login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string period {
+            get {
+                return this.periodField;
+            }
+            set {
+                this.periodField = value;
+                this.RaisePropertyChanged("period");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string code_value {
+            get {
+                return this.code_valueField;
+            }
+            set {
+                this.code_valueField = value;
+                this.RaisePropertyChanged("code_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string service {
+            get {
+                return this.serviceField;
+            }
+            set {
+                this.serviceField = value;
+                this.RaisePropertyChanged("service");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string serv_name {
+            get {
+                return this.serv_nameField;
+            }
+            set {
+                this.serv_nameField = value;
+                this.RaisePropertyChanged("serv_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> tr_value {
+            get {
+                return this.tr_valueField;
+            }
+            set {
+                this.tr_valueField = value;
+                this.RaisePropertyChanged("tr_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string tr_unit {
+            get {
+                return this.tr_unitField;
+            }
+            set {
+                this.tr_unitField = value;
+                this.RaisePropertyChanged("tr_unit");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_Traffic_by_ServicesOutputParameters parametersField;
+        
+        private Get_Traffic_by_ServicesEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_Traffic_by_ServicesOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_Traffic_by_ServicesEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private System.Nullable<System.DateTime> p_Date_BegField;
+        
+        private System.Nullable<System.DateTime> p_Date_EndField;
+        
+        private string p_LoginField;
+        
+        private string p_GroupField;
+        
+        private System.Nullable<decimal> p_LastField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> p_Date_Beg {
+            get {
+                return this.p_Date_BegField;
+            }
+            set {
+                this.p_Date_BegField = value;
+                this.RaisePropertyChanged("p_Date_Beg");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> p_Date_End {
+            get {
+                return this.p_Date_EndField;
+            }
+            set {
+                this.p_Date_EndField = value;
+                this.RaisePropertyChanged("p_Date_End");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string p_Group {
+            get {
+                return this.p_GroupField;
+            }
+            set {
+                this.p_GroupField = value;
+                this.RaisePropertyChanged("p_Group");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> p_Last {
+            get {
+                return this.p_LastField;
+            }
+            set {
+                this.p_LastField = value;
+                this.RaisePropertyChanged("p_Last");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_ServicesRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_Traffic_by_ServicesInputParameters parametersField;
+        
+        public Get_Traffic_by_ServicesRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_Traffic_by_ServicesInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string loginField;
+        
+        private System.Nullable<System.DateTime> zone_start_dateField;
+        
+        private System.Nullable<System.DateTime> zone_stop_dateField;
+        
+        private string code_valueField;
+        
+        private string code_textField;
+        
+        private System.Nullable<decimal> bytes_inField;
+        
+        private System.Nullable<decimal> bytes_outField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string login {
+            get {
+                return this.loginField;
+            }
+            set {
+                this.loginField = value;
+                this.RaisePropertyChanged("login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<System.DateTime> zone_start_date {
+            get {
+                return this.zone_start_dateField;
+            }
+            set {
+                this.zone_start_dateField = value;
+                this.RaisePropertyChanged("zone_start_date");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> zone_stop_date {
+            get {
+                return this.zone_stop_dateField;
+            }
+            set {
+                this.zone_stop_dateField = value;
+                this.RaisePropertyChanged("zone_stop_date");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string code_value {
+            get {
+                return this.code_valueField;
+            }
+            set {
+                this.code_valueField = value;
+                this.RaisePropertyChanged("code_value");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string code_text {
+            get {
+                return this.code_textField;
+            }
+            set {
+                this.code_textField = value;
+                this.RaisePropertyChanged("code_text");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=5)]
+        public System.Nullable<decimal> bytes_in {
+            get {
+                return this.bytes_inField;
+            }
+            set {
+                this.bytes_inField = value;
+                this.RaisePropertyChanged("bytes_in");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=6)]
+        public System.Nullable<decimal> bytes_out {
+            get {
+                return this.bytes_outField;
+            }
+            set {
+                this.bytes_outField = value;
+                this.RaisePropertyChanged("bytes_out");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_Traffic_by_Login_SysOutputParameters parametersField;
+        
+        private Get_Traffic_by_Login_SysEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_Traffic_by_Login_SysOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_Traffic_by_Login_SysEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private System.Nullable<decimal> p_PeriodField;
+        
+        private string p_LoginField;
+        
+        private System.Nullable<decimal> p_IntervalField;
+        
+        private string p_ServicesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=1)]
+        public System.Nullable<decimal> p_Period {
+            get {
+                return this.p_PeriodField;
+            }
+            set {
+                this.p_PeriodField = value;
+                this.RaisePropertyChanged("p_Period");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<decimal> p_Interval {
+            get {
+                return this.p_IntervalField;
+            }
+            set {
+                this.p_IntervalField = value;
+                this.RaisePropertyChanged("p_Interval");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string p_Services {
+            get {
+                return this.p_ServicesField;
+            }
+            set {
+                this.p_ServicesField = value;
+                this.RaisePropertyChanged("p_Services");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Traffic_by_Login_SysRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_Traffic_by_Login_SysInputParameters parametersField;
+        
+        public Get_Traffic_by_Login_SysRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_Traffic_by_Login_SysInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
     public partial class Get_Traffic_by_LoginEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string loginField;
@@ -2140,6 +3805,644 @@ namespace RadiusTest.Radius2 {
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public Get_Sessions_by_LoginInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Service_AtrsEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string lognameField;
+        
+        private string sl_typeField;
+        
+        private System.Nullable<long> vn_codeField;
+        
+        private string atr_nameField;
+        
+        private string atr_valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string logname {
+            get {
+                return this.lognameField;
+            }
+            set {
+                this.lognameField = value;
+                this.RaisePropertyChanged("logname");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string sl_type {
+            get {
+                return this.sl_typeField;
+            }
+            set {
+                this.sl_typeField = value;
+                this.RaisePropertyChanged("sl_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<long> vn_code {
+            get {
+                return this.vn_codeField;
+            }
+            set {
+                this.vn_codeField = value;
+                this.RaisePropertyChanged("vn_code");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string atr_name {
+            get {
+                return this.atr_nameField;
+            }
+            set {
+                this.atr_nameField = value;
+                this.RaisePropertyChanged("atr_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string atr_value {
+            get {
+                return this.atr_valueField;
+            }
+            set {
+                this.atr_valueField = value;
+                this.RaisePropertyChanged("atr_value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Service_AtrsOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Service_AtrsResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_Service_AtrsOutputParameters parametersField;
+        
+        private Get_Service_AtrsEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_Service_AtrsOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_Service_AtrsEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Service_AtrsInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private string p_LoginField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_Service_AtrsRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_Service_AtrsInputParameters parametersField;
+        
+        public Get_Service_AtrsRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_Service_AtrsInputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_BlockingEntity : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Nullable<decimal> ab_idField;
+        
+        private string user_nameField;
+        
+        private System.Nullable<System.DateTime> date_fromField;
+        
+        private System.Nullable<System.DateTime> date_toField;
+        
+        private string blk_codeField;
+        
+        private string blk_nameField;
+        
+        private string blk_typeField;
+        
+        private string blk_type_nameField;
+        
+        private string statusField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=0)]
+        public System.Nullable<decimal> ab_id {
+            get {
+                return this.ab_idField;
+            }
+            set {
+                this.ab_idField = value;
+                this.RaisePropertyChanged("ab_id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string user_name {
+            get {
+                return this.user_nameField;
+            }
+            set {
+                this.user_nameField = value;
+                this.RaisePropertyChanged("user_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=2)]
+        public System.Nullable<System.DateTime> date_from {
+            get {
+                return this.date_fromField;
+            }
+            set {
+                this.date_fromField = value;
+                this.RaisePropertyChanged("date_from");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true, Order=3)]
+        public System.Nullable<System.DateTime> date_to {
+            get {
+                return this.date_toField;
+            }
+            set {
+                this.date_toField = value;
+                this.RaisePropertyChanged("date_to");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string blk_code {
+            get {
+                return this.blk_codeField;
+            }
+            set {
+                this.blk_codeField = value;
+                this.RaisePropertyChanged("blk_code");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string blk_name {
+            get {
+                return this.blk_nameField;
+            }
+            set {
+                this.blk_nameField = value;
+                this.RaisePropertyChanged("blk_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string blk_type {
+            get {
+                return this.blk_typeField;
+            }
+            set {
+                this.blk_typeField = value;
+                this.RaisePropertyChanged("blk_type");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string blk_type_name {
+            get {
+                return this.blk_type_nameField;
+            }
+            set {
+                this.blk_type_nameField = value;
+                this.RaisePropertyChanged("blk_type_name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("status");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_BlockingOutputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_BlockingResult : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DbResult resultField;
+        
+        private Get_BlockingOutputParameters parametersField;
+        
+        private Get_BlockingEntity[] resultSetField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=0)]
+        public DbResult Result {
+            get {
+                return this.resultField;
+            }
+            set {
+                this.resultField = value;
+                this.RaisePropertyChanged("Result");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public Get_BlockingOutputParameters Parameters {
+            get {
+                return this.parametersField;
+            }
+            set {
+                this.parametersField = value;
+                this.RaisePropertyChanged("Parameters");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        public Get_BlockingEntity[] ResultSet {
+            get {
+                return this.resultSetField;
+            }
+            set {
+                this.resultSetField = value;
+                this.RaisePropertyChanged("ResultSet");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_BlockingInputParameters : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string p_FilialField;
+        
+        private string p_LoginField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string p_Filial {
+            get {
+                return this.p_FilialField;
+            }
+            set {
+                this.p_FilialField = value;
+                this.RaisePropertyChanged("p_Filial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string p_Login {
+            get {
+                return this.p_LoginField;
+            }
+            set {
+                this.p_LoginField = value;
+                this.RaisePropertyChanged("p_Login");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.1")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://datumnode.com/start/start_ip/radius2")]
+    public partial class Get_BlockingRequest : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private long idField;
+        
+        private MetaConnection connectionField;
+        
+        private MetaCommand commandField;
+        
+        private Get_BlockingInputParameters parametersField;
+        
+        public Get_BlockingRequest() {
+            this.idField = ((long)(0));
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(long), "0")]
+        public long Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=1)]
+        public MetaConnection Connection {
+            get {
+                return this.connectionField;
+            }
+            set {
+                this.connectionField = value;
+                this.RaisePropertyChanged("Connection");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="DatumNode", Order=2)]
+        public MetaCommand Command {
+            get {
+                return this.commandField;
+            }
+            set {
+                this.commandField = value;
+                this.RaisePropertyChanged("Command");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public Get_BlockingInputParameters Parameters {
             get {
                 return this.parametersField;
             }
@@ -4070,12 +6373,26 @@ namespace RadiusTest.Radius2 {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4098,12 +6415,26 @@ namespace RadiusTest.Radius2 {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4126,12 +6457,26 @@ namespace RadiusTest.Radius2 {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4154,12 +6499,26 @@ namespace RadiusTest.Radius2 {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4182,12 +6541,26 @@ namespace RadiusTest.Radius2 {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4210,12 +6583,26 @@ namespace RadiusTest.Radius2 {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4233,17 +6620,115 @@ namespace RadiusTest.Radius2 {
         
         RadiusTest.Radius2.Get_Access_by_Login_SysResult EndGet_Access_by_Login_Sys(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Blocking", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_BlockingResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_BlockingFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        RadiusTest.Radius2.Get_BlockingResult Get_Blocking(RadiusTest.Radius2.Get_BlockingRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Blocking", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_BlockingResponse")]
+        System.IAsyncResult BeginGet_Blocking(RadiusTest.Radius2.Get_BlockingRequest request, System.AsyncCallback callback, object asyncState);
+        
+        RadiusTest.Radius2.Get_BlockingResult EndGet_Blocking(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Service_Atrs", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Service_AtrsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Service_AtrsFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        RadiusTest.Radius2.Get_Service_AtrsResult Get_Service_Atrs(RadiusTest.Radius2.Get_Service_AtrsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Service_Atrs", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Service_AtrsResponse")]
+        System.IAsyncResult BeginGet_Service_Atrs(RadiusTest.Radius2.Get_Service_AtrsRequest request, System.AsyncCallback callback, object asyncState);
+        
+        RadiusTest.Radius2.Get_Service_AtrsResult EndGet_Service_Atrs(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_Login", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Sessions_by_LoginFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4266,12 +6751,26 @@ namespace RadiusTest.Radius2 {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4294,12 +6793,26 @@ namespace RadiusTest.Radius2 {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4317,17 +6830,241 @@ namespace RadiusTest.Radius2 {
         
         RadiusTest.Radius2.Get_Traffic_by_LoginResult EndGet_Traffic_by_Login(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session", ReplyAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_SysResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_SysFault", Name="DbException", Namespace="DatumNode")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        RadiusTest.Radius2.Get_Traffic_by_Login_SysResult Get_Traffic_by_Login_Sys(RadiusTest.Radius2.Get_Traffic_by_Login_SysRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Login_SysResponse")]
+        System.IAsyncResult BeginGet_Traffic_by_Login_Sys(RadiusTest.Radius2.Get_Traffic_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState);
+        
+        RadiusTest.Radius2.Get_Traffic_by_Login_SysResult EndGet_Traffic_by_Login_Sys(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_ServicesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_ServicesFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        RadiusTest.Radius2.Get_Traffic_by_ServicesResult Get_Traffic_by_Services(RadiusTest.Radius2.Get_Traffic_by_ServicesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_ServicesResponse")]
+        System.IAsyncResult BeginGet_Traffic_by_Services(RadiusTest.Radius2.Get_Traffic_by_ServicesRequest request, System.AsyncCallback callback, object asyncState);
+        
+        RadiusTest.Radius2.Get_Traffic_by_ServicesResult EndGet_Traffic_by_Services(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_SysResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_SysFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        RadiusTest.Radius2.Get_Traffic_by_Services_SysResult Get_Traffic_by_Services_Sys(RadiusTest.Radius2.Get_Traffic_by_Services_SysRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_Sys", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_Traffic_by_Services_SysResponse")]
+        System.IAsyncResult BeginGet_Traffic_by_Services_Sys(RadiusTest.Radius2.Get_Traffic_by_Services_SysRequest request, System.AsyncCallback callback, object asyncState);
+        
+        RadiusTest.Radius2.Get_Traffic_by_Services_SysResult EndGet_Traffic_by_Services_Sys(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_User_Params", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_User_ParamsResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_User_ParamsFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        RadiusTest.Radius2.Get_User_ParamsResult Get_User_Params(RadiusTest.Radius2.Get_User_ParamsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_User_Params", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_User_ParamsResponse")]
+        System.IAsyncResult BeginGet_User_Params(RadiusTest.Radius2.Get_User_ParamsRequest request, System.AsyncCallback callback, object asyncState);
+        
+        RadiusTest.Radius2.Get_User_ParamsResult EndGet_User_Params(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Get_User_Services", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_User_ServicesResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Get_User_ServicesFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_SysdateRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(FilialsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Check_ProfileRequest))]
+        RadiusTest.Radius2.Get_User_ServicesResult Get_User_Services(RadiusTest.Radius2.Get_User_ServicesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://datumnode.com/start/start_ip/radius2/Get_User_Services", ReplyAction="http://datumnode.com/start/start_ip/radius2/Get_User_ServicesResponse")]
+        System.IAsyncResult BeginGet_User_Services(RadiusTest.Radius2.Get_User_ServicesRequest request, System.AsyncCallback callback, object asyncState);
+        
+        RadiusTest.Radius2.Get_User_ServicesResult EndGet_User_Services(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_Session", ReplyAction="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(RadiusTest.Radius2.DbException), Action="http://datumnode.com/start/start_ip/radius2/Stop_Radius_SessionFault", Name="DbException", Namespace="DatumNode")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Stop_Radius_SessionRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_User_ParamsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Services_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_ServicesRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Traffic_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_Login_SysRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Sessions_by_LoginRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Service_AtrsRequest))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingResult))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_BlockingRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysResult))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_Login_SysRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Get_Access_by_LoginResult))]
@@ -4466,6 +7203,44 @@ namespace RadiusTest.Radius2 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_BlockingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_BlockingCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public RadiusTest.Radius2.Get_BlockingResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((RadiusTest.Radius2.Get_BlockingResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Service_AtrsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Service_AtrsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public RadiusTest.Radius2.Get_Service_AtrsResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((RadiusTest.Radius2.Get_Service_AtrsResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Get_Sessions_by_LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -4517,6 +7292,101 @@ namespace RadiusTest.Radius2 {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((RadiusTest.Radius2.Get_Traffic_by_LoginResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Traffic_by_Login_SysCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Traffic_by_Login_SysCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public RadiusTest.Radius2.Get_Traffic_by_Login_SysResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((RadiusTest.Radius2.Get_Traffic_by_Login_SysResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Traffic_by_ServicesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Traffic_by_ServicesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public RadiusTest.Radius2.Get_Traffic_by_ServicesResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((RadiusTest.Radius2.Get_Traffic_by_ServicesResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Traffic_by_Services_SysCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Traffic_by_Services_SysCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public RadiusTest.Radius2.Get_Traffic_by_Services_SysResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((RadiusTest.Radius2.Get_Traffic_by_Services_SysResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_User_ParamsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_User_ParamsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public RadiusTest.Radius2.Get_User_ParamsResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((RadiusTest.Radius2.Get_User_ParamsResult)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_User_ServicesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_User_ServicesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public RadiusTest.Radius2.Get_User_ServicesResult Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((RadiusTest.Radius2.Get_User_ServicesResult)(this.results[0]));
             }
         }
     }
@@ -4580,6 +7450,18 @@ namespace RadiusTest.Radius2 {
         
         private System.Threading.SendOrPostCallback onGet_Access_by_Login_SysCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGet_BlockingDelegate;
+        
+        private EndOperationDelegate onEndGet_BlockingDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_BlockingCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Service_AtrsDelegate;
+        
+        private EndOperationDelegate onEndGet_Service_AtrsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Service_AtrsCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGet_Sessions_by_LoginDelegate;
         
         private EndOperationDelegate onEndGet_Sessions_by_LoginDelegate;
@@ -4597,6 +7479,36 @@ namespace RadiusTest.Radius2 {
         private EndOperationDelegate onEndGet_Traffic_by_LoginDelegate;
         
         private System.Threading.SendOrPostCallback onGet_Traffic_by_LoginCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Traffic_by_Login_SysDelegate;
+        
+        private EndOperationDelegate onEndGet_Traffic_by_Login_SysDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Traffic_by_Login_SysCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Traffic_by_ServicesDelegate;
+        
+        private EndOperationDelegate onEndGet_Traffic_by_ServicesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Traffic_by_ServicesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Traffic_by_Services_SysDelegate;
+        
+        private EndOperationDelegate onEndGet_Traffic_by_Services_SysDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Traffic_by_Services_SysCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_User_ParamsDelegate;
+        
+        private EndOperationDelegate onEndGet_User_ParamsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_User_ParamsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_User_ServicesDelegate;
+        
+        private EndOperationDelegate onEndGet_User_ServicesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_User_ServicesCompletedDelegate;
         
         private BeginOperationDelegate onBeginStop_Radius_SessionDelegate;
         
@@ -4635,11 +7547,25 @@ namespace RadiusTest.Radius2 {
         
         public event System.EventHandler<Get_Access_by_Login_SysCompletedEventArgs> Get_Access_by_Login_SysCompleted;
         
+        public event System.EventHandler<Get_BlockingCompletedEventArgs> Get_BlockingCompleted;
+        
+        public event System.EventHandler<Get_Service_AtrsCompletedEventArgs> Get_Service_AtrsCompleted;
+        
         public event System.EventHandler<Get_Sessions_by_LoginCompletedEventArgs> Get_Sessions_by_LoginCompleted;
         
         public event System.EventHandler<Get_Sessions_by_Login_SysCompletedEventArgs> Get_Sessions_by_Login_SysCompleted;
         
         public event System.EventHandler<Get_Traffic_by_LoginCompletedEventArgs> Get_Traffic_by_LoginCompleted;
+        
+        public event System.EventHandler<Get_Traffic_by_Login_SysCompletedEventArgs> Get_Traffic_by_Login_SysCompleted;
+        
+        public event System.EventHandler<Get_Traffic_by_ServicesCompletedEventArgs> Get_Traffic_by_ServicesCompleted;
+        
+        public event System.EventHandler<Get_Traffic_by_Services_SysCompletedEventArgs> Get_Traffic_by_Services_SysCompleted;
+        
+        public event System.EventHandler<Get_User_ParamsCompletedEventArgs> Get_User_ParamsCompleted;
+        
+        public event System.EventHandler<Get_User_ServicesCompletedEventArgs> Get_User_ServicesCompleted;
         
         public event System.EventHandler<Stop_Radius_SessionCompletedEventArgs> Stop_Radius_SessionCompleted;
         
@@ -4943,6 +7869,106 @@ namespace RadiusTest.Radius2 {
                         request}, this.onEndGet_Access_by_Login_SysDelegate, this.onGet_Access_by_Login_SysCompletedDelegate, userState);
         }
         
+        public RadiusTest.Radius2.Get_BlockingResult Get_Blocking(RadiusTest.Radius2.Get_BlockingRequest request) {
+            return base.Channel.Get_Blocking(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Blocking(RadiusTest.Radius2.Get_BlockingRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Blocking(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public RadiusTest.Radius2.Get_BlockingResult EndGet_Blocking(System.IAsyncResult result) {
+            return base.Channel.EndGet_Blocking(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Blocking(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            RadiusTest.Radius2.Get_BlockingRequest request = ((RadiusTest.Radius2.Get_BlockingRequest)(inValues[0]));
+            return this.BeginGet_Blocking(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Blocking(System.IAsyncResult result) {
+            RadiusTest.Radius2.Get_BlockingResult retVal = this.EndGet_Blocking(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_BlockingCompleted(object state) {
+            if ((this.Get_BlockingCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_BlockingCompleted(this, new Get_BlockingCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_BlockingAsync(RadiusTest.Radius2.Get_BlockingRequest request) {
+            this.Get_BlockingAsync(request, null);
+        }
+        
+        public void Get_BlockingAsync(RadiusTest.Radius2.Get_BlockingRequest request, object userState) {
+            if ((this.onBeginGet_BlockingDelegate == null)) {
+                this.onBeginGet_BlockingDelegate = new BeginOperationDelegate(this.OnBeginGet_Blocking);
+            }
+            if ((this.onEndGet_BlockingDelegate == null)) {
+                this.onEndGet_BlockingDelegate = new EndOperationDelegate(this.OnEndGet_Blocking);
+            }
+            if ((this.onGet_BlockingCompletedDelegate == null)) {
+                this.onGet_BlockingCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_BlockingCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_BlockingDelegate, new object[] {
+                        request}, this.onEndGet_BlockingDelegate, this.onGet_BlockingCompletedDelegate, userState);
+        }
+        
+        public RadiusTest.Radius2.Get_Service_AtrsResult Get_Service_Atrs(RadiusTest.Radius2.Get_Service_AtrsRequest request) {
+            return base.Channel.Get_Service_Atrs(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Service_Atrs(RadiusTest.Radius2.Get_Service_AtrsRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Service_Atrs(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public RadiusTest.Radius2.Get_Service_AtrsResult EndGet_Service_Atrs(System.IAsyncResult result) {
+            return base.Channel.EndGet_Service_Atrs(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Service_Atrs(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            RadiusTest.Radius2.Get_Service_AtrsRequest request = ((RadiusTest.Radius2.Get_Service_AtrsRequest)(inValues[0]));
+            return this.BeginGet_Service_Atrs(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Service_Atrs(System.IAsyncResult result) {
+            RadiusTest.Radius2.Get_Service_AtrsResult retVal = this.EndGet_Service_Atrs(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Service_AtrsCompleted(object state) {
+            if ((this.Get_Service_AtrsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Service_AtrsCompleted(this, new Get_Service_AtrsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Service_AtrsAsync(RadiusTest.Radius2.Get_Service_AtrsRequest request) {
+            this.Get_Service_AtrsAsync(request, null);
+        }
+        
+        public void Get_Service_AtrsAsync(RadiusTest.Radius2.Get_Service_AtrsRequest request, object userState) {
+            if ((this.onBeginGet_Service_AtrsDelegate == null)) {
+                this.onBeginGet_Service_AtrsDelegate = new BeginOperationDelegate(this.OnBeginGet_Service_Atrs);
+            }
+            if ((this.onEndGet_Service_AtrsDelegate == null)) {
+                this.onEndGet_Service_AtrsDelegate = new EndOperationDelegate(this.OnEndGet_Service_Atrs);
+            }
+            if ((this.onGet_Service_AtrsCompletedDelegate == null)) {
+                this.onGet_Service_AtrsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Service_AtrsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Service_AtrsDelegate, new object[] {
+                        request}, this.onEndGet_Service_AtrsDelegate, this.onGet_Service_AtrsCompletedDelegate, userState);
+        }
+        
         public RadiusTest.Radius2.Get_Sessions_by_LoginResult Get_Sessions_by_Login(RadiusTest.Radius2.Get_Sessions_by_LoginRequest request) {
             return base.Channel.Get_Sessions_by_Login(request);
         }
@@ -5091,6 +8117,256 @@ namespace RadiusTest.Radius2 {
             }
             base.InvokeAsync(this.onBeginGet_Traffic_by_LoginDelegate, new object[] {
                         request}, this.onEndGet_Traffic_by_LoginDelegate, this.onGet_Traffic_by_LoginCompletedDelegate, userState);
+        }
+        
+        public RadiusTest.Radius2.Get_Traffic_by_Login_SysResult Get_Traffic_by_Login_Sys(RadiusTest.Radius2.Get_Traffic_by_Login_SysRequest request) {
+            return base.Channel.Get_Traffic_by_Login_Sys(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Traffic_by_Login_Sys(RadiusTest.Radius2.Get_Traffic_by_Login_SysRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Traffic_by_Login_Sys(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public RadiusTest.Radius2.Get_Traffic_by_Login_SysResult EndGet_Traffic_by_Login_Sys(System.IAsyncResult result) {
+            return base.Channel.EndGet_Traffic_by_Login_Sys(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Traffic_by_Login_Sys(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            RadiusTest.Radius2.Get_Traffic_by_Login_SysRequest request = ((RadiusTest.Radius2.Get_Traffic_by_Login_SysRequest)(inValues[0]));
+            return this.BeginGet_Traffic_by_Login_Sys(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Traffic_by_Login_Sys(System.IAsyncResult result) {
+            RadiusTest.Radius2.Get_Traffic_by_Login_SysResult retVal = this.EndGet_Traffic_by_Login_Sys(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Traffic_by_Login_SysCompleted(object state) {
+            if ((this.Get_Traffic_by_Login_SysCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Traffic_by_Login_SysCompleted(this, new Get_Traffic_by_Login_SysCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Traffic_by_Login_SysAsync(RadiusTest.Radius2.Get_Traffic_by_Login_SysRequest request) {
+            this.Get_Traffic_by_Login_SysAsync(request, null);
+        }
+        
+        public void Get_Traffic_by_Login_SysAsync(RadiusTest.Radius2.Get_Traffic_by_Login_SysRequest request, object userState) {
+            if ((this.onBeginGet_Traffic_by_Login_SysDelegate == null)) {
+                this.onBeginGet_Traffic_by_Login_SysDelegate = new BeginOperationDelegate(this.OnBeginGet_Traffic_by_Login_Sys);
+            }
+            if ((this.onEndGet_Traffic_by_Login_SysDelegate == null)) {
+                this.onEndGet_Traffic_by_Login_SysDelegate = new EndOperationDelegate(this.OnEndGet_Traffic_by_Login_Sys);
+            }
+            if ((this.onGet_Traffic_by_Login_SysCompletedDelegate == null)) {
+                this.onGet_Traffic_by_Login_SysCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Traffic_by_Login_SysCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Traffic_by_Login_SysDelegate, new object[] {
+                        request}, this.onEndGet_Traffic_by_Login_SysDelegate, this.onGet_Traffic_by_Login_SysCompletedDelegate, userState);
+        }
+        
+        public RadiusTest.Radius2.Get_Traffic_by_ServicesResult Get_Traffic_by_Services(RadiusTest.Radius2.Get_Traffic_by_ServicesRequest request) {
+            return base.Channel.Get_Traffic_by_Services(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Traffic_by_Services(RadiusTest.Radius2.Get_Traffic_by_ServicesRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Traffic_by_Services(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public RadiusTest.Radius2.Get_Traffic_by_ServicesResult EndGet_Traffic_by_Services(System.IAsyncResult result) {
+            return base.Channel.EndGet_Traffic_by_Services(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Traffic_by_Services(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            RadiusTest.Radius2.Get_Traffic_by_ServicesRequest request = ((RadiusTest.Radius2.Get_Traffic_by_ServicesRequest)(inValues[0]));
+            return this.BeginGet_Traffic_by_Services(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Traffic_by_Services(System.IAsyncResult result) {
+            RadiusTest.Radius2.Get_Traffic_by_ServicesResult retVal = this.EndGet_Traffic_by_Services(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Traffic_by_ServicesCompleted(object state) {
+            if ((this.Get_Traffic_by_ServicesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Traffic_by_ServicesCompleted(this, new Get_Traffic_by_ServicesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Traffic_by_ServicesAsync(RadiusTest.Radius2.Get_Traffic_by_ServicesRequest request) {
+            this.Get_Traffic_by_ServicesAsync(request, null);
+        }
+        
+        public void Get_Traffic_by_ServicesAsync(RadiusTest.Radius2.Get_Traffic_by_ServicesRequest request, object userState) {
+            if ((this.onBeginGet_Traffic_by_ServicesDelegate == null)) {
+                this.onBeginGet_Traffic_by_ServicesDelegate = new BeginOperationDelegate(this.OnBeginGet_Traffic_by_Services);
+            }
+            if ((this.onEndGet_Traffic_by_ServicesDelegate == null)) {
+                this.onEndGet_Traffic_by_ServicesDelegate = new EndOperationDelegate(this.OnEndGet_Traffic_by_Services);
+            }
+            if ((this.onGet_Traffic_by_ServicesCompletedDelegate == null)) {
+                this.onGet_Traffic_by_ServicesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Traffic_by_ServicesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Traffic_by_ServicesDelegate, new object[] {
+                        request}, this.onEndGet_Traffic_by_ServicesDelegate, this.onGet_Traffic_by_ServicesCompletedDelegate, userState);
+        }
+        
+        public RadiusTest.Radius2.Get_Traffic_by_Services_SysResult Get_Traffic_by_Services_Sys(RadiusTest.Radius2.Get_Traffic_by_Services_SysRequest request) {
+            return base.Channel.Get_Traffic_by_Services_Sys(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Traffic_by_Services_Sys(RadiusTest.Radius2.Get_Traffic_by_Services_SysRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Traffic_by_Services_Sys(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public RadiusTest.Radius2.Get_Traffic_by_Services_SysResult EndGet_Traffic_by_Services_Sys(System.IAsyncResult result) {
+            return base.Channel.EndGet_Traffic_by_Services_Sys(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Traffic_by_Services_Sys(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            RadiusTest.Radius2.Get_Traffic_by_Services_SysRequest request = ((RadiusTest.Radius2.Get_Traffic_by_Services_SysRequest)(inValues[0]));
+            return this.BeginGet_Traffic_by_Services_Sys(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Traffic_by_Services_Sys(System.IAsyncResult result) {
+            RadiusTest.Radius2.Get_Traffic_by_Services_SysResult retVal = this.EndGet_Traffic_by_Services_Sys(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Traffic_by_Services_SysCompleted(object state) {
+            if ((this.Get_Traffic_by_Services_SysCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Traffic_by_Services_SysCompleted(this, new Get_Traffic_by_Services_SysCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Traffic_by_Services_SysAsync(RadiusTest.Radius2.Get_Traffic_by_Services_SysRequest request) {
+            this.Get_Traffic_by_Services_SysAsync(request, null);
+        }
+        
+        public void Get_Traffic_by_Services_SysAsync(RadiusTest.Radius2.Get_Traffic_by_Services_SysRequest request, object userState) {
+            if ((this.onBeginGet_Traffic_by_Services_SysDelegate == null)) {
+                this.onBeginGet_Traffic_by_Services_SysDelegate = new BeginOperationDelegate(this.OnBeginGet_Traffic_by_Services_Sys);
+            }
+            if ((this.onEndGet_Traffic_by_Services_SysDelegate == null)) {
+                this.onEndGet_Traffic_by_Services_SysDelegate = new EndOperationDelegate(this.OnEndGet_Traffic_by_Services_Sys);
+            }
+            if ((this.onGet_Traffic_by_Services_SysCompletedDelegate == null)) {
+                this.onGet_Traffic_by_Services_SysCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Traffic_by_Services_SysCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Traffic_by_Services_SysDelegate, new object[] {
+                        request}, this.onEndGet_Traffic_by_Services_SysDelegate, this.onGet_Traffic_by_Services_SysCompletedDelegate, userState);
+        }
+        
+        public RadiusTest.Radius2.Get_User_ParamsResult Get_User_Params(RadiusTest.Radius2.Get_User_ParamsRequest request) {
+            return base.Channel.Get_User_Params(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_User_Params(RadiusTest.Radius2.Get_User_ParamsRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_User_Params(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public RadiusTest.Radius2.Get_User_ParamsResult EndGet_User_Params(System.IAsyncResult result) {
+            return base.Channel.EndGet_User_Params(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_User_Params(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            RadiusTest.Radius2.Get_User_ParamsRequest request = ((RadiusTest.Radius2.Get_User_ParamsRequest)(inValues[0]));
+            return this.BeginGet_User_Params(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_User_Params(System.IAsyncResult result) {
+            RadiusTest.Radius2.Get_User_ParamsResult retVal = this.EndGet_User_Params(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_User_ParamsCompleted(object state) {
+            if ((this.Get_User_ParamsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_User_ParamsCompleted(this, new Get_User_ParamsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_User_ParamsAsync(RadiusTest.Radius2.Get_User_ParamsRequest request) {
+            this.Get_User_ParamsAsync(request, null);
+        }
+        
+        public void Get_User_ParamsAsync(RadiusTest.Radius2.Get_User_ParamsRequest request, object userState) {
+            if ((this.onBeginGet_User_ParamsDelegate == null)) {
+                this.onBeginGet_User_ParamsDelegate = new BeginOperationDelegate(this.OnBeginGet_User_Params);
+            }
+            if ((this.onEndGet_User_ParamsDelegate == null)) {
+                this.onEndGet_User_ParamsDelegate = new EndOperationDelegate(this.OnEndGet_User_Params);
+            }
+            if ((this.onGet_User_ParamsCompletedDelegate == null)) {
+                this.onGet_User_ParamsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_User_ParamsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_User_ParamsDelegate, new object[] {
+                        request}, this.onEndGet_User_ParamsDelegate, this.onGet_User_ParamsCompletedDelegate, userState);
+        }
+        
+        public RadiusTest.Radius2.Get_User_ServicesResult Get_User_Services(RadiusTest.Radius2.Get_User_ServicesRequest request) {
+            return base.Channel.Get_User_Services(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_User_Services(RadiusTest.Radius2.Get_User_ServicesRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_User_Services(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public RadiusTest.Radius2.Get_User_ServicesResult EndGet_User_Services(System.IAsyncResult result) {
+            return base.Channel.EndGet_User_Services(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_User_Services(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            RadiusTest.Radius2.Get_User_ServicesRequest request = ((RadiusTest.Radius2.Get_User_ServicesRequest)(inValues[0]));
+            return this.BeginGet_User_Services(request, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_User_Services(System.IAsyncResult result) {
+            RadiusTest.Radius2.Get_User_ServicesResult retVal = this.EndGet_User_Services(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_User_ServicesCompleted(object state) {
+            if ((this.Get_User_ServicesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_User_ServicesCompleted(this, new Get_User_ServicesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_User_ServicesAsync(RadiusTest.Radius2.Get_User_ServicesRequest request) {
+            this.Get_User_ServicesAsync(request, null);
+        }
+        
+        public void Get_User_ServicesAsync(RadiusTest.Radius2.Get_User_ServicesRequest request, object userState) {
+            if ((this.onBeginGet_User_ServicesDelegate == null)) {
+                this.onBeginGet_User_ServicesDelegate = new BeginOperationDelegate(this.OnBeginGet_User_Services);
+            }
+            if ((this.onEndGet_User_ServicesDelegate == null)) {
+                this.onEndGet_User_ServicesDelegate = new EndOperationDelegate(this.OnEndGet_User_Services);
+            }
+            if ((this.onGet_User_ServicesCompletedDelegate == null)) {
+                this.onGet_User_ServicesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_User_ServicesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_User_ServicesDelegate, new object[] {
+                        request}, this.onEndGet_User_ServicesDelegate, this.onGet_User_ServicesCompletedDelegate, userState);
         }
         
         public RadiusTest.Radius2.Stop_Radius_SessionResult Stop_Radius_Session(RadiusTest.Radius2.Stop_Radius_SessionRequest request) {

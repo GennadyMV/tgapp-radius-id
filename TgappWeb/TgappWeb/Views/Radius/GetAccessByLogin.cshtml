@@ -12,20 +12,4 @@
     Layout = "";    
     }
 
-	@{
-		int index = 0;
-	}
-
-[
-	@foreach(var item in ViewBag.ResultSet)
-	{
-		if (ViewBag.Mac != null && ViewBag.Nas != null && ViewBag.Login != null && ViewBag.Interval != null )
-		{
-			if (ViewBag.Mac.Length > 0 || ViewBag.Nas.Length > 0 || ViewBag.Login.Length > 0 || ViewBag.Interval > 0 )
-			{
-				@("{\"login\":\""+(@item.login)+"\",")
-			}
-		}
-		@("\"zone_date\":\""+(@item.zone_date)+"\",\"nas\":\""+(@item.nas_ip)+"\",\"nas_port\":\""+(@item.nas_port_id)+"\",\"mac_addr\":\""+(@item.mac_addr)+"\",\"num\":\""+(@item.err_code)+"\",\"error\":\""+(@item.err_string)+"\"}")
-	}
-]
+@Html.Raw(Json.Encode("'"))

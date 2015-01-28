@@ -8,6 +8,13 @@ using System.Globalization;
 
 namespace TgappWeb.Controllers
 {
+    [Serializable]
+    public class GetAccessArrayWrap
+    {
+        [System.Xml.Serialization.XmlArray("Autorizations")]
+        public RadiusAsync.Get_Access_SysdateEntity[] Autorizations;
+    }
+
     public class RadiusController : Controller
     {
         //
@@ -377,9 +384,11 @@ namespace TgappWeb.Controllers
 
             return View();
         }
-
-        public ActionResult GetAccessSysdate(string login="", string mac="", string nas="", decimal interval=0)
+                
+        public JsonResult GetAccessSysdate(string login="", string mac="", string nas="", decimal interval=0)
         {
+            Models.Autorizations theList = new Models.Autorizations();
+            theList._Autorizations = new List<Models.Autorization>();
             try
             {
                 var radiusClient = new RadiusAsync.radius2Client("http");
@@ -400,18 +409,56 @@ namespace TgappWeb.Controllers
                 };
                 RadiusAsync.Get_Access_SysdateResult theAccessSysdateResult;
                 theAccessSysdateResult = radiusClient.Get_Access_Sysdate(theAccessSysdateRequest);
+                                
+                foreach (var item in theAccessSysdateResult.ResultSet)
+                {
+                    Models.Autorization theAutorization = new Models.Autorization();
+                    theAutorization.login = item.login;
+                    theAutorization.nas = item.nas_ip;
+                    theAutorization.nas_port = item.nas_port_id;
+                    theAutorization.mac_addr = item.mac_addr;
+                    theAutorization.zone_date = (DateTime)item.zone_date;
 
+                    theList._Autorizations.Add(theAutorization);                    
+                }
+
+                /*
+                string tab = "";
+                foreach (var item in theAccessSysdateResult.ResultSet)
+                {
+                    tab += String.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\n",
+                        item.login,
+                        item.nas_name+" "+item.nas_ip,
+                        item.nas_port_id,
+                        item.mac_addr,
+                        item.err_code,
+                        item.err_string);
+                }
+                @ViewBag.Tab = tab;
+                 * */
+                /*
+                Response.Write(tab);
+                Response.ContentType = "text/txt; charset=utf-8";
+                Response.AddHeader("Content-Disposition", "attachment; filename=test.tab");
+                Response.End();
+                
+                */
+
+                
+                /*
                 ViewBag.ResultSet = theAccessSysdateResult.ResultSet;
                 ViewBag.Mac = mac;
                 ViewBag.Nas = nas;
                 ViewBag.Login = login;
                 ViewBag.Interval = interval;
+                 * */
+                
             }
             catch (Exception ex)
             {
                 ViewBag.StatusString = ex.Message;
             }
-            return View("GetAccessByLogin");
+            return Json(theList._Autorizations, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult GetUserParams(string filial, string login)

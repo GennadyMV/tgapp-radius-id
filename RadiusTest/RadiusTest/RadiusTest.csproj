@@ -82,6 +82,12 @@
     <None Include="Service References\Radius2\RadiusTest.Radius2.Get_Access_SysdateResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\Radius2\RadiusTest.Radius2.Get_BlockingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Radius2\RadiusTest.Radius2.Get_Service_AtrsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Radius2\RadiusTest.Radius2.Get_Sessions_by_LoginResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -89,6 +95,21 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Radius2\RadiusTest.Radius2.Get_Traffic_by_LoginResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Radius2\RadiusTest.Radius2.Get_Traffic_by_Login_SysResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Radius2\RadiusTest.Radius2.Get_Traffic_by_ServicesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Radius2\RadiusTest.Radius2.Get_Traffic_by_Services_SysResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Radius2\RadiusTest.Radius2.Get_User_ParamsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Radius2\RadiusTest.Radius2.Get_User_ServicesResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Radius2\RadiusTest.Radius2.Stop_Radius_SessionResult.datasource">

@@ -236,8 +236,7 @@
 							</div>
 
 
-				<div id="autorization_result">
-				</div>
+				<div id="autorization_result"></div>
 			</div>
 			<div role="tabpanel" class="tab-pane" id="sessions">
 				<div id="sessions_result">
@@ -623,11 +622,12 @@ $("#autorization_result").jqxGrid(
             });
 */
 
-					var data_json = data.replace(/}{/gi,'},{');
-					data_json = data_json.replace(/&quot;/gi,'"');
-					data_json = data_json.replace(/&#39;/gi, '');
-					console.log( data_json );
-					data_json = JSON.parse(data_json);
+					$("#autorization_result").remove();
+					$("#autorization").append('<div id="autorization_result"></div>');
+
+					
+					
+					console.log( data );
 
 					var source =
 					{
@@ -638,10 +638,8 @@ $("#autorization_result").jqxGrid(
 							{ name: 'nas' },
 							{ name: 'nas_port' },
 							{ name: 'mac_addr' },
-							{ name: 'num' },
-							{ name: 'error' }
 						],
-						localdata: data_json
+						localdata: data
 					};
 
 					var dataAdapter = new $.jqx.dataAdapter(source);
@@ -660,8 +658,6 @@ $("#autorization_result").jqxGrid(
 							  { text: 'NAS', dataField: 'nas', width: 120 },
 							  { text: 'NAS-порт', dataField: 'nas_port', width: '100%' },
 							  { text: 'MAC-адрес', dataField: 'mac_addr', width: 150 },
-							  { text: '#', dataField: 'num', width: 50 },
-							  { text: 'Ошибка', dataField: 'error', width: '80%' }
 							],
 							groups: ['login']
 						});
