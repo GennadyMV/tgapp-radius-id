@@ -69,13 +69,32 @@ namespace TgappWeb.Controllers
             {
                 dbgn = DateTime.Now.AddMinutes(-1 * interval);
                 dend = DateTime.Now;
+                /*
+                RadiusAsync.Get_Access_by_Login_SysResult theLoginSysResult;
+                theLoginSysResult = radiusClient.Get_Access_by_Login_Sys(new Get_Access_by_Login_SysRequest()
+                {
+                    Command = new MetaCommand()
+                    {
+                        Operation = DbOperation.ExecuteQuery
+                    },
+                    Connection = new MetaConnection() { Connection = "*.*" },
+                    Parameters = new Get_Access_by_Login_SysInputParameters()
+                    {
+                        p_Filial = filial,
+                        p_Login = login,
+                        p_Interval = interval
+                    }
+                });
+                ViewBag.ResultSet = theLoginSysResult.ResultSet;
+                */
+                
             }
             else
             {
-                dbgn = DateTime.ParseExact(datebgn, "dd.MM.yyyy", new CultureInfo("en-US"));
-                dend = DateTime.ParseExact(dateend, "dd.MM.yyyy", new CultureInfo("en-US"));
+                dbgn = DateTime.ParseExact(datebgn+" 00:00:00", "dd.MM.yyyy H:mm:ss", new CultureInfo("en-US"));
+                dend = DateTime.ParseExact(dateend+" 23:59:59", "dd.MM.yyyy H:mm:ss", new CultureInfo("en-US"));
             }
-            
+
             RadiusAsync.Get_Access_by_LoginResult theLoginResult;
             theLoginResult = radiusClient.Get_Access_by_Login(new Get_Access_by_LoginRequest()
             {
@@ -83,7 +102,7 @@ namespace TgappWeb.Controllers
                 {
                     Operation = DbOperation.ExecuteQuery
                 },
-                Connection = new MetaConnection() { Connection = "*.*" },                
+                Connection = new MetaConnection() { Connection = "*.*" },
                 Parameters =//параметры функции
                     new Get_Access_by_LoginInputParameters()
                     {
@@ -94,7 +113,6 @@ namespace TgappWeb.Controllers
                     }
             });
             ViewBag.ResultSet = theLoginResult.ResultSet;
-
 
             return View();
         }
@@ -112,8 +130,8 @@ namespace TgappWeb.Controllers
             }
             else
             {
-                dbgn = DateTime.ParseExact(datebgn, "dd.MM.yyyy", new CultureInfo("en-US"));
-                dend = DateTime.ParseExact(dateend, "dd.MM.yyyy", new CultureInfo("en-US"));
+                dbgn = DateTime.ParseExact(datebgn + " 00:00:00", "dd.MM.yyyy H:mm:ss", new CultureInfo("en-US"));
+                dend = DateTime.ParseExact(dateend + " 23:59:59", "dd.MM.yyyy H:mm:ss", new CultureInfo("en-US"));
             }
 
             RadiusAsync.Get_Sessions_by_LoginResult theSessionResult;
@@ -150,8 +168,8 @@ namespace TgappWeb.Controllers
                 }
                 else
                 {
-                    dbgn = DateTime.ParseExact(datebgn, "dd.MM.yyyy", new CultureInfo("en-US"));
-                    dend = DateTime.ParseExact(dateend, "dd.MM.yyyy", new CultureInfo("en-US"));
+                    dbgn = DateTime.ParseExact(datebgn + " 00:00:00", "dd.MM.yyyy H:mm:ss", new CultureInfo("en-US"));
+                    dend = DateTime.ParseExact(dateend + " 23:59:59", "dd.MM.yyyy H:mm:ss", new CultureInfo("en-US"));
                 }
 
                 RadiusAsync.Get_Traffic_by_LoginResult theTrafficResult;
@@ -235,8 +253,8 @@ namespace TgappWeb.Controllers
                 }
                 else
                 {
-                    dbgn = DateTime.ParseExact(datebgn, "dd.MM.yyyy", new CultureInfo("en-US"));
-                    dend = DateTime.ParseExact(dateend, "dd.MM.yyyy", new CultureInfo("en-US"));
+                    dbgn = DateTime.ParseExact(datebgn + " 00:00:00", "dd.MM.yyyy H:mm:ss", new CultureInfo("en-US"));
+                    dend = DateTime.ParseExact(dateend + " 23:59:59", "dd.MM.yyyy H:mm:ss", new CultureInfo("en-US"));
                 }
 
                 RadiusAsync.Get_Traffic_by_ServicesResult theTrafficResult;
