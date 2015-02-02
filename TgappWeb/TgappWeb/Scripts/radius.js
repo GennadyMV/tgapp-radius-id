@@ -23,6 +23,7 @@ function Init() {
 	}
 }
 
+
 function Validation(thisShowAlert) {	
 	var isOk = true;
 	if (ValidationLogin(thisShowAlert) == false) {

@@ -266,6 +266,7 @@
 		  $(this).tab('show')
 		});
 		function SubmitSearch(interval) {
+			document.getElementById("login").value = document.getElementById("login").value.trim();			
 			var isValid = true;
 			if (interval > 0) {
 				isValid = ValidationLogin(true);
