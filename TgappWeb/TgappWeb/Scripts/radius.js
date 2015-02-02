@@ -2,6 +2,7 @@
 	$('#alert-danger-login').hide();
 	$('#alert-danger-datebgn').hide();
 	$('#alert-danger-dateend').hide();		
+	
 	Init();
 	if (document.getElementById("p_login").value == "" ) {
 		$('#login_head').hide();
@@ -9,6 +10,7 @@
 });
 
 function Init() {
+	
 	if (Validation(false) == true) {
 		SubmitSearch(0);
 		return;

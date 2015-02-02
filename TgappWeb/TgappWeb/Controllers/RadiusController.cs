@@ -18,7 +18,10 @@ namespace TgappWeb.Controllers
             return View();
         }
 
-        public ActionResult Radius(string mode="view", int filial=423, string login="", string date_beg="", string date_end="", int period=0 )
+        public ActionResult Radius( string mode="view", int filial=423, string login="", 
+                                    string date_beg="", 
+                                    string date_end="", 
+                                    int period=0 )
         {
             var radiusClient = new radius2Client("http");
             RadiusAsync.FilialsResult theFilialsResult;
@@ -49,11 +52,21 @@ namespace TgappWeb.Controllers
                     ViewBag.Filial = "Филиал не определён по номеру: " + filial.ToString();
                     break;
             }
+
+
             ViewBag.Mode = mode.ToUpper() ;
             ViewBag.FilialCode = filial;
             ViewBag.Login = login;
             ViewBag.DateBgn = date_beg;
+            if (date_beg == "")
+            {
+                ViewBag.DateBgn = String.Format("{0:dd.MM.yyyy}", DateTime.Now.AddDays(-1));
+            }
             ViewBag.DateEnd = date_end;
+            if (date_end == "")
+            {
+                ViewBag.DateEnd = String.Format("{0:dd.MM.yyyy}", DateTime.Now);
+            }
             ViewBag.Period = period;
 
             return View();
@@ -69,7 +82,7 @@ namespace TgappWeb.Controllers
             {
                 dbgn = DateTime.Now.AddMinutes(-1 * interval);
                 dend = DateTime.Now;
-                /*
+                
                 RadiusAsync.Get_Access_by_Login_SysResult theLoginSysResult;
                 theLoginSysResult = radiusClient.Get_Access_by_Login_Sys(new Get_Access_by_Login_SysRequest()
                 {
@@ -86,7 +99,7 @@ namespace TgappWeb.Controllers
                     }
                 });
                 ViewBag.ResultSet = theLoginSysResult.ResultSet;
-                */
+                
                 
             }
             else
