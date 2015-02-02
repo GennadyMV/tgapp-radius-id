@@ -57,16 +57,16 @@
         
 
 		<div class="btn-group">
-		  <input type="button" name="submit" class="btn btn-default" value="Получить данные" onclick="SubmitSearch(0)"/>
+		  <input type="button" name="submit" class="btn btn-default" value="Получить данные" onclick="SubmitSearchDay0()"/>
 		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 			<span class="caret"></span>
 			<span class="sr-only">Toggle Dropdown</span>
 		  </button>
 		  <ul class="dropdown-menu" role="menu">
-			<li><a href="#" onclick="SubmitSearch(1*24*60)">1 день</a></li>
-			<li><a href="#" onclick="SubmitSearch(3*24*60)">3 дня</a></li>
-			<li><a href="#" onclick="SubmitSearch(7*24*60)">7 дней</a></li>
-			<li><a href="#" onclick="SubmitSearch(30*24*60)">30 дней</a></li>
+			<li><a href="#" onclick="SubmitSearchDay1()">1 день</a></li>
+			<li><a href="#" onclick="SubmitSearchDay3()">3 дня</a></li>
+			<li><a href="#" onclick="SubmitSearchDay7()">7 дней</a></li>
+			<li><a href="#" onclick="SubmitSearchDay30()">30 дней</a></li>
 		  </ul>
 		</div>
 
@@ -265,8 +265,25 @@
 		  e.preventDefault()
 		  $(this).tab('show')
 		});
+		
+		function SubmitSearchDay0() {
+			SubmitSearch(0);
+		}
+		function SubmitSearchDay1() {
+			SubmitSearch(1440); //1*24*60
+		}
+		function SubmitSearchDay3() {
+			SubmitSearch(4320); //3*24*60
+		}
+		function SubmitSearchDay7() {
+			SubmitSearch(10080);
+		}
+		function SubmitSearchDay30() {
+			SubmitSearch(43200);
+		}
+
 		function SubmitSearch(interval) {
-			document.getElementById("login").value = document.getElementById("login").value.trim();			
+			document.getElementById("login").value = $.trim( document.getElementById("login").value );
 			var isValid = true;
 			if (interval > 0) {
 				isValid = ValidationLogin(true);
@@ -456,7 +473,7 @@
 							// filter widget: If true, ALL filter searches will only use parsed
 							// data. To only use parsed data in specific columns, set this option
 							// to false and add class name "filter-parsed" to the header
-							filter_useParsedData: false,
+							filter_useParsedData: false
 
 
 						}
