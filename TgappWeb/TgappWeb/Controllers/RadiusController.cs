@@ -48,6 +48,12 @@ namespace TgappWeb.Controllers
                 case 424:
                     ViewBag.Filial = "Сахалинский филиал";
                     break;
+                case 416:
+                    ViewBag.Filial = "Амурский филиал";
+                    break;
+                case 411:
+                    ViewBag.Filial = "Сахателеком";
+                    break;
                 default:
                     ViewBag.Filial = "Филиал не определён по номеру: " + filial.ToString();
                     break;
